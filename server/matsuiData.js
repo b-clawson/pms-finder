@@ -8,6 +8,10 @@ const __dirname = dirname(fileURLToPath(import.meta.url));
 // Map of series name → file path for locally available data
 const LOCAL_FILES = {
   "301 RC Neo": resolve(__dirname, "../data/matsui_301_rc_neo.json"),
+  "Alpha Discharge": resolve(__dirname, "../data/matsui_alpha_discharge.json"),
+  "Brite Discharge": resolve(__dirname, "../data/matsui_brite_discharge.json"),
+  "HM Discharge": resolve(__dirname, "../data/matsui_hm_discharge.json"),
+  "OW Stretch": resolve(__dirname, "../data/matsui_ow_stretch.json"),
 };
 
 // In-memory cache: series name → formula array

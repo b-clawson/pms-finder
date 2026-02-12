@@ -4,6 +4,16 @@ import { resolve, dirname } from "node:path";
 import { fileURLToPath } from "node:url";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
+const dataDir = resolve(__dirname, "../data");
+
+// --- Series config: input xlsx → output json ---
+const SERIES = [
+  { name: "301 RC Neo",       input: "matsui_301_rc_neo_raw.xlsx",       output: "matsui_301_rc_neo.json" },
+  { name: "Alpha Discharge",  input: "matsui_alpha_discharge_raw.xlsx",  output: "matsui_alpha_discharge.json" },
+  { name: "Brite Discharge",  input: "matsui_brite_discharge_raw.xlsx",  output: "matsui_brite_discharge.json" },
+  { name: "HM Discharge",     input: "matsui_hm_discharge_raw.xlsx",     output: "matsui_hm_discharge.json" },
+  { name: "OW Stretch",       input: "matsui_ow_stretch_raw.xlsx",       output: "matsui_ow_stretch.json" },
+];
 
 // Component code → hex color mapping (from Matsui API + manual fills)
 const COMP_HEX = {
@@ -30,24 +40,46 @@ const COMP_HEX = {
   "GRN EC5G": "A8EA16",
   "BLU ECBR": "008EB9",
   "BLK MK": "3E3D39",
+  "ROSE MB": "CB6597",
+  "RED ECB": "FF888E",
+  "YEL ECGG": "F8FA00",
+  // Bases / clears / whites
   "BRITE DSCHRG BASE": "FFFFFF",
-  // Manual fills
   "BR DSCHRG BASE": "FFFFFF",
+  "BRT DSCHRG WHT": "FFFFFF",
+  "BRITE DSCHRG WHT": "FFFFFF",
+  "ALPHA DSCHRG BASE": "FFFFFF",
+  "ALPHA DSCHRG WHT": "FFFFFF",
+  "ALPHA TRANS WHITE": "FFFFFF",
+  "HM DSCHRG BASE": "FFFFFF",
+  "HM DSCHRG WHT": "FFFFFF",
   "EP WHT 301": "FFFFFF",
   "WH301W-B": "FFFFFF",
+  "ST CLR 301": "FFFFFF",
   "ST CLR 301-5": "FFFFFF",
+  "ST WHT 300": "FFFFFF",
+  "ST WHT 301": "FFFFFF",
   "ST WHT 301-5": "FFFFFF",
+  "ST WHT 302": "FFFFFF",
+  "STRETCH WHITER 301-5": "FFFFFF",
+  // Manual fills
   "NEO BLACK BK": "000000",
   "Navy B": "1A2355",
   "NEO VIOLET MSGR": "654285",
   "SLVRSM 602": "C0C0C0",
+  "GLW VLT ECGR": "654285",
+  "ORNG": "F8622C",
+  "YEL MFR": "FFBD0D",
 };
 
 // Known base/clear/matte/white component codes
 const BASE_CODES = new Set([
   "CLR 301C", "MAT 301M", "EP WHT 301", "WH301W-B",
-  "ST CLR 301-5", "ST WHT 301-5", "BR DSCHRG BASE",
-  "BRITE DSCHRG BASE",
+  "ST CLR 301", "ST CLR 301-5", "ST WHT 300", "ST WHT 301", "ST WHT 301-5", "ST WHT 302",
+  "STRETCH WHITER 301-5",
+  "BR DSCHRG BASE", "BRITE DSCHRG BASE", "BRITE DSCHRG WHT", "BRT DSCHRG WHT",
+  "ALPHA DSCHRG BASE", "ALPHA DSCHRG WHT", "ALPHA TRANS WHITE",
+  "HM DSCHRG BASE", "HM DSCHRG WHT",
 ]);
 
 function hexToRgb(hex) {
@@ -76,76 +108,91 @@ function blendComponents(components) {
   return `${rr}${gg}${bb}`;
 }
 
-// --- Main ---
-const inputPath = process.argv[2] || resolve(__dirname, "../data/matsui_301_rc_neo_raw.xlsx");
-const outputPath = resolve(__dirname, "../data/matsui_301_rc_neo.json");
+function convertFile(seriesName, inputFile, outputFile) {
+  const inputPath = resolve(dataDir, inputFile);
+  const outputPath = resolve(dataDir, outputFile);
 
-console.log(`Reading: ${inputPath}`);
-const workbook = XLSX.readFile(inputPath);
-const sheet = workbook.Sheets[workbook.SheetNames[0]];
-const rows = XLSX.utils.sheet_to_json(sheet);
+  console.log(`\n--- ${seriesName} ---`);
+  console.log(`Reading: ${inputPath}`);
 
-console.log(`Rows: ${rows.length}`);
+  let workbook;
+  try {
+    workbook = XLSX.readFile(inputPath);
+  } catch (err) {
+    console.log(`  SKIP: ${err.message}`);
+    return 0;
+  }
 
-// Group by FormulaCode
-const grouped = new Map();
-for (const row of rows) {
-  const code = String(row.FormulaCode || "").trim();
-  if (!code) continue;
-  if (!grouped.has(code)) {
-    grouped.set(code, {
-      desc: String(row.FormulaDescription || "").trim(),
-      components: [],
+  const sheet = workbook.Sheets[workbook.SheetNames[0]];
+  const rows = XLSX.utils.sheet_to_json(sheet);
+  console.log(`  Rows: ${rows.length}`);
+
+  // Group by FormulaCode
+  const grouped = new Map();
+  for (const row of rows) {
+    const code = String(row.FormulaCode || "").trim();
+    if (!code) continue;
+    if (!grouped.has(code)) {
+      grouped.set(code, {
+        desc: String(row.FormulaDescription || "").trim(),
+        components: [],
+      });
+    }
+    const compCode = String(row.ComponentCode || "").trim();
+    const hex = COMP_HEX[compCode] || "";
+    grouped.get(code).components.push({
+      componentCode: compCode,
+      componentDescription: String(row.ComponentDescription || "").trim(),
+      percentage: Number(row.Percentage) || 0,
+      hex,
+      isBase: BASE_CODES.has(compCode),
     });
   }
-  const compCode = String(row.ComponentCode || "").trim();
-  const hex = COMP_HEX[compCode] || "";
-  grouped.get(code).components.push({
-    componentCode: compCode,
-    componentDescription: String(row.ComponentDescription || "").trim(),
-    percentage: Number(row.Percentage) || 0,
-    hex,
-    isBase: BASE_CODES.has(compCode),
-  });
-}
 
-console.log(`Unique formulas: ${grouped.size}`);
-
-// Build output array
-const formulas = [];
-let missingHex = 0;
-for (const [code, data] of grouped) {
-  const swatchColor = blendComponents(data.components);
-  for (const c of data.components) {
-    if (!c.hex) missingHex++;
-  }
-  formulas.push({
-    _id: code,
-    formulaCode: code,
-    formulaDescription: data.desc,
-    formulaSeries: "301 RC Neo",
-    formulaColor: "",
-    formulaSwatchColor: {
+  // Build output array
+  const formulas = [];
+  let missingHex = 0;
+  for (const [code, data] of grouped) {
+    const swatchColor = blendComponents(data.components);
+    for (const c of data.components) {
+      if (!c.hex) missingHex++;
+    }
+    formulas.push({
       _id: code,
       formulaCode: code,
-      formulaColor: swatchColor,
-    },
-    components: data.components,
+      formulaDescription: data.desc,
+      formulaSeries: seriesName,
+      formulaColor: "",
+      formulaSwatchColor: {
+        _id: code,
+        formulaCode: code,
+        formulaColor: swatchColor,
+      },
+      components: data.components,
+    });
+  }
+
+  // Sort by formula code (numeric first, then alpha)
+  formulas.sort((a, b) => {
+    const aNum = parseInt(a.formulaCode);
+    const bNum = parseInt(b.formulaCode);
+    if (!isNaN(aNum) && !isNaN(bNum)) return aNum - bNum;
+    if (!isNaN(aNum)) return -1;
+    if (!isNaN(bNum)) return 1;
+    return a.formulaCode.localeCompare(b.formulaCode);
   });
+
+  writeFileSync(outputPath, JSON.stringify(formulas, null, 2));
+  console.log(`  Wrote ${formulas.length} formulas to ${outputFile}`);
+  if (missingHex > 0) {
+    console.log(`  Warning: ${missingHex} components had no hex mapping`);
+  }
+  return formulas.length;
 }
 
-// Sort by formula code (numeric first, then alpha)
-formulas.sort((a, b) => {
-  const aNum = parseInt(a.formulaCode);
-  const bNum = parseInt(b.formulaCode);
-  if (!isNaN(aNum) && !isNaN(bNum)) return aNum - bNum;
-  if (!isNaN(aNum)) return -1;
-  if (!isNaN(bNum)) return 1;
-  return a.formulaCode.localeCompare(b.formulaCode);
-});
-
-writeFileSync(outputPath, JSON.stringify(formulas, null, 2));
-console.log(`Wrote ${formulas.length} formulas to ${outputPath}`);
-if (missingHex > 0) {
-  console.log(`Warning: ${missingHex} components had no hex mapping`);
+// --- Run all series ---
+let total = 0;
+for (const s of SERIES) {
+  total += convertFile(s.name, s.input, s.output);
 }
+console.log(`\n=== Total: ${total} formulas across ${SERIES.length} series ===`);
