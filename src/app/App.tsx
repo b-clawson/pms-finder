@@ -5,6 +5,8 @@ import { SearchCard } from './components/SearchCard';
 import { MessageBar } from './components/MessageBar';
 import { ResultsCard } from './components/ResultsCard';
 import { SwatchLibrary } from './components/SwatchLibrary';
+import { MatsuiFormulas } from './components/MatsuiFormulas';
+import { MatsuiBridge } from './components/MatsuiBridge';
 
 interface PMSMatch {
   pms: string;
@@ -19,6 +21,7 @@ function PmsFinderPage() {
   const [results, setResults] = useState<PMSMatch[]>([]);
   const [message, setMessage] = useState<{ type: 'error' | 'info'; text: string } | null>(null);
   const [isSearching, setIsSearching] = useState(false);
+  const [matsuiBridgeHex, setMatsuiBridgeHex] = useState<string | null>(null);
 
   const handleSearch = async (hex: string, series: string, limit: number) => {
     setIsSearching(true);
@@ -72,7 +75,11 @@ function PmsFinderPage() {
         </div>
       )}
 
-      {results.length > 0 && <ResultsCard results={results} />}
+      {results.length > 0 && (
+        <ResultsCard results={results} onFindMatsui={(hex) => setMatsuiBridgeHex(hex)} />
+      )}
+
+      <MatsuiBridge targetHex={matsuiBridgeHex} onClose={() => setMatsuiBridgeHex(null)} />
     </>
   );
 }
@@ -89,6 +96,18 @@ function SwatchLibraryPage() {
   );
 }
 
+function MatsuiFormulasPage() {
+  return (
+    <>
+      <div className="mb-8">
+        <h1 className="text-3xl mb-2">Matsui Formulas</h1>
+        <p className="text-gray-600">Browse and search Matsui ink formulas by series</p>
+      </div>
+      <MatsuiFormulas />
+    </>
+  );
+}
+
 export default function App() {
   return (
     <BrowserRouter>
@@ -99,6 +118,7 @@ export default function App() {
             <Routes>
               <Route path="/" element={<PmsFinderPage />} />
               <Route path="/swatches" element={<SwatchLibraryPage />} />
+              <Route path="/formulas" element={<MatsuiFormulasPage />} />
             </Routes>
           </div>
         </main>

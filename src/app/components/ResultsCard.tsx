@@ -1,3 +1,5 @@
+import { FlaskConical } from 'lucide-react';
+
 interface PMSMatch {
   pms: string;
   series: string;
@@ -9,6 +11,7 @@ interface PMSMatch {
 
 interface ResultsCardProps {
   results: PMSMatch[];
+  onFindMatsui?: (hex: string) => void;
 }
 
 function getDistanceBadgeColor(distance: number): string {
@@ -23,7 +26,7 @@ function getDistanceLabel(distance: number): string {
   return 'Far';
 }
 
-export function ResultsCard({ results }: ResultsCardProps) {
+export function ResultsCard({ results, onFindMatsui }: ResultsCardProps) {
   if (results.length === 0) return null;
 
   return (
@@ -56,9 +59,11 @@ export function ResultsCard({ results }: ResultsCardProps) {
               <th className="px-6 py-3 text-left text-xs text-gray-500 uppercase tracking-wider">
                 Name
               </th>
-              <th className="px-6 py-3 text-left text-xs text-gray-500 uppercase tracking-wider">
-                Notes
-              </th>
+              {onFindMatsui && (
+                <th className="px-6 py-3 text-left text-xs text-gray-500 uppercase tracking-wider">
+                  Matsui
+                </th>
+              )}
             </tr>
           </thead>
           <tbody className="divide-y divide-gray-100">
@@ -94,8 +99,18 @@ export function ResultsCard({ results }: ResultsCardProps) {
                 </td>
                 {/* Name */}
                 <td className="px-6 py-4 text-sm text-gray-700">{match.name}</td>
-                {/* Notes */}
-                <td className="px-6 py-4 text-sm text-gray-500">{match.notes}</td>
+                {/* Matsui action */}
+                {onFindMatsui && (
+                  <td className="px-6 py-4">
+                    <button
+                      onClick={() => onFindMatsui(match.hex)}
+                      className="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium text-[#0D9E7A] border border-[#0D9E7A] rounded-lg hover:bg-[#0D9E7A] hover:text-white transition-colors whitespace-nowrap"
+                    >
+                      <FlaskConical className="w-3.5 h-3.5" />
+                      Mix
+                    </button>
+                  </td>
+                )}
               </tr>
             ))}
           </tbody>

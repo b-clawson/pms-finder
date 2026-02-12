@@ -4,6 +4,7 @@ import { dirname, resolve } from "node:path";
 import { existsSync } from "node:fs";
 import { normalizeHex } from "./color.js";
 import { matchPms, getAllSwatches } from "./matcher.js";
+import { matsuiGet, matsuiPost } from "./matsuiClient.js";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const app = express();
@@ -14,6 +15,7 @@ const distDir = resolve(__dirname, "../dist");
 const webDir = resolve(__dirname, "../web");
 const staticDir = existsSync(distDir) ? distDir : webDir;
 app.use(express.static(staticDir));
+app.use(express.json());
 
 // API endpoint
 app.get("/api/pms", async (req, res) => {
@@ -65,6 +67,43 @@ app.get("/api/swatches", async (req, res) => {
     res.json({ swatches, mode });
   } catch (err) {
     res.status(500).json({ error: err.message });
+  }
+});
+
+// --- Matsui API proxy ---
+app.get("/api/matsui/series", async (req, res) => {
+  try {
+    const data = await matsuiGet("components/GetSeries", { useCache: true });
+    res.json(data);
+  } catch (err) {
+    res.status(502).json({ error: "Failed to fetch Matsui series", detail: err.message });
+  }
+});
+
+app.get("/api/matsui/pigments", async (req, res) => {
+  try {
+    const data = await matsuiGet("components/GetPigments", { useCache: true });
+    res.json(data);
+  } catch (err) {
+    res.status(502).json({ error: "Failed to fetch Matsui pigments", detail: err.message });
+  }
+});
+
+app.post("/api/matsui/formulas", async (req, res) => {
+  try {
+    const data = await matsuiPost("components/GetFormulas", req.body);
+    res.json(data);
+  } catch (err) {
+    res.status(502).json({ error: "Failed to fetch Matsui formulas", detail: err.message });
+  }
+});
+
+app.post("/api/matsui/closest", async (req, res) => {
+  try {
+    const data = await matsuiPost("components/GetClosestColors", req.body);
+    res.json(data);
+  } catch (err) {
+    res.status(502).json({ error: "Failed to fetch closest Matsui colors", detail: err.message });
   }
 });
 

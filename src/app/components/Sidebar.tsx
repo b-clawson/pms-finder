@@ -1,4 +1,4 @@
-import { Search, Palette } from 'lucide-react';
+import { Search, Palette, FlaskConical } from 'lucide-react';
 import { useLocation, Link } from 'react-router';
 
 interface NavItemProps {
@@ -52,6 +52,12 @@ export function Sidebar() {
           label="Swatch Library"
           to="/swatches"
           active={location.pathname === '/swatches'}
+        />
+        <NavItem
+          icon={<FlaskConical />}
+          label="Matsui Formulas"
+          to="/formulas"
+          active={location.pathname === '/formulas'}
         />
       </nav>
     </aside>
