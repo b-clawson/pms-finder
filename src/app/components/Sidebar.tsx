@@ -107,13 +107,6 @@ export function Sidebar() {
               nested
             />
             <NavItem
-              icon={<Palette />}
-              label="Matsui Formulas"
-              to="/mixing/matsui/browse"
-              active={location.pathname === '/mixing/matsui/browse'}
-              nested
-            />
-            <NavItem
               icon={<FlaskConical />}
               label="Green Galaxy"
               to="/mixing/greengalaxy"

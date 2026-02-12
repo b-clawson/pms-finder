@@ -1,11 +1,10 @@
 import { useState } from 'react';
-import { BrowserRouter, Routes, Route, Navigate } from 'react-router';
+import { BrowserRouter, Routes, Route } from 'react-router';
 import { Sidebar } from './components/Sidebar';
 import { SearchCard } from './components/SearchCard';
 import { MessageBar } from './components/MessageBar';
 import { ResultsCard } from './components/ResultsCard';
 import { SwatchLibrary } from './components/SwatchLibrary';
-import { MatsuiFormulas } from './components/MatsuiFormulas';
 import { MatsuiBridge } from './components/MatsuiBridge';
 import { MatsuiMix } from './components/MatsuiMix';
 import { GreenGalaxyMix } from './components/GreenGalaxyMix';
@@ -102,18 +101,6 @@ function MatsuiMixPage() {
   return <MatsuiMix />;
 }
 
-function MatsuiFormulasPage() {
-  return (
-    <>
-      <div className="mb-8">
-        <h1 className="text-3xl mb-2">Matsui Formulas</h1>
-        <p className="text-gray-600">Browse and search Matsui ink formulas by series</p>
-      </div>
-      <MatsuiFormulas />
-    </>
-  );
-}
-
 export default function App() {
   return (
     <BrowserRouter>
@@ -125,9 +112,7 @@ export default function App() {
               <Route path="/" element={<PmsFinderPage />} />
               <Route path="/swatches" element={<SwatchLibraryPage />} />
               <Route path="/mixing/matsui" element={<MatsuiMixPage />} />
-              <Route path="/mixing/matsui/browse" element={<MatsuiFormulasPage />} />
               <Route path="/mixing/greengalaxy" element={<GreenGalaxyMix />} />
-              <Route path="/formulas" element={<Navigate to="/mixing/matsui/browse" replace />} />
             </Routes>
           </div>
         </main>
