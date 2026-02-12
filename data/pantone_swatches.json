@@ -1,0 +1,6309 @@
+[
+  {
+    "pms": "100",
+    "series": "C",
+    "hex": "#F4ED7C",
+    "name": "100 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "101",
+    "series": "C",
+    "hex": "#F4ED47",
+    "name": "101 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "102",
+    "series": "C",
+    "hex": "#F9E814",
+    "name": "102 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "103",
+    "series": "C",
+    "hex": "#C6AD0F",
+    "name": "103 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "104",
+    "series": "C",
+    "hex": "#AD9B0C",
+    "name": "104 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "105",
+    "series": "C",
+    "hex": "#82750F",
+    "name": "105 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "106",
+    "series": "C",
+    "hex": "#F7E859",
+    "name": "106 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "107",
+    "series": "C",
+    "hex": "#F9E526",
+    "name": "107 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "108",
+    "series": "C",
+    "hex": "#F7DD16",
+    "name": "108 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "109",
+    "series": "C",
+    "hex": "#F9D616",
+    "name": "109 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "110",
+    "series": "C",
+    "hex": "#D8B511",
+    "name": "110 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "111",
+    "series": "C",
+    "hex": "#AA930A",
+    "name": "111 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "112",
+    "series": "C",
+    "hex": "#99840A",
+    "name": "112 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "113",
+    "series": "C",
+    "hex": "#F9E55B",
+    "name": "113 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "114",
+    "series": "C",
+    "hex": "#F9E24C",
+    "name": "114 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "115",
+    "series": "C",
+    "hex": "#F9E04C",
+    "name": "115 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "116",
+    "series": "C",
+    "hex": "#FCD116",
+    "name": "116 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "117",
+    "series": "C",
+    "hex": "#C6A00C",
+    "name": "117 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "118",
+    "series": "C",
+    "hex": "#AA8E0A",
+    "name": "118 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "119",
+    "series": "C",
+    "hex": "#897719",
+    "name": "119 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "120",
+    "series": "C",
+    "hex": "#F9E27F",
+    "name": "120 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "121",
+    "series": "C",
+    "hex": "#F9E070",
+    "name": "121 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "122",
+    "series": "C",
+    "hex": "#FCD856",
+    "name": "122 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "123",
+    "series": "C",
+    "hex": "#FFC61E",
+    "name": "123 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "124",
+    "series": "C",
+    "hex": "#E0AA0F",
+    "name": "124 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "125",
+    "series": "C",
+    "hex": "#B58C0A",
+    "name": "125 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "1205",
+    "series": "C",
+    "hex": "#F7E8AA",
+    "name": "1205 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "1215",
+    "series": "C",
+    "hex": "#F9E08C",
+    "name": "1215 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "1225",
+    "series": "C",
+    "hex": "#FFCC49",
+    "name": "1225 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "1235",
+    "series": "C",
+    "hex": "#FCB514",
+    "name": "1235 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "1245",
+    "series": "C",
+    "hex": "#BF910C",
+    "name": "1245 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "1255",
+    "series": "C",
+    "hex": "#A37F14",
+    "name": "1255 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "1265",
+    "series": "C",
+    "hex": "#7C6316",
+    "name": "1265 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "127",
+    "series": "C",
+    "hex": "#F4E287",
+    "name": "127 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "128",
+    "series": "C",
+    "hex": "#F4DB60",
+    "name": "128 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "129",
+    "series": "C",
+    "hex": "#F2D13D",
+    "name": "129 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "130",
+    "series": "C",
+    "hex": "#EAAF0F",
+    "name": "130 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "131",
+    "series": "C",
+    "hex": "#C6930A",
+    "name": "131 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "132",
+    "series": "C",
+    "hex": "#9E7C0A",
+    "name": "132 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "133",
+    "series": "C",
+    "hex": "#705B0A",
+    "name": "133 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "134",
+    "series": "C",
+    "hex": "#FFD87F",
+    "name": "134 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "135",
+    "series": "C",
+    "hex": "#FCC963",
+    "name": "135 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "136",
+    "series": "C",
+    "hex": "#FCBF49",
+    "name": "136 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "137",
+    "series": "C",
+    "hex": "#FCA311",
+    "name": "137 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "138",
+    "series": "C",
+    "hex": "#D88C02",
+    "name": "138 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "139",
+    "series": "C",
+    "hex": "#AF7505",
+    "name": "139 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "140",
+    "series": "C",
+    "hex": "#7A5B11",
+    "name": "140 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "1345",
+    "series": "C",
+    "hex": "#FFD691",
+    "name": "1345 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "1355",
+    "series": "C",
+    "hex": "#FCCE87",
+    "name": "1355 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "1365",
+    "series": "C",
+    "hex": "#FCBA5E",
+    "name": "1365 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "1375",
+    "series": "C",
+    "hex": "#F99B0C",
+    "name": "1375 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "1385",
+    "series": "C",
+    "hex": "#CC7A02",
+    "name": "1385 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "1395",
+    "series": "C",
+    "hex": "#996007",
+    "name": "1395 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "1405",
+    "series": "C",
+    "hex": "#6B4714",
+    "name": "1405 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "141",
+    "series": "C",
+    "hex": "#F2CE68",
+    "name": "141 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "142",
+    "series": "C",
+    "hex": "#F2BF49",
+    "name": "142 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "143",
+    "series": "C",
+    "hex": "#EFB22D",
+    "name": "143 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "144",
+    "series": "C",
+    "hex": "#E28C05",
+    "name": "144 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "145",
+    "series": "C",
+    "hex": "#C67F07",
+    "name": "145 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "146",
+    "series": "C",
+    "hex": "#9E6B05",
+    "name": "146 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "147",
+    "series": "C",
+    "hex": "#725E26",
+    "name": "147 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "148",
+    "series": "C",
+    "hex": "#FFD69B",
+    "name": "148 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "149",
+    "series": "C",
+    "hex": "#FCCC93",
+    "name": "149 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "150",
+    "series": "C",
+    "hex": "#FCAD56",
+    "name": "150 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "151",
+    "series": "C",
+    "hex": "#F77F00",
+    "name": "151 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "152",
+    "series": "C",
+    "hex": "#DD7500",
+    "name": "152 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "153",
+    "series": "C",
+    "hex": "#BC6D0A",
+    "name": "153 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "154",
+    "series": "C",
+    "hex": "#995905",
+    "name": "154 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "1485",
+    "series": "C",
+    "hex": "#FFB777",
+    "name": "1485 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "1495",
+    "series": "C",
+    "hex": "#FF993F",
+    "name": "1495 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "1505",
+    "series": "C",
+    "hex": "#F47C00",
+    "name": "1505 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "1525",
+    "series": "C",
+    "hex": "#B55400",
+    "name": "1525 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "1535",
+    "series": "C",
+    "hex": "#8C4400",
+    "name": "1535 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "1545",
+    "series": "C",
+    "hex": "#4C280F",
+    "name": "1545 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "155",
+    "series": "C",
+    "hex": "#F4DBAA",
+    "name": "155 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "156",
+    "series": "C",
+    "hex": "#F2C68C",
+    "name": "156 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "157",
+    "series": "C",
+    "hex": "#EDA04F",
+    "name": "157 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "158",
+    "series": "C",
+    "hex": "#E87511",
+    "name": "158 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "159",
+    "series": "C",
+    "hex": "#C66005",
+    "name": "159 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "160",
+    "series": "C",
+    "hex": "#9E540A",
+    "name": "160 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "161",
+    "series": "C",
+    "hex": "#633A11",
+    "name": "161 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "1555",
+    "series": "C",
+    "hex": "#F9BF9E",
+    "name": "1555 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "1565",
+    "series": "C",
+    "hex": "#FCA577",
+    "name": "1565 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "1575",
+    "series": "C",
+    "hex": "#FC8744",
+    "name": "1575 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "1585",
+    "series": "C",
+    "hex": "#F96B07",
+    "name": "1585 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "1595",
+    "series": "C",
+    "hex": "#D15B05",
+    "name": "1595 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "1605",
+    "series": "C",
+    "hex": "#A04F11",
+    "name": "1605 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "1615",
+    "series": "C",
+    "hex": "#843F0F",
+    "name": "1615 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "162",
+    "series": "C",
+    "hex": "#F9C6AA",
+    "name": "162 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "163",
+    "series": "C",
+    "hex": "#FC9E70",
+    "name": "163 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "164",
+    "series": "C",
+    "hex": "#FC7F3F",
+    "name": "164 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "165",
+    "series": "C",
+    "hex": "#F96302",
+    "name": "165 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "166",
+    "series": "C",
+    "hex": "#DD5900",
+    "name": "166 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "167",
+    "series": "C",
+    "hex": "#BC4F07",
+    "name": "167 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "168",
+    "series": "C",
+    "hex": "#6D3011",
+    "name": "168 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "1625",
+    "series": "C",
+    "hex": "#F9A58C",
+    "name": "1625 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "1635",
+    "series": "C",
+    "hex": "#F98E6D",
+    "name": "1635 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "1645",
+    "series": "C",
+    "hex": "#F97242",
+    "name": "1645 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "1655",
+    "series": "C",
+    "hex": "#F95602",
+    "name": "1655 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "1665",
+    "series": "C",
+    "hex": "#F95602",
+    "name": "1665 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "1675",
+    "series": "C",
+    "hex": "#A53F0F",
+    "name": "1675 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "1685",
+    "series": "C",
+    "hex": "#843511",
+    "name": "1685 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "169",
+    "series": "C",
+    "hex": "#F9BAAA",
+    "name": "169 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "170",
+    "series": "C",
+    "hex": "#F98972",
+    "name": "170 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "171",
+    "series": "C",
+    "hex": "#F9603A",
+    "name": "171 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "172",
+    "series": "C",
+    "hex": "#F74902",
+    "name": "172 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "173",
+    "series": "C",
+    "hex": "#D14414",
+    "name": "173 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "174",
+    "series": "C",
+    "hex": "#933311",
+    "name": "174 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "175",
+    "series": "C",
+    "hex": "#6D3321",
+    "name": "175 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "176",
+    "series": "C",
+    "hex": "#F9AFAD",
+    "name": "176 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "177",
+    "series": "C",
+    "hex": "#F9827F",
+    "name": "177 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "178",
+    "series": "C",
+    "hex": "#F95E59",
+    "name": "178 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "179",
+    "series": "C",
+    "hex": "#E23D28",
+    "name": "179 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "180",
+    "series": "C",
+    "hex": "#C13828",
+    "name": "180 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "181",
+    "series": "C",
+    "hex": "#7C2D23",
+    "name": "181 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "1765",
+    "series": "C",
+    "hex": "#F99EA3",
+    "name": "1765 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "1775",
+    "series": "C",
+    "hex": "#F9848E",
+    "name": "1775 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "1785",
+    "series": "C",
+    "hex": "#FC4F59",
+    "name": "1785 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "1788",
+    "series": "C",
+    "hex": "#EF2B2D",
+    "name": "1788 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "1795",
+    "series": "C",
+    "hex": "#D62828",
+    "name": "1795 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "1805",
+    "series": "C",
+    "hex": "#AF2626",
+    "name": "1805 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "1815",
+    "series": "C",
+    "hex": "#7C211E",
+    "name": "1815 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "1767",
+    "series": "C",
+    "hex": "#F9B2B7",
+    "name": "1767 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "1777",
+    "series": "C",
+    "hex": "#FC6675",
+    "name": "1777 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "1787",
+    "series": "C",
+    "hex": "#F43F4F",
+    "name": "1787 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "1797",
+    "series": "C",
+    "hex": "#CC2D30",
+    "name": "1797 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "1807",
+    "series": "C",
+    "hex": "#A03033",
+    "name": "1807 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "1817",
+    "series": "C",
+    "hex": "#5B2D28",
+    "name": "1817 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "182",
+    "series": "C",
+    "hex": "#F9BFC1",
+    "name": "182 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "183",
+    "series": "C",
+    "hex": "#FC8C99",
+    "name": "183 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "184",
+    "series": "C",
+    "hex": "#FC5E72",
+    "name": "184 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "185",
+    "series": "C",
+    "hex": "#E8112D",
+    "name": "185 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "186",
+    "series": "C",
+    "hex": "#CE1126",
+    "name": "186 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "187",
+    "series": "C",
+    "hex": "#AF1E2D",
+    "name": "187 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "188",
+    "series": "C",
+    "hex": "#7C2128",
+    "name": "188 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "189",
+    "series": "C",
+    "hex": "#FFA3B2",
+    "name": "189 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "190",
+    "series": "C",
+    "hex": "#FC758E",
+    "name": "190 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "191",
+    "series": "C",
+    "hex": "#F4476B",
+    "name": "191 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "192",
+    "series": "C",
+    "hex": "#E5053A",
+    "name": "192 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "193",
+    "series": "C",
+    "hex": "#BF0A30",
+    "name": "193 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "194",
+    "series": "C",
+    "hex": "#992135",
+    "name": "194 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "195",
+    "series": "C",
+    "hex": "#772D35",
+    "name": "195 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "1895",
+    "series": "C",
+    "hex": "#FCBFC9",
+    "name": "1895 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "1905",
+    "series": "C",
+    "hex": "#FC9BB2",
+    "name": "1905 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "1915",
+    "series": "C",
+    "hex": "#F4547C",
+    "name": "1915 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "1925",
+    "series": "C",
+    "hex": "#E00747",
+    "name": "1925 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "1935",
+    "series": "C",
+    "hex": "#C10538",
+    "name": "1935 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "1945",
+    "series": "C",
+    "hex": "#A80C35",
+    "name": "1945 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "1955",
+    "series": "C",
+    "hex": "#931638",
+    "name": "1955 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "196",
+    "series": "C",
+    "hex": "#F4C9C9",
+    "name": "196 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "197",
+    "series": "C",
+    "hex": "#EF99A3",
+    "name": "197 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "198",
+    "series": "C",
+    "hex": "#E5566D",
+    "name": "198 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "199",
+    "series": "C",
+    "hex": "#D81C3F",
+    "name": "199 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "200",
+    "series": "C",
+    "hex": "#C41E3A",
+    "name": "200 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "201",
+    "series": "C",
+    "hex": "#A32638",
+    "name": "201 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "202",
+    "series": "C",
+    "hex": "#8C2633",
+    "name": "202 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "203",
+    "series": "C",
+    "hex": "#F2AFC1",
+    "name": "203 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "204",
+    "series": "C",
+    "hex": "#ED7A9E",
+    "name": "204 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "205",
+    "series": "C",
+    "hex": "#E54C7C",
+    "name": "205 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "206",
+    "series": "C",
+    "hex": "#D30547",
+    "name": "206 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "207",
+    "series": "C",
+    "hex": "#AF003D",
+    "name": "207 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "208",
+    "series": "C",
+    "hex": "#8E2344",
+    "name": "208 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "209",
+    "series": "C",
+    "hex": "#75263D",
+    "name": "209 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "210",
+    "series": "C",
+    "hex": "#FFA0BF",
+    "name": "210 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "211",
+    "series": "C",
+    "hex": "#FF77A8",
+    "name": "211 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "212",
+    "series": "C",
+    "hex": "#F94F8E",
+    "name": "212 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "213",
+    "series": "C",
+    "hex": "#EA0F6B",
+    "name": "213 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "214",
+    "series": "C",
+    "hex": "#CC0256",
+    "name": "214 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "215",
+    "series": "C",
+    "hex": "#A50544",
+    "name": "215 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "216",
+    "series": "C",
+    "hex": "#7C1E3F",
+    "name": "216 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "217",
+    "series": "C",
+    "hex": "#F4BFD1",
+    "name": "217 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "218",
+    "series": "C",
+    "hex": "#ED72AA",
+    "name": "218 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "219",
+    "series": "C",
+    "hex": "#E22882",
+    "name": "219 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "220",
+    "series": "C",
+    "hex": "#AA004F",
+    "name": "220 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "221",
+    "series": "C",
+    "hex": "#930042",
+    "name": "221 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "222",
+    "series": "C",
+    "hex": "#70193D",
+    "name": "222 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "223",
+    "series": "C",
+    "hex": "#F993C4",
+    "name": "223 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "224",
+    "series": "C",
+    "hex": "#F46BAF",
+    "name": "224 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "225",
+    "series": "C",
+    "hex": "#ED2893",
+    "name": "225 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "226",
+    "series": "C",
+    "hex": "#D60270",
+    "name": "226 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "227",
+    "series": "C",
+    "hex": "#AD005B",
+    "name": "227 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "228",
+    "series": "C",
+    "hex": "#8C004C",
+    "name": "228 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "229",
+    "series": "C",
+    "hex": "#6D213F",
+    "name": "229 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "230",
+    "series": "C",
+    "hex": "#FFA0CC",
+    "name": "230 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "231",
+    "series": "C",
+    "hex": "#FC70BA",
+    "name": "231 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "232",
+    "series": "C",
+    "hex": "#F43FA5",
+    "name": "232 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "233",
+    "series": "C",
+    "hex": "#CE007C",
+    "name": "233 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "234",
+    "series": "C",
+    "hex": "#AA0066",
+    "name": "234 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "235",
+    "series": "C",
+    "hex": "#8E0554",
+    "name": "235 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "236",
+    "series": "C",
+    "hex": "#F9AFD3",
+    "name": "236 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "237",
+    "series": "C",
+    "hex": "#F484C4",
+    "name": "237 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "238",
+    "series": "C",
+    "hex": "#ED4FAF",
+    "name": "238 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "239",
+    "series": "C",
+    "hex": "#E0219E",
+    "name": "239 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "240",
+    "series": "C",
+    "hex": "#C40F89",
+    "name": "240 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "241",
+    "series": "C",
+    "hex": "#AD0075",
+    "name": "241 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "242",
+    "series": "C",
+    "hex": "#7C1C51",
+    "name": "242 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "2365",
+    "series": "C",
+    "hex": "#F7C4D8",
+    "name": "2365 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "2375",
+    "series": "C",
+    "hex": "#EA6BBF",
+    "name": "2375 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "2385",
+    "series": "C",
+    "hex": "#DB28A5",
+    "name": "2385 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "2395",
+    "series": "C",
+    "hex": "#C4008C",
+    "name": "2395 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "2405",
+    "series": "C",
+    "hex": "#A8007A",
+    "name": "2405 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "2415",
+    "series": "C",
+    "hex": "#9B0070",
+    "name": "2415 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "2425",
+    "series": "C",
+    "hex": "#87005B",
+    "name": "2425 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "243",
+    "series": "C",
+    "hex": "#F2BAD8",
+    "name": "243 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "244",
+    "series": "C",
+    "hex": "#EDA0D3",
+    "name": "244 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "245",
+    "series": "C",
+    "hex": "#E87FC9",
+    "name": "245 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "246",
+    "series": "C",
+    "hex": "#CC00A0",
+    "name": "246 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "247",
+    "series": "C",
+    "hex": "#B7008E",
+    "name": "247 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "248",
+    "series": "C",
+    "hex": "#A3057F",
+    "name": "248 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "249",
+    "series": "C",
+    "hex": "#7F2860",
+    "name": "249 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "250",
+    "series": "C",
+    "hex": "#EDC4DD",
+    "name": "250 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "251",
+    "series": "C",
+    "hex": "#E29ED6",
+    "name": "251 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "252",
+    "series": "C",
+    "hex": "#D36BC6",
+    "name": "252 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "253",
+    "series": "C",
+    "hex": "#AF23A5",
+    "name": "253 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "254",
+    "series": "C",
+    "hex": "#A02D96",
+    "name": "254 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "255",
+    "series": "C",
+    "hex": "#772D6B",
+    "name": "255 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "256",
+    "series": "C",
+    "hex": "#E5C4D6",
+    "name": "256 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "257",
+    "series": "C",
+    "hex": "#D3A5C9",
+    "name": "257 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "258",
+    "series": "C",
+    "hex": "#9B4F96",
+    "name": "258 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "259",
+    "series": "C",
+    "hex": "#72166B",
+    "name": "259 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "260",
+    "series": "C",
+    "hex": "#681E5B",
+    "name": "260 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "261",
+    "series": "C",
+    "hex": "#5E2154",
+    "name": "261 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "262",
+    "series": "C",
+    "hex": "#542344",
+    "name": "262 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "2562",
+    "series": "C",
+    "hex": "#D8A8D8",
+    "name": "2562 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "2572",
+    "series": "C",
+    "hex": "#C687D1",
+    "name": "2572 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "2582",
+    "series": "C",
+    "hex": "#AA47BA",
+    "name": "2582 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "2592",
+    "series": "C",
+    "hex": "#930FA5",
+    "name": "2592 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "2602",
+    "series": "C",
+    "hex": "#820C8E",
+    "name": "2602 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "2612",
+    "series": "C",
+    "hex": "#701E72",
+    "name": "2612 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "2622",
+    "series": "C",
+    "hex": "#602D59",
+    "name": "2622 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "2563",
+    "series": "C",
+    "hex": "#D1A0CC",
+    "name": "2563 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "2573",
+    "series": "C",
+    "hex": "#BA7CBC",
+    "name": "2573 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "2583",
+    "series": "C",
+    "hex": "#9E4FA5",
+    "name": "2583 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "2593",
+    "series": "C",
+    "hex": "#872B93",
+    "name": "2593 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "2603",
+    "series": "C",
+    "hex": "#70147A",
+    "name": "2603 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "2613",
+    "series": "C",
+    "hex": "#66116D",
+    "name": "2613 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "2623",
+    "series": "C",
+    "hex": "#5B195E",
+    "name": "2623 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "2567",
+    "series": "C",
+    "hex": "#BF93CC",
+    "name": "2567 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "2577",
+    "series": "C",
+    "hex": "#AA72BF",
+    "name": "2577 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "2587",
+    "series": "C",
+    "hex": "#8E47AD",
+    "name": "2587 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "2597",
+    "series": "C",
+    "hex": "#66008C",
+    "name": "2597 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "2607",
+    "series": "C",
+    "hex": "#5B027A",
+    "name": "2607 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "2617",
+    "series": "C",
+    "hex": "#560C70",
+    "name": "2617 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "2627",
+    "series": "C",
+    "hex": "#4C145E",
+    "name": "2627 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "263",
+    "series": "C",
+    "hex": "#E0CEE0",
+    "name": "263 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "264",
+    "series": "C",
+    "hex": "#C6AADB",
+    "name": "264 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "265",
+    "series": "C",
+    "hex": "#9663C4",
+    "name": "265 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "266",
+    "series": "C",
+    "hex": "#6D28AA",
+    "name": "266 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "267",
+    "series": "C",
+    "hex": "#59118E",
+    "name": "267 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "268",
+    "series": "C",
+    "hex": "#4F2170",
+    "name": "268 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "269",
+    "series": "C",
+    "hex": "#442359",
+    "name": "269 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "2635",
+    "series": "C",
+    "hex": "#C9ADD8",
+    "name": "2635 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "2645",
+    "series": "C",
+    "hex": "#B591D1",
+    "name": "2645 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "2655",
+    "series": "C",
+    "hex": "#9B6DC6",
+    "name": "2655 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "2665",
+    "series": "C",
+    "hex": "#894FBF",
+    "name": "2665 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "2685",
+    "series": "C",
+    "hex": "#56008C",
+    "name": "2685 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "2695",
+    "series": "C",
+    "hex": "#44235E",
+    "name": "2695 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "270",
+    "series": "C",
+    "hex": "#BAAFD3",
+    "name": "270 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "271",
+    "series": "C",
+    "hex": "#9E91C6",
+    "name": "271 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "272",
+    "series": "C",
+    "hex": "#8977BA",
+    "name": "272 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "273",
+    "series": "C",
+    "hex": "#38197A",
+    "name": "273 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "274",
+    "series": "C",
+    "hex": "#2B1166",
+    "name": "274 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "275",
+    "series": "C",
+    "hex": "#260F54",
+    "name": "275 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "276",
+    "series": "C",
+    "hex": "#2B2147",
+    "name": "276 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "2705",
+    "series": "C",
+    "hex": "#AD9ED3",
+    "name": "2705 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "2715",
+    "series": "C",
+    "hex": "#937ACC",
+    "name": "2715 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "2725",
+    "series": "C",
+    "hex": "#7251BC",
+    "name": "2725 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "2735",
+    "series": "C",
+    "hex": "#4F0093",
+    "name": "2735 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "2745",
+    "series": "C",
+    "hex": "#3F0077",
+    "name": "2745 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "2755",
+    "series": "C",
+    "hex": "#35006D",
+    "name": "2755 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "2765",
+    "series": "C",
+    "hex": "#2B0C56",
+    "name": "2765 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "2706",
+    "series": "C",
+    "hex": "#D1CEDD",
+    "name": "2706 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "2716",
+    "series": "C",
+    "hex": "#A5A0D6",
+    "name": "2716 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "2726",
+    "series": "C",
+    "hex": "#6656BC",
+    "name": "2726 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "2736",
+    "series": "C",
+    "hex": "#4930AD",
+    "name": "2736 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "2746",
+    "series": "C",
+    "hex": "#3F2893",
+    "name": "2746 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "2756",
+    "series": "C",
+    "hex": "#332875",
+    "name": "2756 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "2766",
+    "series": "C",
+    "hex": "#2B265B",
+    "name": "2766 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "2707",
+    "series": "C",
+    "hex": "#BFD1E5",
+    "name": "2707 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "2717",
+    "series": "C",
+    "hex": "#A5BAE0",
+    "name": "2717 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "2727",
+    "series": "C",
+    "hex": "#5E68C4",
+    "name": "2727 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "2747",
+    "series": "C",
+    "hex": "#1C146B",
+    "name": "2747 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "2757",
+    "series": "C",
+    "hex": "#141654",
+    "name": "2757 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "2767",
+    "series": "C",
+    "hex": "#14213D",
+    "name": "2767 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "2708",
+    "series": "C",
+    "hex": "#AFBCDB",
+    "name": "2708 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "2718",
+    "series": "C",
+    "hex": "#5B77CC",
+    "name": "2718 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "2728",
+    "series": "C",
+    "hex": "#3044B5",
+    "name": "2728 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "2738",
+    "series": "C",
+    "hex": "#2D008E",
+    "name": "2738 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "2748",
+    "series": "C",
+    "hex": "#1E1C77",
+    "name": "2748 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "2758",
+    "series": "C",
+    "hex": "#192168",
+    "name": "2758 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "2768",
+    "series": "C",
+    "hex": "#112151",
+    "name": "2768 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "277",
+    "series": "C",
+    "hex": "#B5D1E8",
+    "name": "277 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "278",
+    "series": "C",
+    "hex": "#99BADD",
+    "name": "278 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "279",
+    "series": "C",
+    "hex": "#6689CC",
+    "name": "279 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "280",
+    "series": "C",
+    "hex": "#002B7F",
+    "name": "280 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "281",
+    "series": "C",
+    "hex": "#002868",
+    "name": "281 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "282",
+    "series": "C",
+    "hex": "#002654",
+    "name": "282 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "283",
+    "series": "C",
+    "hex": "#9BC4E2",
+    "name": "283 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "284",
+    "series": "C",
+    "hex": "#75AADB",
+    "name": "284 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "285",
+    "series": "C",
+    "hex": "#3A75C4",
+    "name": "285 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "286",
+    "series": "C",
+    "hex": "#0038A8",
+    "name": "286 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "287",
+    "series": "C",
+    "hex": "#003893",
+    "name": "287 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "288",
+    "series": "C",
+    "hex": "#00337F",
+    "name": "288 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "289",
+    "series": "C",
+    "hex": "#002649",
+    "name": "289 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "290",
+    "series": "C",
+    "hex": "#C4D8E2",
+    "name": "290 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "291",
+    "series": "C",
+    "hex": "#A8CEE2",
+    "name": "291 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "292",
+    "series": "C",
+    "hex": "#75B2DD",
+    "name": "292 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "293",
+    "series": "C",
+    "hex": "#0051BA",
+    "name": "293 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "294",
+    "series": "C",
+    "hex": "#003F87",
+    "name": "294 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "295",
+    "series": "C",
+    "hex": "#00386B",
+    "name": "295 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "296",
+    "series": "C",
+    "hex": "#002D47",
+    "name": "296 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "2905",
+    "series": "C",
+    "hex": "#93C6E0",
+    "name": "2905 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "2915",
+    "series": "C",
+    "hex": "#60AFDD",
+    "name": "2915 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "2925",
+    "series": "C",
+    "hex": "#008ED6",
+    "name": "2925 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "2935",
+    "series": "C",
+    "hex": "#005BBF",
+    "name": "2935 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "2945",
+    "series": "C",
+    "hex": "#0054A0",
+    "name": "2945 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "2955",
+    "series": "C",
+    "hex": "#003D6B",
+    "name": "2955 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "2965",
+    "series": "C",
+    "hex": "#00334C",
+    "name": "2965 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "297",
+    "series": "C",
+    "hex": "#82C6E2",
+    "name": "297 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "298",
+    "series": "C",
+    "hex": "#51B5E0",
+    "name": "298 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "299",
+    "series": "C",
+    "hex": "#00A3DD",
+    "name": "299 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "300",
+    "series": "C",
+    "hex": "#0072C6",
+    "name": "300 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "301",
+    "series": "C",
+    "hex": "#005B99",
+    "name": "301 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "302",
+    "series": "C",
+    "hex": "#004F6D",
+    "name": "302 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "303",
+    "series": "C",
+    "hex": "#003F54",
+    "name": "303 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "2975",
+    "series": "C",
+    "hex": "#BAE0E2",
+    "name": "2975 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "2985",
+    "series": "C",
+    "hex": "#51BFE2",
+    "name": "2985 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "2995",
+    "series": "C",
+    "hex": "#00A5DB",
+    "name": "2995 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "3005",
+    "series": "C",
+    "hex": "#0084C9",
+    "name": "3005 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "3015",
+    "series": "C",
+    "hex": "#00709E",
+    "name": "3015 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "3025",
+    "series": "C",
+    "hex": "#00546B",
+    "name": "3025 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "3035",
+    "series": "C",
+    "hex": "#004454",
+    "name": "3035 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "304",
+    "series": "C",
+    "hex": "#A5DDE2",
+    "name": "304 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "305",
+    "series": "C",
+    "hex": "#70CEE2",
+    "name": "305 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "306",
+    "series": "C",
+    "hex": "#00BCE2",
+    "name": "306 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "307",
+    "series": "C",
+    "hex": "#007AA5",
+    "name": "307 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "308",
+    "series": "C",
+    "hex": "#00607C",
+    "name": "308 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "309",
+    "series": "C",
+    "hex": "#003F49",
+    "name": "309 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "310",
+    "series": "C",
+    "hex": "#72D1DD",
+    "name": "310 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "311",
+    "series": "C",
+    "hex": "#28C4D8",
+    "name": "311 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "312",
+    "series": "C",
+    "hex": "#00ADC6",
+    "name": "312 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "313",
+    "series": "C",
+    "hex": "#0099B5",
+    "name": "313 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "314",
+    "series": "C",
+    "hex": "#00829B",
+    "name": "314 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "315",
+    "series": "C",
+    "hex": "#006B77",
+    "name": "315 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "316",
+    "series": "C",
+    "hex": "#00494F",
+    "name": "316 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "3105",
+    "series": "C",
+    "hex": "#7FD6DB",
+    "name": "3105 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "3115",
+    "series": "C",
+    "hex": "#2DC6D6",
+    "name": "3115 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "3125",
+    "series": "C",
+    "hex": "#00B7C6",
+    "name": "3125 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "3135",
+    "series": "C",
+    "hex": "#009BAA",
+    "name": "3135 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "3145",
+    "series": "C",
+    "hex": "#00848E",
+    "name": "3145 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "3155",
+    "series": "C",
+    "hex": "#006D75",
+    "name": "3155 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "3165",
+    "series": "C",
+    "hex": "#00565B",
+    "name": "3165 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "317",
+    "series": "C",
+    "hex": "#C9E8DD",
+    "name": "317 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "318",
+    "series": "C",
+    "hex": "#93DDDB",
+    "name": "318 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "319",
+    "series": "C",
+    "hex": "#4CCED1",
+    "name": "319 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "320",
+    "series": "C",
+    "hex": "#009EA0",
+    "name": "320 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "321",
+    "series": "C",
+    "hex": "#008789",
+    "name": "321 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "322",
+    "series": "C",
+    "hex": "#007272",
+    "name": "322 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "323",
+    "series": "C",
+    "hex": "#006663",
+    "name": "323 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "324",
+    "series": "C",
+    "hex": "#AADDD6",
+    "name": "324 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "325",
+    "series": "C",
+    "hex": "#56C9C1",
+    "name": "325 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "326",
+    "series": "C",
+    "hex": "#00B2AA",
+    "name": "326 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "327",
+    "series": "C",
+    "hex": "#008C82",
+    "name": "327 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "328",
+    "series": "C",
+    "hex": "#007770",
+    "name": "328 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "329",
+    "series": "C",
+    "hex": "#006D66",
+    "name": "329 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "330",
+    "series": "C",
+    "hex": "#005951",
+    "name": "330 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "3242",
+    "series": "C",
+    "hex": "#87DDD1",
+    "name": "3242 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "3252",
+    "series": "C",
+    "hex": "#56D6C9",
+    "name": "3252 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "3262",
+    "series": "C",
+    "hex": "#00C1B5",
+    "name": "3262 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "3272",
+    "series": "C",
+    "hex": "#00AA9E",
+    "name": "3272 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "3282",
+    "series": "C",
+    "hex": "#008C82",
+    "name": "3282 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "3292",
+    "series": "C",
+    "hex": "#006056",
+    "name": "3292 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "3302",
+    "series": "C",
+    "hex": "#00493F",
+    "name": "3302 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "3245",
+    "series": "C",
+    "hex": "#8CE0D1",
+    "name": "3245 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "3255",
+    "series": "C",
+    "hex": "#47D6C1",
+    "name": "3255 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "3265",
+    "series": "C",
+    "hex": "#00C6B2",
+    "name": "3265 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "3275",
+    "series": "C",
+    "hex": "#00B2A0",
+    "name": "3275 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "3285",
+    "series": "C",
+    "hex": "#009987",
+    "name": "3285 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "3295",
+    "series": "C",
+    "hex": "#008272",
+    "name": "3295 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "3305",
+    "series": "C",
+    "hex": "#004F42",
+    "name": "3305 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "3248",
+    "series": "C",
+    "hex": "#7AD3C1",
+    "name": "3248 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "3258",
+    "series": "C",
+    "hex": "#35C4AF",
+    "name": "3258 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "3268",
+    "series": "C",
+    "hex": "#00AF99",
+    "name": "3268 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "3278",
+    "series": "C",
+    "hex": "#009B84",
+    "name": "3278 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "3288",
+    "series": "C",
+    "hex": "#008270",
+    "name": "3288 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "3298",
+    "series": "C",
+    "hex": "#006B5B",
+    "name": "3298 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "3308",
+    "series": "C",
+    "hex": "#004438",
+    "name": "3308 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "331",
+    "series": "C",
+    "hex": "#BAEAD6",
+    "name": "331 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "332",
+    "series": "C",
+    "hex": "#A0E5CE",
+    "name": "332 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "333",
+    "series": "C",
+    "hex": "#5EDDC1",
+    "name": "333 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "334",
+    "series": "C",
+    "hex": "#00997C",
+    "name": "334 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "335",
+    "series": "C",
+    "hex": "#007C66",
+    "name": "335 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "336",
+    "series": "C",
+    "hex": "#006854",
+    "name": "336 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "337",
+    "series": "C",
+    "hex": "#9BDBC1",
+    "name": "337 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "338",
+    "series": "C",
+    "hex": "#7AD1B5",
+    "name": "338 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "339",
+    "series": "C",
+    "hex": "#00B28C",
+    "name": "339 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "340",
+    "series": "C",
+    "hex": "#009977",
+    "name": "340 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "341",
+    "series": "C",
+    "hex": "#007A5E",
+    "name": "341 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "342",
+    "series": "C",
+    "hex": "#006B54",
+    "name": "342 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "343",
+    "series": "C",
+    "hex": "#00563F",
+    "name": "343 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "3375",
+    "series": "C",
+    "hex": "#8EE2BC",
+    "name": "3375 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "3385",
+    "series": "C",
+    "hex": "#54D8A8",
+    "name": "3385 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "3395",
+    "series": "C",
+    "hex": "#00C993",
+    "name": "3395 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "3405",
+    "series": "C",
+    "hex": "#00B27A",
+    "name": "3405 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "3415",
+    "series": "C",
+    "hex": "#007C59",
+    "name": "3415 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "3425",
+    "series": "C",
+    "hex": "#006847",
+    "name": "3425 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "3435",
+    "series": "C",
+    "hex": "#024930",
+    "name": "3435 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "344",
+    "series": "C",
+    "hex": "#B5E2BF",
+    "name": "344 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "345",
+    "series": "C",
+    "hex": "#96D8AF",
+    "name": "345 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "346",
+    "series": "C",
+    "hex": "#70CE9B",
+    "name": "346 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "347",
+    "series": "C",
+    "hex": "#009E60",
+    "name": "347 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "348",
+    "series": "C",
+    "hex": "#008751",
+    "name": "348 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "349",
+    "series": "C",
+    "hex": "#006B3F",
+    "name": "349 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "350",
+    "series": "C",
+    "hex": "#234F33",
+    "name": "350 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "351",
+    "series": "C",
+    "hex": "#B5E8BF",
+    "name": "351 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "352",
+    "series": "C",
+    "hex": "#99E5B2",
+    "name": "352 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "353",
+    "series": "C",
+    "hex": "#84E2A8",
+    "name": "353 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "354",
+    "series": "C",
+    "hex": "#00B760",
+    "name": "354 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "355",
+    "series": "C",
+    "hex": "#009E49",
+    "name": "355 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "356",
+    "series": "C",
+    "hex": "#007A3D",
+    "name": "356 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "357",
+    "series": "C",
+    "hex": "#215B33",
+    "name": "357 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "358",
+    "series": "C",
+    "hex": "#AADD96",
+    "name": "358 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "359",
+    "series": "C",
+    "hex": "#A0DB8E",
+    "name": "359 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "360",
+    "series": "C",
+    "hex": "#60C659",
+    "name": "360 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "361",
+    "series": "C",
+    "hex": "#1EB53A",
+    "name": "361 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "362",
+    "series": "C",
+    "hex": "#339E35",
+    "name": "362 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "363",
+    "series": "C",
+    "hex": "#3D8E33",
+    "name": "363 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "364",
+    "series": "C",
+    "hex": "#3A7728",
+    "name": "364 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "365",
+    "series": "C",
+    "hex": "#D3E8A3",
+    "name": "365 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "366",
+    "series": "C",
+    "hex": "#C4E58E",
+    "name": "366 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "367",
+    "series": "C",
+    "hex": "#AADD6D",
+    "name": "367 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "368",
+    "series": "C",
+    "hex": "#5BBF21",
+    "name": "368 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "369",
+    "series": "C",
+    "hex": "#56AA1C",
+    "name": "369 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "370",
+    "series": "C",
+    "hex": "#568E14",
+    "name": "370 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "371",
+    "series": "C",
+    "hex": "#566B21",
+    "name": "371 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "372",
+    "series": "C",
+    "hex": "#D8ED96",
+    "name": "372 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "373",
+    "series": "C",
+    "hex": "#CEEA82",
+    "name": "373 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "374",
+    "series": "C",
+    "hex": "#BAE860",
+    "name": "374 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "375",
+    "series": "C",
+    "hex": "#8CD600",
+    "name": "375 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "376",
+    "series": "C",
+    "hex": "#7FBA00",
+    "name": "376 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "377",
+    "series": "C",
+    "hex": "#709302",
+    "name": "377 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "378",
+    "series": "C",
+    "hex": "#566314",
+    "name": "378 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "379",
+    "series": "C",
+    "hex": "#E0EA68",
+    "name": "379 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "380",
+    "series": "C",
+    "hex": "#D6E542",
+    "name": "380 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "381",
+    "series": "C",
+    "hex": "#CCE226",
+    "name": "381 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "382",
+    "series": "C",
+    "hex": "#BAD80A",
+    "name": "382 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "383",
+    "series": "C",
+    "hex": "#A3AF07",
+    "name": "383 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "384",
+    "series": "C",
+    "hex": "#939905",
+    "name": "384 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "385",
+    "series": "C",
+    "hex": "#707014",
+    "name": "385 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "386",
+    "series": "C",
+    "hex": "#E8ED60",
+    "name": "386 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "387",
+    "series": "C",
+    "hex": "#E0ED44",
+    "name": "387 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "388",
+    "series": "C",
+    "hex": "#D6E80F",
+    "name": "388 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "389",
+    "series": "C",
+    "hex": "#CEE007",
+    "name": "389 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "390",
+    "series": "C",
+    "hex": "#BAC405",
+    "name": "390 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "391",
+    "series": "C",
+    "hex": "#9E9E07",
+    "name": "391 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "392",
+    "series": "C",
+    "hex": "#848205",
+    "name": "392 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "393",
+    "series": "C",
+    "hex": "#F2EF87",
+    "name": "393 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "394",
+    "series": "C",
+    "hex": "#EAED35",
+    "name": "394 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "395",
+    "series": "C",
+    "hex": "#E5E811",
+    "name": "395 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "396",
+    "series": "C",
+    "hex": "#E0E20C",
+    "name": "396 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "397",
+    "series": "C",
+    "hex": "#C1BF0A",
+    "name": "397 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "398",
+    "series": "C",
+    "hex": "#AFA80A",
+    "name": "398 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "399",
+    "series": "C",
+    "hex": "#998E07",
+    "name": "399 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "3935",
+    "series": "C",
+    "hex": "#F2ED6D",
+    "name": "3935 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "3945",
+    "series": "C",
+    "hex": "#EFEA07",
+    "name": "3945 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "3955",
+    "series": "C",
+    "hex": "#EDE211",
+    "name": "3955 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "3965",
+    "series": "C",
+    "hex": "#E8DD11",
+    "name": "3965 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "3975",
+    "series": "C",
+    "hex": "#B5A80C",
+    "name": "3975 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "3985",
+    "series": "C",
+    "hex": "#998C0A",
+    "name": "3985 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "3995",
+    "series": "C",
+    "hex": "#6D6002",
+    "name": "3995 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "400",
+    "series": "C",
+    "hex": "#D1C6B5",
+    "name": "400 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "401",
+    "series": "C",
+    "hex": "#C1B5A5",
+    "name": "401 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "402",
+    "series": "C",
+    "hex": "#AFA593",
+    "name": "402 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "403",
+    "series": "C",
+    "hex": "#998C7C",
+    "name": "403 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "404",
+    "series": "C",
+    "hex": "#827566",
+    "name": "404 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "405",
+    "series": "C",
+    "hex": "#6B5E4F",
+    "name": "405 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "406",
+    "series": "C",
+    "hex": "#CEC1B5",
+    "name": "406 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "407",
+    "series": "C",
+    "hex": "#BAAA9E",
+    "name": "407 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "408",
+    "series": "C",
+    "hex": "#A8998C",
+    "name": "408 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "409",
+    "series": "C",
+    "hex": "#99897C",
+    "name": "409 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "410",
+    "series": "C",
+    "hex": "#7C6D63",
+    "name": "410 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "411",
+    "series": "C",
+    "hex": "#66594C",
+    "name": "411 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "412",
+    "series": "C",
+    "hex": "#3D3028",
+    "name": "412 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "413",
+    "series": "C",
+    "hex": "#C6C1B2",
+    "name": "413 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "414",
+    "series": "C",
+    "hex": "#B5AFA0",
+    "name": "414 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "415",
+    "series": "C",
+    "hex": "#A39E8C",
+    "name": "415 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "416",
+    "series": "C",
+    "hex": "#8E8C7A",
+    "name": "416 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "417",
+    "series": "C",
+    "hex": "#777263",
+    "name": "417 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "418",
+    "series": "C",
+    "hex": "#605E4F",
+    "name": "418 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "419",
+    "series": "C",
+    "hex": "#282821",
+    "name": "419 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "420",
+    "series": "C",
+    "hex": "#D1CCBF",
+    "name": "420 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "421",
+    "series": "C",
+    "hex": "#BFBAAF",
+    "name": "421 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "422",
+    "series": "C",
+    "hex": "#AFAAA3",
+    "name": "422 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "423",
+    "series": "C",
+    "hex": "#96938E",
+    "name": "423 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "424",
+    "series": "C",
+    "hex": "#827F77",
+    "name": "424 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "425",
+    "series": "C",
+    "hex": "#60605B",
+    "name": "425 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "426",
+    "series": "C",
+    "hex": "#2B2B28",
+    "name": "426 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "427",
+    "series": "C",
+    "hex": "#DDDBD1",
+    "name": "427 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "428",
+    "series": "C",
+    "hex": "#D1CEC6",
+    "name": "428 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "429",
+    "series": "C",
+    "hex": "#ADAFAA",
+    "name": "429 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "430",
+    "series": "C",
+    "hex": "#919693",
+    "name": "430 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "431",
+    "series": "C",
+    "hex": "#666D70",
+    "name": "431 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "432",
+    "series": "C",
+    "hex": "#444F51",
+    "name": "432 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "433",
+    "series": "C",
+    "hex": "#30383A",
+    "name": "433 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "434",
+    "series": "C",
+    "hex": "#E0D1C6",
+    "name": "434 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "435",
+    "series": "C",
+    "hex": "#D3BFB7",
+    "name": "435 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "436",
+    "series": "C",
+    "hex": "#BCA59E",
+    "name": "436 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "437",
+    "series": "C",
+    "hex": "#8C706B",
+    "name": "437 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "438",
+    "series": "C",
+    "hex": "#593F3D",
+    "name": "438 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "439",
+    "series": "C",
+    "hex": "#493533",
+    "name": "439 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "440",
+    "series": "C",
+    "hex": "#3F302B",
+    "name": "440 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "441",
+    "series": "C",
+    "hex": "#D1D1C6",
+    "name": "441 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "442",
+    "series": "C",
+    "hex": "#BABFB7",
+    "name": "442 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "443",
+    "series": "C",
+    "hex": "#A3A8A3",
+    "name": "443 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "444",
+    "series": "C",
+    "hex": "#898E8C",
+    "name": "444 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "445",
+    "series": "C",
+    "hex": "#565959",
+    "name": "445 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "446",
+    "series": "C",
+    "hex": "#494C49",
+    "name": "446 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "447",
+    "series": "C",
+    "hex": "#3F3F38",
+    "name": "447 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "448",
+    "series": "C",
+    "hex": "#54472D",
+    "name": "448 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "449",
+    "series": "C",
+    "hex": "#544726",
+    "name": "449 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "450",
+    "series": "C",
+    "hex": "#60542B",
+    "name": "450 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "451",
+    "series": "C",
+    "hex": "#ADA07A",
+    "name": "451 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "452",
+    "series": "C",
+    "hex": "#C4B796",
+    "name": "452 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "453",
+    "series": "C",
+    "hex": "#D6CCAF",
+    "name": "453 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "454",
+    "series": "C",
+    "hex": "#E2D8BF",
+    "name": "454 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "4485",
+    "series": "C",
+    "hex": "#604C11",
+    "name": "4485 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "4495",
+    "series": "C",
+    "hex": "#877530",
+    "name": "4495 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "4505",
+    "series": "C",
+    "hex": "#A09151",
+    "name": "4505 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "4515",
+    "series": "C",
+    "hex": "#BCAD75",
+    "name": "4515 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "4525",
+    "series": "C",
+    "hex": "#CCBF8E",
+    "name": "4525 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "4535",
+    "series": "C",
+    "hex": "#DBCEA5",
+    "name": "4535 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "4545",
+    "series": "C",
+    "hex": "#E5DBBA",
+    "name": "4545 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "455",
+    "series": "C",
+    "hex": "#665614",
+    "name": "455 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "456",
+    "series": "C",
+    "hex": "#998714",
+    "name": "456 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "457",
+    "series": "C",
+    "hex": "#B59B0C",
+    "name": "457 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "458",
+    "series": "C",
+    "hex": "#DDCC6B",
+    "name": "458 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "459",
+    "series": "C",
+    "hex": "#E2D67C",
+    "name": "459 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "460",
+    "series": "C",
+    "hex": "#EADD96",
+    "name": "460 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "461",
+    "series": "C",
+    "hex": "#EDE5AD",
+    "name": "461 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "462",
+    "series": "C",
+    "hex": "#5B4723",
+    "name": "462 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "463",
+    "series": "C",
+    "hex": "#755426",
+    "name": "463 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "464",
+    "series": "C",
+    "hex": "#876028",
+    "name": "464 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "465",
+    "series": "C",
+    "hex": "#C1A875",
+    "name": "465 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "466",
+    "series": "C",
+    "hex": "#D1BF91",
+    "name": "466 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "467",
+    "series": "C",
+    "hex": "#DDCCA5",
+    "name": "467 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "468",
+    "series": "C",
+    "hex": "#E2D6B5",
+    "name": "468 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "4625",
+    "series": "C",
+    "hex": "#472311",
+    "name": "4625 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "4635",
+    "series": "C",
+    "hex": "#8C5933",
+    "name": "4635 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "4645",
+    "series": "C",
+    "hex": "#B28260",
+    "name": "4645 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "4655",
+    "series": "C",
+    "hex": "#C49977",
+    "name": "4655 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "4665",
+    "series": "C",
+    "hex": "#D8B596",
+    "name": "4665 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "4675",
+    "series": "C",
+    "hex": "#E5C6AA",
+    "name": "4675 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "4685",
+    "series": "C",
+    "hex": "#EDD3BC",
+    "name": "4685 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "469",
+    "series": "C",
+    "hex": "#603311",
+    "name": "469 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "4695",
+    "series": "C",
+    "hex": "#51261C",
+    "name": "4695 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "4705",
+    "series": "C",
+    "hex": "#7C513D",
+    "name": "4705 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "4715",
+    "series": "C",
+    "hex": "#99705B",
+    "name": "4715 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "4725",
+    "series": "C",
+    "hex": "#B5917C",
+    "name": "4725 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "4735",
+    "series": "C",
+    "hex": "#CCAF9B",
+    "name": "4735 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "4745",
+    "series": "C",
+    "hex": "#D8BFAA",
+    "name": "4745 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "4755",
+    "series": "C",
+    "hex": "#E2CCBA",
+    "name": "4755 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "476",
+    "series": "C",
+    "hex": "#593D2B",
+    "name": "476 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "477",
+    "series": "C",
+    "hex": "#633826",
+    "name": "477 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "478",
+    "series": "C",
+    "hex": "#7A3F28",
+    "name": "478 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "479",
+    "series": "C",
+    "hex": "#AF8970",
+    "name": "479 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "480",
+    "series": "C",
+    "hex": "#D3B7A3",
+    "name": "480 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "481",
+    "series": "C",
+    "hex": "#E0CCBA",
+    "name": "481 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "482",
+    "series": "C",
+    "hex": "#E5D3C1",
+    "name": "482 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "483",
+    "series": "C",
+    "hex": "#6B3021",
+    "name": "483 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "484",
+    "series": "C",
+    "hex": "#9B301C",
+    "name": "484 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "485",
+    "series": "C",
+    "hex": "#D81E05",
+    "name": "485 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "486",
+    "series": "C",
+    "hex": "#ED9E84",
+    "name": "486 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "487",
+    "series": "C",
+    "hex": "#EFB5A0",
+    "name": "487 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "488",
+    "series": "C",
+    "hex": "#F2C4AF",
+    "name": "488 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "489",
+    "series": "C",
+    "hex": "#F2D1BF",
+    "name": "489 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "490",
+    "series": "C",
+    "hex": "#5B2626",
+    "name": "490 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "491",
+    "series": "C",
+    "hex": "#752828",
+    "name": "491 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "492",
+    "series": "C",
+    "hex": "#913338",
+    "name": "492 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "493",
+    "series": "C",
+    "hex": "#DB828C",
+    "name": "493 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "494",
+    "series": "C",
+    "hex": "#F2ADB2",
+    "name": "494 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "495",
+    "series": "C",
+    "hex": "#F4BCBF",
+    "name": "495 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "496",
+    "series": "C",
+    "hex": "#F7C9C6",
+    "name": "496 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "497",
+    "series": "C",
+    "hex": "#512826",
+    "name": "497 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "498",
+    "series": "C",
+    "hex": "#6D332B",
+    "name": "498 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "499",
+    "series": "C",
+    "hex": "#7A382D",
+    "name": "499 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "500",
+    "series": "C",
+    "hex": "#CE898C",
+    "name": "500 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "501",
+    "series": "C",
+    "hex": "#EAB2B2",
+    "name": "501 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "502",
+    "series": "C",
+    "hex": "#F2C6C4",
+    "name": "502 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "503",
+    "series": "C",
+    "hex": "#F4D1CC",
+    "name": "503 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "4975",
+    "series": "C",
+    "hex": "#441E1C",
+    "name": "4975 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "4985",
+    "series": "C",
+    "hex": "#844949",
+    "name": "4985 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "4995",
+    "series": "C",
+    "hex": "#A56B6D",
+    "name": "4995 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "5005",
+    "series": "C",
+    "hex": "#BC8787",
+    "name": "5005 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "5015",
+    "series": "C",
+    "hex": "#D8ADA8",
+    "name": "5015 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "5025",
+    "series": "C",
+    "hex": "#E2BCB7",
+    "name": "5025 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "5035",
+    "series": "C",
+    "hex": "#EDCEC6",
+    "name": "5035 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "504",
+    "series": "C",
+    "hex": "#511E26",
+    "name": "504 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "505",
+    "series": "C",
+    "hex": "#661E2B",
+    "name": "505 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "506",
+    "series": "C",
+    "hex": "#7A2638",
+    "name": "506 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "507",
+    "series": "C",
+    "hex": "#D8899B",
+    "name": "507 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "508",
+    "series": "C",
+    "hex": "#E8A5AF",
+    "name": "508 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "509",
+    "series": "C",
+    "hex": "#F2BABF",
+    "name": "509 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "510",
+    "series": "C",
+    "hex": "#F4C6C9",
+    "name": "510 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "511",
+    "series": "C",
+    "hex": "#602144",
+    "name": "511 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "512",
+    "series": "C",
+    "hex": "#84216B",
+    "name": "512 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "513",
+    "series": "C",
+    "hex": "#9E2387",
+    "name": "513 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "514",
+    "series": "C",
+    "hex": "#D884BC",
+    "name": "514 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "515",
+    "series": "C",
+    "hex": "#E8A3C9",
+    "name": "515 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "516",
+    "series": "C",
+    "hex": "#F2BAD3",
+    "name": "516 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "517",
+    "series": "C",
+    "hex": "#F4CCD8",
+    "name": "517 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "5115",
+    "series": "C",
+    "hex": "#4F213A",
+    "name": "5115 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "5125",
+    "series": "C",
+    "hex": "#754760",
+    "name": "5125 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "5135",
+    "series": "C",
+    "hex": "#936B7F",
+    "name": "5135 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "5145",
+    "series": "C",
+    "hex": "#AD8799",
+    "name": "5145 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "5155",
+    "series": "C",
+    "hex": "#CCAFB7",
+    "name": "5155 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "5165",
+    "series": "C",
+    "hex": "#E0C9CC",
+    "name": "5165 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "5175",
+    "series": "C",
+    "hex": "#E8D6D1",
+    "name": "5175 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "518",
+    "series": "C",
+    "hex": "#512D44",
+    "name": "518 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "519",
+    "series": "C",
+    "hex": "#63305E",
+    "name": "519 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "520",
+    "series": "C",
+    "hex": "#703572",
+    "name": "520 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "521",
+    "series": "C",
+    "hex": "#B58CB2",
+    "name": "521 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "522",
+    "series": "C",
+    "hex": "#C6A3C1",
+    "name": "522 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "523",
+    "series": "C",
+    "hex": "#D3B7CC",
+    "name": "523 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "524",
+    "series": "C",
+    "hex": "#E2CCD3",
+    "name": "524 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "5185",
+    "series": "C",
+    "hex": "#472835",
+    "name": "5185 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "5195",
+    "series": "C",
+    "hex": "#593344",
+    "name": "5195 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "5205",
+    "series": "C",
+    "hex": "#8E6877",
+    "name": "5205 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "5215",
+    "series": "C",
+    "hex": "#B5939B",
+    "name": "5215 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "5225",
+    "series": "C",
+    "hex": "#CCADAF",
+    "name": "5225 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "5235",
+    "series": "C",
+    "hex": "#DDC6C4",
+    "name": "5235 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "5245",
+    "series": "C",
+    "hex": "#E5D3CC",
+    "name": "5245 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "525",
+    "series": "C",
+    "hex": "#512654",
+    "name": "525 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "526",
+    "series": "C",
+    "hex": "#68217A",
+    "name": "526 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "527",
+    "series": "C",
+    "hex": "#7A1E99",
+    "name": "527 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "528",
+    "series": "C",
+    "hex": "#AF72C1",
+    "name": "528 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "529",
+    "series": "C",
+    "hex": "#CEA3D3",
+    "name": "529 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "530",
+    "series": "C",
+    "hex": "#D6AFD6",
+    "name": "530 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "531",
+    "series": "C",
+    "hex": "#E5C6DB",
+    "name": "531 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "5255",
+    "series": "C",
+    "hex": "#35264F",
+    "name": "5255 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "5265",
+    "series": "C",
+    "hex": "#493D63",
+    "name": "5265 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "5275",
+    "series": "C",
+    "hex": "#605677",
+    "name": "5275 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "5285",
+    "series": "C",
+    "hex": "#8C8299",
+    "name": "5285 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "5295",
+    "series": "C",
+    "hex": "#B2A8B5",
+    "name": "5295 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "5305",
+    "series": "C",
+    "hex": "#CCC1C6",
+    "name": "5305 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "5315",
+    "series": "C",
+    "hex": "#DBD3D3",
+    "name": "5315 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "532",
+    "series": "C",
+    "hex": "#353842",
+    "name": "532 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "533",
+    "series": "C",
+    "hex": "#353F5B",
+    "name": "533 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "534",
+    "series": "C",
+    "hex": "#3A4972",
+    "name": "534 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "535",
+    "series": "C",
+    "hex": "#9BA3B7",
+    "name": "535 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "536",
+    "series": "C",
+    "hex": "#ADB2C1",
+    "name": "536 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "537",
+    "series": "C",
+    "hex": "#C4C6CE",
+    "name": "537 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "538",
+    "series": "C",
+    "hex": "#D6D3D6",
+    "name": "538 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "539",
+    "series": "C",
+    "hex": "#003049",
+    "name": "539 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "540",
+    "series": "C",
+    "hex": "#00335B",
+    "name": "540 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "541",
+    "series": "C",
+    "hex": "#003F77",
+    "name": "541 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "542",
+    "series": "C",
+    "hex": "#6693BC",
+    "name": "542 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "543",
+    "series": "C",
+    "hex": "#93B7D1",
+    "name": "543 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "544",
+    "series": "C",
+    "hex": "#B7CCDB",
+    "name": "544 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "545",
+    "series": "C",
+    "hex": "#C4D3DD",
+    "name": "545 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "5395",
+    "series": "C",
+    "hex": "#02283A",
+    "name": "5395 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "5405",
+    "series": "C",
+    "hex": "#3F6075",
+    "name": "5405 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "5415",
+    "series": "C",
+    "hex": "#607C8C",
+    "name": "5415 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "5425",
+    "series": "C",
+    "hex": "#8499A5",
+    "name": "5425 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "5435",
+    "series": "C",
+    "hex": "#AFBCBF",
+    "name": "5435 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "5445",
+    "series": "C",
+    "hex": "#C4CCCC",
+    "name": "5445 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "5455",
+    "series": "C",
+    "hex": "#D6D8D3",
+    "name": "5455 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "546",
+    "series": "C",
+    "hex": "#0C3844",
+    "name": "546 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "547",
+    "series": "C",
+    "hex": "#003F54",
+    "name": "547 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "548",
+    "series": "C",
+    "hex": "#004459",
+    "name": "548 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "549",
+    "series": "C",
+    "hex": "#5E99AA",
+    "name": "549 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "550",
+    "series": "C",
+    "hex": "#87AFBF",
+    "name": "550 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "551",
+    "series": "C",
+    "hex": "#A3C1C9",
+    "name": "551 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "552",
+    "series": "C",
+    "hex": "#C4D6D6",
+    "name": "552 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "5463",
+    "series": "C",
+    "hex": "#00353A",
+    "name": "5463 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "5473",
+    "series": "C",
+    "hex": "#26686D",
+    "name": "5473 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "5483",
+    "series": "C",
+    "hex": "#609191",
+    "name": "5483 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "5493",
+    "series": "C",
+    "hex": "#8CAFAD",
+    "name": "5493 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "5503",
+    "series": "C",
+    "hex": "#AAC4BF",
+    "name": "5503 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "5513",
+    "series": "C",
+    "hex": "#CED8D1",
+    "name": "5513 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "5523",
+    "series": "C",
+    "hex": "#D6DDD6",
+    "name": "5523 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "5467",
+    "series": "C",
+    "hex": "#193833",
+    "name": "5467 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "5477",
+    "series": "C",
+    "hex": "#3A564F",
+    "name": "5477 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "5487",
+    "series": "C",
+    "hex": "#667C72",
+    "name": "5487 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "5497",
+    "series": "C",
+    "hex": "#91A399",
+    "name": "5497 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "5507",
+    "series": "C",
+    "hex": "#AFBAB2",
+    "name": "5507 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "5517",
+    "series": "C",
+    "hex": "#C9CEC4",
+    "name": "5517 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "5527",
+    "series": "C",
+    "hex": "#CED1C6",
+    "name": "5527 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "553",
+    "series": "C",
+    "hex": "#234435",
+    "name": "553 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "554",
+    "series": "C",
+    "hex": "#195E47",
+    "name": "554 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "555",
+    "series": "C",
+    "hex": "#076D54",
+    "name": "555 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "556",
+    "series": "C",
+    "hex": "#7AA891",
+    "name": "556 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "557",
+    "series": "C",
+    "hex": "#A3C1AD",
+    "name": "557 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "558",
+    "series": "C",
+    "hex": "#B7CEBC",
+    "name": "558 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "559",
+    "series": "C",
+    "hex": "#C6D6C4",
+    "name": "559 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "5535",
+    "series": "C",
+    "hex": "#213D30",
+    "name": "5535 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "5545",
+    "series": "C",
+    "hex": "#4F6D5E",
+    "name": "5545 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "5555",
+    "series": "C",
+    "hex": "#779182",
+    "name": "5555 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "5565",
+    "series": "C",
+    "hex": "#96AA99",
+    "name": "5565 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "5575",
+    "series": "C",
+    "hex": "#AFBFAD",
+    "name": "5575 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "5585",
+    "series": "C",
+    "hex": "#C4CEBF",
+    "name": "5585 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "5595",
+    "series": "C",
+    "hex": "#D8DBCC",
+    "name": "5595 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "560",
+    "series": "C",
+    "hex": "#2B4C3F",
+    "name": "560 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "561",
+    "series": "C",
+    "hex": "#266659",
+    "name": "561 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "562",
+    "series": "C",
+    "hex": "#1E7A6D",
+    "name": "562 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "563",
+    "series": "C",
+    "hex": "#7FBCAA",
+    "name": "563 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "564",
+    "series": "C",
+    "hex": "#A0CEBC",
+    "name": "564 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "565",
+    "series": "C",
+    "hex": "#BCDBCC",
+    "name": "565 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "566",
+    "series": "C",
+    "hex": "#D1E2D3",
+    "name": "566 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "5605",
+    "series": "C",
+    "hex": "#233A2D",
+    "name": "5605 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "5615",
+    "series": "C",
+    "hex": "#546856",
+    "name": "5615 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "5625",
+    "series": "C",
+    "hex": "#728470",
+    "name": "5625 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "5635",
+    "series": "C",
+    "hex": "#9EAA99",
+    "name": "5635 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "5645",
+    "series": "C",
+    "hex": "#BCC1B2",
+    "name": "5645 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "5655",
+    "series": "C",
+    "hex": "#C6CCBA",
+    "name": "5655 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "568",
+    "series": "C",
+    "hex": "#D6D6C6",
+    "name": "568 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "569",
+    "series": "C",
+    "hex": "#05705E",
+    "name": "569 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "570",
+    "series": "C",
+    "hex": "#008772",
+    "name": "570 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "571",
+    "series": "C",
+    "hex": "#7FC6B2",
+    "name": "571 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "572",
+    "series": "C",
+    "hex": "#AADBC6",
+    "name": "572 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "573",
+    "series": "C",
+    "hex": "#BCE2CE",
+    "name": "573 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "574",
+    "series": "C",
+    "hex": "#CCE5D6",
+    "name": "574 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "575",
+    "series": "C",
+    "hex": "#495928",
+    "name": "575 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "576",
+    "series": "C",
+    "hex": "#547730",
+    "name": "576 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "577",
+    "series": "C",
+    "hex": "#608E3A",
+    "name": "577 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "578",
+    "series": "C",
+    "hex": "#B5CC8E",
+    "name": "578 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "579",
+    "series": "C",
+    "hex": "#C6D6A0",
+    "name": "579 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "580",
+    "series": "C",
+    "hex": "#C9D6A3",
+    "name": "580 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "5743",
+    "series": "C",
+    "hex": "#D8DDB5",
+    "name": "5743 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "5753",
+    "series": "C",
+    "hex": "#3F4926",
+    "name": "5753 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "5763",
+    "series": "C",
+    "hex": "#5E663A",
+    "name": "5763 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "5773",
+    "series": "C",
+    "hex": "#777C4F",
+    "name": "5773 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "5783",
+    "series": "C",
+    "hex": "#9B9E72",
+    "name": "5783 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "5793",
+    "series": "C",
+    "hex": "#B5B58E",
+    "name": "5793 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "803",
+    "series": "C",
+    "hex": "#FFED38",
+    "name": "803 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "5747",
+    "series": "C",
+    "hex": "#D8D6B7",
+    "name": "5747 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "5757",
+    "series": "C",
+    "hex": "#424716",
+    "name": "5757 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "5767",
+    "series": "C",
+    "hex": "#6B702B",
+    "name": "5767 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "5777",
+    "series": "C",
+    "hex": "#8C914F",
+    "name": "5777 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "5787",
+    "series": "C",
+    "hex": "#AAAD75",
+    "name": "5787 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "5797",
+    "series": "C",
+    "hex": "#C6C699",
+    "name": "5797 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "5807",
+    "series": "C",
+    "hex": "#D3D1AA",
+    "name": "5807 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "581",
+    "series": "C",
+    "hex": "#E0DDBC",
+    "name": "581 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "582",
+    "series": "C",
+    "hex": "#605E11",
+    "name": "582 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "583",
+    "series": "C",
+    "hex": "#878905",
+    "name": "583 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "584",
+    "series": "C",
+    "hex": "#AABA0A",
+    "name": "584 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "585",
+    "series": "C",
+    "hex": "#DBE06B",
+    "name": "585 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "586",
+    "series": "C",
+    "hex": "#E2E584",
+    "name": "586 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "587",
+    "series": "C",
+    "hex": "#E8E89B",
+    "name": "587 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "5815",
+    "series": "C",
+    "hex": "#494411",
+    "name": "5815 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "5825",
+    "series": "C",
+    "hex": "#75702B",
+    "name": "5825 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "5835",
+    "series": "C",
+    "hex": "#9E9959",
+    "name": "5835 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "5845",
+    "series": "C",
+    "hex": "#B2AA70",
+    "name": "5845 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "5855",
+    "series": "C",
+    "hex": "#CCC693",
+    "name": "5855 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "5865",
+    "series": "C",
+    "hex": "#D6CEA3",
+    "name": "5865 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "5875",
+    "series": "C",
+    "hex": "#E0DBB5",
+    "name": "5875 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "600",
+    "series": "C",
+    "hex": "#F4EDAF",
+    "name": "600 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "601",
+    "series": "C",
+    "hex": "#F2ED9E",
+    "name": "601 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "602",
+    "series": "C",
+    "hex": "#F2EA87",
+    "name": "602 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "603",
+    "series": "C",
+    "hex": "#EDE85B",
+    "name": "603 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "604",
+    "series": "C",
+    "hex": "#E8DD21",
+    "name": "604 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "605",
+    "series": "C",
+    "hex": "#DDCE11",
+    "name": "605 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "606",
+    "series": "C",
+    "hex": "#D3BF11",
+    "name": "606 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "607",
+    "series": "C",
+    "hex": "#F2EABC",
+    "name": "607 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "608",
+    "series": "C",
+    "hex": "#EFE8AD",
+    "name": "608 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "609",
+    "series": "C",
+    "hex": "#EAE596",
+    "name": "609 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "610",
+    "series": "C",
+    "hex": "#E2DB72",
+    "name": "610 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "611",
+    "series": "C",
+    "hex": "#D6CE49",
+    "name": "611 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "612",
+    "series": "C",
+    "hex": "#C4BA00",
+    "name": "612 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "613",
+    "series": "C",
+    "hex": "#AFA00C",
+    "name": "613 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "614",
+    "series": "C",
+    "hex": "#EAE2B7",
+    "name": "614 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "615",
+    "series": "C",
+    "hex": "#E2DBAA",
+    "name": "615 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "616",
+    "series": "C",
+    "hex": "#DDD69B",
+    "name": "616 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "617",
+    "series": "C",
+    "hex": "#CCC47C",
+    "name": "617 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "618",
+    "series": "C",
+    "hex": "#B5AA59",
+    "name": "618 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "619",
+    "series": "C",
+    "hex": "#968C28",
+    "name": "619 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "620",
+    "series": "C",
+    "hex": "#847711",
+    "name": "620 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "621",
+    "series": "C",
+    "hex": "#D8DDCE",
+    "name": "621 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "622",
+    "series": "C",
+    "hex": "#C1D1BF",
+    "name": "622 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "623",
+    "series": "C",
+    "hex": "#A5BFAA",
+    "name": "623 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "624",
+    "series": "C",
+    "hex": "#7FA08C",
+    "name": "624 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "625",
+    "series": "C",
+    "hex": "#5B8772",
+    "name": "625 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "626",
+    "series": "C",
+    "hex": "#21543F",
+    "name": "626 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "627",
+    "series": "C",
+    "hex": "#0C3026",
+    "name": "627 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "628",
+    "series": "C",
+    "hex": "#CCE2DD",
+    "name": "628 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "629",
+    "series": "C",
+    "hex": "#B2D8D8",
+    "name": "629 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "630",
+    "series": "C",
+    "hex": "#8CCCD3",
+    "name": "630 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "631",
+    "series": "C",
+    "hex": "#54B7C6",
+    "name": "631 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "632",
+    "series": "C",
+    "hex": "#00A0BA",
+    "name": "632 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "633",
+    "series": "C",
+    "hex": "#007F99",
+    "name": "633 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "634",
+    "series": "C",
+    "hex": "#00667F",
+    "name": "634 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "635",
+    "series": "C",
+    "hex": "#BAE0E0",
+    "name": "635 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "636",
+    "series": "C",
+    "hex": "#99D6DD",
+    "name": "636 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "637",
+    "series": "C",
+    "hex": "#6BC9DB",
+    "name": "637 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "638",
+    "series": "C",
+    "hex": "#00B5D6",
+    "name": "638 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "639",
+    "series": "C",
+    "hex": "#00A0C4",
+    "name": "639 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "640",
+    "series": "C",
+    "hex": "#008CB2",
+    "name": "640 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "641",
+    "series": "C",
+    "hex": "#007AA5",
+    "name": "641 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "642",
+    "series": "C",
+    "hex": "#D1D8D8",
+    "name": "642 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "643",
+    "series": "C",
+    "hex": "#C6D1D6",
+    "name": "643 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "644",
+    "series": "C",
+    "hex": "#9BAFC4",
+    "name": "644 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "645",
+    "series": "C",
+    "hex": "#7796B2",
+    "name": "645 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "646",
+    "series": "C",
+    "hex": "#5E82A3",
+    "name": "646 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "647",
+    "series": "C",
+    "hex": "#26547C",
+    "name": "647 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "648",
+    "series": "C",
+    "hex": "#00305E",
+    "name": "648 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "649",
+    "series": "C",
+    "hex": "#D6D6D8",
+    "name": "649 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "650",
+    "series": "C",
+    "hex": "#BFC6D1",
+    "name": "650 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "651",
+    "series": "C",
+    "hex": "#9BAABF",
+    "name": "651 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "652",
+    "series": "C",
+    "hex": "#6D87A8",
+    "name": "652 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "653",
+    "series": "C",
+    "hex": "#335687",
+    "name": "653 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "654",
+    "series": "C",
+    "hex": "#0F2B5B",
+    "name": "654 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "655",
+    "series": "C",
+    "hex": "#0C1C47",
+    "name": "655 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "656",
+    "series": "C",
+    "hex": "#D6DBE0",
+    "name": "656 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "657",
+    "series": "C",
+    "hex": "#C1C9DD",
+    "name": "657 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "658",
+    "series": "C",
+    "hex": "#A5AFD6",
+    "name": "658 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "659",
+    "series": "C",
+    "hex": "#7F8CBF",
+    "name": "659 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "660",
+    "series": "C",
+    "hex": "#5960A8",
+    "name": "660 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "661",
+    "series": "C",
+    "hex": "#2D338E",
+    "name": "661 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "662",
+    "series": "C",
+    "hex": "#0C1975",
+    "name": "662 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "663",
+    "series": "C",
+    "hex": "#E2D3D6",
+    "name": "663 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "664",
+    "series": "C",
+    "hex": "#D8CCD1",
+    "name": "664 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "665",
+    "series": "C",
+    "hex": "#C6B5C4",
+    "name": "665 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "666",
+    "series": "C",
+    "hex": "#A893AD",
+    "name": "666 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "667",
+    "series": "C",
+    "hex": "#7F6689",
+    "name": "667 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "668",
+    "series": "C",
+    "hex": "#664975",
+    "name": "668 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "669",
+    "series": "C",
+    "hex": "#472B59",
+    "name": "669 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "670",
+    "series": "C",
+    "hex": "#F2D6D8",
+    "name": "670 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "671",
+    "series": "C",
+    "hex": "#EFC6D3",
+    "name": "671 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "672",
+    "series": "C",
+    "hex": "#EAAAC4",
+    "name": "672 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "673",
+    "series": "C",
+    "hex": "#E08CB2",
+    "name": "673 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "674",
+    "series": "C",
+    "hex": "#D36B9E",
+    "name": "674 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "675",
+    "series": "C",
+    "hex": "#BC3877",
+    "name": "675 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "676",
+    "series": "C",
+    "hex": "#A00054",
+    "name": "676 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "677",
+    "series": "C",
+    "hex": "#EDD6D6",
+    "name": "677 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "678",
+    "series": "C",
+    "hex": "#EACCCE",
+    "name": "678 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "679",
+    "series": "C",
+    "hex": "#E5BFC6",
+    "name": "679 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "680",
+    "series": "C",
+    "hex": "#D39EAF",
+    "name": "680 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "681",
+    "series": "C",
+    "hex": "#B7728E",
+    "name": "681 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "682",
+    "series": "C",
+    "hex": "#A05175",
+    "name": "682 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "683",
+    "series": "C",
+    "hex": "#7F284F",
+    "name": "683 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "684",
+    "series": "C",
+    "hex": "#EFCCCE",
+    "name": "684 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "685",
+    "series": "C",
+    "hex": "#EABFC4",
+    "name": "685 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "686",
+    "series": "C",
+    "hex": "#E0AABA",
+    "name": "686 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "687",
+    "series": "C",
+    "hex": "#C9899E",
+    "name": "687 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "688",
+    "series": "C",
+    "hex": "#B26684",
+    "name": "688 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "689",
+    "series": "C",
+    "hex": "#934266",
+    "name": "689 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "690",
+    "series": "C",
+    "hex": "#702342",
+    "name": "690 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "691",
+    "series": "C",
+    "hex": "#EFD1C9",
+    "name": "691 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "692",
+    "series": "C",
+    "hex": "#E8BFBA",
+    "name": "692 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "693",
+    "series": "C",
+    "hex": "#DBA8A5",
+    "name": "693 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "694",
+    "series": "C",
+    "hex": "#C98C8C",
+    "name": "694 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "695",
+    "series": "C",
+    "hex": "#B26B70",
+    "name": "695 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "696",
+    "series": "C",
+    "hex": "#8E4749",
+    "name": "696 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "697",
+    "series": "C",
+    "hex": "#7F383A",
+    "name": "697 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "698",
+    "series": "C",
+    "hex": "#F7D1CC",
+    "name": "698 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "699",
+    "series": "C",
+    "hex": "#F7BFBF",
+    "name": "699 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "700",
+    "series": "C",
+    "hex": "#F2A5AA",
+    "name": "700 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "701",
+    "series": "C",
+    "hex": "#E8878E",
+    "name": "701 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "702",
+    "series": "C",
+    "hex": "#D6606D",
+    "name": "702 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "703",
+    "series": "C",
+    "hex": "#B73844",
+    "name": "703 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "704",
+    "series": "C",
+    "hex": "#9E2828",
+    "name": "704 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "705",
+    "series": "C",
+    "hex": "#F9DDD6",
+    "name": "705 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "706",
+    "series": "C",
+    "hex": "#FCC9C6",
+    "name": "706 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "707",
+    "series": "C",
+    "hex": "#FCADAF",
+    "name": "707 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "708",
+    "series": "C",
+    "hex": "#F98E99",
+    "name": "708 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "709",
+    "series": "C",
+    "hex": "#F26877",
+    "name": "709 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "710",
+    "series": "C",
+    "hex": "#E04251",
+    "name": "710 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "711",
+    "series": "C",
+    "hex": "#D12D33",
+    "name": "711 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "712",
+    "series": "C",
+    "hex": "#FFD3AA",
+    "name": "712 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "713",
+    "series": "C",
+    "hex": "#F9C9A3",
+    "name": "713 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "714",
+    "series": "C",
+    "hex": "#F9BA82",
+    "name": "714 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "715",
+    "series": "C",
+    "hex": "#FC9E49",
+    "name": "715 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "716",
+    "series": "C",
+    "hex": "#F28411",
+    "name": "716 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "717",
+    "series": "C",
+    "hex": "#D36D00",
+    "name": "717 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "718",
+    "series": "C",
+    "hex": "#BF5B00",
+    "name": "718 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "719",
+    "series": "C",
+    "hex": "#F4D1AF",
+    "name": "719 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "720",
+    "series": "C",
+    "hex": "#EFC49E",
+    "name": "720 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "721",
+    "series": "C",
+    "hex": "#E8B282",
+    "name": "721 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "722",
+    "series": "C",
+    "hex": "#D18E54",
+    "name": "722 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "723",
+    "series": "C",
+    "hex": "#BA7530",
+    "name": "723 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "724",
+    "series": "C",
+    "hex": "#8E4905",
+    "name": "724 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "725",
+    "series": "C",
+    "hex": "#753802",
+    "name": "725 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "726",
+    "series": "C",
+    "hex": "#EDD3B5",
+    "name": "726 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "727",
+    "series": "C",
+    "hex": "#E2BF9B",
+    "name": "727 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "728",
+    "series": "C",
+    "hex": "#D3A87C",
+    "name": "728 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "729",
+    "series": "C",
+    "hex": "#C18E60",
+    "name": "729 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "730",
+    "series": "C",
+    "hex": "#AA753F",
+    "name": "730 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "731",
+    "series": "C",
+    "hex": "#723F0A",
+    "name": "731 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "732",
+    "series": "C",
+    "hex": "#60330A",
+    "name": "732 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "801",
+    "series": "C",
+    "hex": "#00AACC",
+    "name": "801 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "802",
+    "series": "C",
+    "hex": "#60DD49",
+    "name": "802 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "804",
+    "series": "C",
+    "hex": "#FF9338",
+    "name": "804 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "805",
+    "series": "C",
+    "hex": "#F95951",
+    "name": "805 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "806",
+    "series": "C",
+    "hex": "#FF0093",
+    "name": "806 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "807",
+    "series": "C",
+    "hex": "#D6009E",
+    "name": "807 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "808",
+    "series": "C",
+    "hex": "#00B59B",
+    "name": "808 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "809",
+    "series": "C",
+    "hex": "#DDE00F",
+    "name": "809 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "810",
+    "series": "C",
+    "hex": "#FFCC1E",
+    "name": "810 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "811",
+    "series": "C",
+    "hex": "#FF7247",
+    "name": "811 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "812",
+    "series": "C",
+    "hex": "#FC2366",
+    "name": "812 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "813",
+    "series": "C",
+    "hex": "#E50099",
+    "name": "813 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  },
+  {
+    "pms": "814",
+    "series": "C",
+    "hex": "#8C60C1",
+    "name": "814 C",
+    "notes": "Source: PeakTech PMS Color Chart"
+  }
+]
