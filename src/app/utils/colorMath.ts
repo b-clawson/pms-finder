@@ -20,6 +20,28 @@ export function getContrastColor(hex: string): string {
   return luminance > 0.55 ? '#1B1B2F' : '#FFFFFF';
 }
 
+export function blendComponentColors(
+  components: { hex?: string; percentage: number }[]
+): string {
+  let r = 0, g = 0, b = 0, totalPct = 0;
+
+  for (const c of components) {
+    if (!c.hex || c.hex.length < 6) continue;
+    const rgb = hexToRgb(c.hex);
+    r += rgb.r * c.percentage;
+    g += rgb.g * c.percentage;
+    b += rgb.b * c.percentage;
+    totalPct += c.percentage;
+  }
+
+  if (totalPct === 0) return '#888888';
+
+  const rr = Math.round(r / totalPct);
+  const gg = Math.round(g / totalPct);
+  const bb = Math.round(b / totalPct);
+  return `#${rr.toString(16).padStart(2, '0')}${gg.toString(16).padStart(2, '0')}${bb.toString(16).padStart(2, '0')}`;
+}
+
 export function cmykToHex(cmyk: number[]): string {
   // CMYK values can be 0-100 or 0-1 — normalize
   const c = cmyk[0] > 1 ? cmyk[0] / 100 : cmyk[0];

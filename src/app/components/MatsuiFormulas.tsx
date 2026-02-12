@@ -2,12 +2,14 @@ import { useState, useEffect, useCallback } from 'react';
 import { Search, ArrowLeft } from 'lucide-react';
 import { BarChart, Bar, XAxis, YAxis, Tooltip, Cell, ResponsiveContainer } from 'recharts';
 import { useDebounce } from '../hooks/useDebounce';
-import { getContrastColor, cmykToHex } from '../utils/colorMath';
+import { getContrastColor, cmykToHex, blendComponentColors } from '../utils/colorMath';
 import type { MatsuiSeries, MatsuiFormula } from '../types/matsui';
 
 // --- Formula Card ---
 function FormulaCard({ formula, onClick }: { formula: MatsuiFormula; onClick: () => void }) {
-  const hex = formula.formulaColor ? `#${formula.formulaColor}` : '#888888';
+  const hex = formula.formulaColor
+    ? `#${formula.formulaColor}`
+    : blendComponentColors(formula.components);
   const contrast = getContrastColor(hex);
 
   return (
@@ -39,7 +41,9 @@ function FormulaDetail({ formula, onBack }: { formula: MatsuiFormula; onBack: ()
   const [weight, setWeight] = useState(1000);
   const [unit, setUnit] = useState<'g' | 'kg' | 'lb'>('g');
 
-  const hex = formula.formulaColor ? `#${formula.formulaColor}` : '#888888';
+  const hex = formula.formulaColor
+    ? `#${formula.formulaColor}`
+    : blendComponentColors(formula.components);
   const weightInGrams = unit === 'kg' ? weight * 1000 : unit === 'lb' ? weight * 453.592 : weight;
 
   const chartData = formula.components.map((c) => ({

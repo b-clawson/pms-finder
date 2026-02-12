@@ -6,7 +6,7 @@ import {
   DialogTitle,
   DialogDescription,
 } from './ui/dialog';
-import { hexToRgb, rgbDistance, cmykToHex } from '../utils/colorMath';
+import { hexToRgb, rgbDistance, blendComponentColors } from '../utils/colorMath';
 import type { MatsuiFormula, MatsuiSeries } from '../types/matsui';
 
 interface MatsuiBridgeProps {
@@ -73,10 +73,12 @@ export function MatsuiBridge({ targetHex, onClose }: MatsuiBridgeProps) {
 
       const scored: ScoredFormula[] = formulas
         .map((f) => {
-          const fHex = f.formulaColor || '';
-          if (!fHex || fHex.length < 6) return null;
+          const fHex = f.formulaColor
+            ? `#${f.formulaColor}`
+            : blendComponentColors(f.components);
+          if (fHex === '#888888') return null;
           const fRgb = hexToRgb(fHex);
-          return { ...f, distance: Math.round(rgbDistance(targetRgb, fRgb) * 100) / 100 };
+          return { ...f, formulaColor: fHex.replace('#', ''), distance: Math.round(rgbDistance(targetRgb, fRgb) * 100) / 100 };
         })
         .filter(Boolean) as ScoredFormula[];
 
