@@ -2,19 +2,18 @@ import { useState, useEffect, useCallback } from 'react';
 import { Search, ArrowLeft } from 'lucide-react';
 import { BarChart, Bar, XAxis, YAxis, Tooltip, Cell, ResponsiveContainer } from 'recharts';
 import { useDebounce } from '../hooks/useDebounce';
-import { getContrastColor, cmykToHex, blendComponentColors, extractPmsFromDescription } from '../utils/colorMath';
+import { getContrastColor, cmykToHex, blendComponentColors } from '../utils/colorMath';
 import type { MatsuiSeries, MatsuiFormula } from '../types/matsui';
 
-function resolveFormulaHex(formula: MatsuiFormula, swatchMap: Record<string, string>): string {
+function resolveFormulaHex(formula: MatsuiFormula): string {
+  if (formula.formulaSwatchColor?.formulaColor) return `#${formula.formulaSwatchColor.formulaColor}`;
   if (formula.formulaColor) return `#${formula.formulaColor}`;
-  const pmsKey = extractPmsFromDescription(formula.formulaDescription);
-  if (pmsKey && swatchMap[pmsKey.toLowerCase()]) return swatchMap[pmsKey.toLowerCase()];
   return blendComponentColors(formula.components);
 }
 
 // --- Formula Card ---
-function FormulaCard({ formula, onClick, swatchMap }: { formula: MatsuiFormula; onClick: () => void; swatchMap: Record<string, string> }) {
-  const hex = resolveFormulaHex(formula, swatchMap);
+function FormulaCard({ formula, onClick }: { formula: MatsuiFormula; onClick: () => void }) {
+  const hex = resolveFormulaHex(formula);
   const contrast = getContrastColor(hex);
 
   return (
@@ -42,11 +41,11 @@ function FormulaCard({ formula, onClick, swatchMap }: { formula: MatsuiFormula; 
 }
 
 // --- Formula Detail ---
-function FormulaDetail({ formula, onBack, swatchMap }: { formula: MatsuiFormula; onBack: () => void; swatchMap: Record<string, string> }) {
+function FormulaDetail({ formula, onBack }: { formula: MatsuiFormula; onBack: () => void }) {
   const [weight, setWeight] = useState(1000);
   const [unit, setUnit] = useState<'g' | 'kg' | 'lb'>('g');
 
-  const hex = resolveFormulaHex(formula, swatchMap);
+  const hex = resolveFormulaHex(formula);
   const weightInGrams = unit === 'kg' ? weight * 1000 : unit === 'lb' ? weight * 453.592 : weight;
 
   const chartData = formula.components.map((c) => ({
@@ -238,23 +237,8 @@ export function MatsuiFormulas() {
   const [seriesLoading, setSeriesLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
   const [selectedFormula, setSelectedFormula] = useState<MatsuiFormula | null>(null);
-  const [swatchMap, setSwatchMap] = useState<Record<string, string>>({});
 
   const debouncedQuery = useDebounce(searchQuery, 400);
-
-  // Load PMS swatch map on mount
-  useEffect(() => {
-    fetch('/api/swatches')
-      .then((res) => res.json())
-      .then((data) => {
-        const map: Record<string, string> = {};
-        (data.swatches || []).forEach((s: { pms: string; hex: string }) => {
-          map[s.pms.toLowerCase()] = s.hex;
-        });
-        setSwatchMap(map);
-      })
-      .catch(() => {});
-  }, []);
 
   // Load series on mount
   useEffect(() => {
@@ -311,7 +295,7 @@ export function MatsuiFormulas() {
   }, [selectedSeries, debouncedQuery, fetchFormulas]);
 
   if (selectedFormula) {
-    return <FormulaDetail formula={selectedFormula} onBack={() => setSelectedFormula(null)} swatchMap={swatchMap} />;
+    return <FormulaDetail formula={selectedFormula} onBack={() => setSelectedFormula(null)} />;
   }
 
   return (
@@ -376,7 +360,6 @@ export function MatsuiFormulas() {
               key={f._id || f.formulaCode}
               formula={f}
               onClick={() => setSelectedFormula(f)}
-              swatchMap={swatchMap}
             />
           ))}
         </div>

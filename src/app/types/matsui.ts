@@ -32,5 +32,10 @@ export interface MatsuiFormula {
   formulaDescription: string;
   formulaSeries: string;
   formulaColor: string; // hex without #
+  formulaSwatchColor?: {
+    _id: string;
+    formulaCode: string;
+    formulaColor: string; // hex without #
+  };
   components: FormulaComponent[];
 }

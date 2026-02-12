@@ -73,9 +73,11 @@ export function MatsuiBridge({ targetHex, onClose }: MatsuiBridgeProps) {
 
       const scored: ScoredFormula[] = formulas
         .map((f) => {
-          const fHex = f.formulaColor
-            ? `#${f.formulaColor}`
-            : blendComponentColors(f.components);
+          const fHex = f.formulaSwatchColor?.formulaColor
+            ? `#${f.formulaSwatchColor.formulaColor}`
+            : f.formulaColor
+              ? `#${f.formulaColor}`
+              : blendComponentColors(f.components);
           if (fHex === '#888888') return null;
           const fRgb = hexToRgb(fHex);
           return { ...f, formulaColor: fHex.replace('#', ''), distance: Math.round(rgbDistance(targetRgb, fRgb) * 100) / 100 };
