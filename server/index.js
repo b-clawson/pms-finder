@@ -5,6 +5,7 @@ import { existsSync } from "node:fs";
 import { normalizeHex } from "./color.js";
 import { matchPms, getAllSwatches } from "./matcher.js";
 import { matsuiGet, matsuiPost } from "./matsuiClient.js";
+import { getLocalFormulas } from "./matsuiData.js";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const app = express();
@@ -91,6 +92,15 @@ app.get("/api/matsui/pigments", async (req, res) => {
 
 app.post("/api/matsui/formulas", async (req, res) => {
   try {
+    const { formulaSeries, formulaSearchQuery } = req.body || {};
+
+    // Try local data first (full catalog from Excel exports)
+    const local = await getLocalFormulas(formulaSeries, formulaSearchQuery);
+    if (local) {
+      return res.json(local);
+    }
+
+    // Fall back to Matsui API for series without local data
     const data = await matsuiPost("components/GetFormulas", req.body);
     res.json(data);
   } catch (err) {
