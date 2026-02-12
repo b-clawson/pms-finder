@@ -1,10 +1,17 @@
 import XLSX from "xlsx";
-import { writeFileSync } from "node:fs";
+import { readFileSync, writeFileSync } from "node:fs";
 import { resolve, dirname } from "node:path";
 import { fileURLToPath } from "node:url";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const dataDir = resolve(__dirname, "../data");
+
+// Load PMS swatch database for formula color matching
+const pmsSwatches = JSON.parse(readFileSync(resolve(dataDir, "pantone_swatches.json"), "utf-8"));
+const pmsHexMap = {};
+for (const s of pmsSwatches) {
+  pmsHexMap[s.pms.toLowerCase()] = s.hex.replace("#", "");
+}
 
 // --- Series config: input xlsx → output json ---
 const SERIES = [
@@ -152,11 +159,18 @@ function convertFile(seriesName, inputFile, outputFile) {
   // Build output array
   const formulas = [];
   let missingHex = 0;
+  let pmsMatched = 0;
   for (const [code, data] of grouped) {
-    const swatchColor = blendComponents(data.components);
+    const blended = blendComponents(data.components);
     for (const c of data.components) {
       if (!c.hex) missingHex++;
     }
+
+    // Try to match formula code to a PMS swatch (e.g. "485 C" → PMS 485)
+    const pmsKey = code.replace(/\s+[CUcu](\s*\(\d+\))?$/, "").trim().toLowerCase();
+    const pmsHex = pmsHexMap[pmsKey];
+    if (pmsHex) pmsMatched++;
+
     formulas.push({
       _id: code,
       formulaCode: code,
@@ -166,7 +180,7 @@ function convertFile(seriesName, inputFile, outputFile) {
       formulaSwatchColor: {
         _id: code,
         formulaCode: code,
-        formulaColor: swatchColor,
+        formulaColor: pmsHex || blended,
       },
       components: data.components,
     });
@@ -183,7 +197,7 @@ function convertFile(seriesName, inputFile, outputFile) {
   });
 
   writeFileSync(outputPath, JSON.stringify(formulas, null, 2));
-  console.log(`  Wrote ${formulas.length} formulas to ${outputFile}`);
+  console.log(`  Wrote ${formulas.length} formulas to ${outputFile} (${pmsMatched} PMS matched, ${formulas.length - pmsMatched} blended)`);
   if (missingHex > 0) {
     console.log(`  Warning: ${missingHex} components had no hex mapping`);
   }
