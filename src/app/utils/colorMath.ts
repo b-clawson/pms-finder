@@ -42,6 +42,22 @@ export function blendComponentColors(
   return `#${rr.toString(16).padStart(2, '0')}${gg.toString(16).padStart(2, '0')}${bb.toString(16).padStart(2, '0')}`;
 }
 
+/**
+ * Extract a PMS identifier from a Matsui formula description.
+ * e.g. "301 RC NEO VIOLET C" → "violet", "301 RC NEO 459 C" → "459"
+ */
+export function extractPmsFromDescription(desc: string): string | null {
+  if (!desc) return null;
+  // Strip known series prefixes (may or may not start with a number)
+  const stripped = desc
+    .replace(/^(\d+\s*)?(RC\s*NEO|ALPHA\s*(DISCHARGE)?|BRITE\s*(DISCHARGE)?|HM\s*(DISCHARGE)?|OW\s*(STRETCH)?)\s*/i, '')
+    .trim();
+  if (!stripped) return null;
+  // Remove trailing C or U (coated/uncoated marker)
+  const pmsKey = stripped.replace(/\s+[CU]$/i, '').trim();
+  return pmsKey || null;
+}
+
 export function cmykToHex(cmyk: number[]): string {
   // CMYK values can be 0-100 or 0-1 — normalize
   const c = cmyk[0] > 1 ? cmyk[0] / 100 : cmyk[0];
