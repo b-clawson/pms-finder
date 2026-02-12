@@ -5,7 +5,7 @@ import { useDebounce } from '../hooks/useDebounce';
 import { getContrastColor, cmykToHex, blendComponentColors } from '../utils/colorMath';
 import type { MatsuiSeries, MatsuiFormula } from '../types/matsui';
 
-function resolveFormulaHex(formula: MatsuiFormula): string {
+export function resolveFormulaHex(formula: MatsuiFormula): string {
   if (formula.formulaSwatchColor?.formulaColor) return `#${formula.formulaSwatchColor.formulaColor}`;
   if (formula.formulaColor) return `#${formula.formulaColor}`;
   return blendComponentColors(formula.components);
@@ -41,7 +41,7 @@ function FormulaCard({ formula, onClick }: { formula: MatsuiFormula; onClick: ()
 }
 
 // --- Formula Detail ---
-function FormulaDetail({ formula, onBack }: { formula: MatsuiFormula; onBack: () => void }) {
+export function FormulaDetail({ formula, onBack }: { formula: MatsuiFormula; onBack: () => void }) {
   const [weight, setWeight] = useState(1000);
   const [unit, setUnit] = useState<'g' | 'kg' | 'lb'>('g');
 

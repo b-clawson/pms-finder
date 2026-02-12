@@ -2,10 +2,11 @@ import express from "express";
 import { fileURLToPath } from "node:url";
 import { dirname, resolve } from "node:path";
 import { existsSync } from "node:fs";
-import { normalizeHex } from "./color.js";
+import { normalizeHex, hexToRgb, rgbDistance } from "./color.js";
 import { matchPms, getAllSwatches } from "./matcher.js";
 import { matsuiGet, matsuiPost } from "./matsuiClient.js";
 import { getLocalFormulas } from "./matsuiData.js";
+import { getGGColors, getGGFormula } from "./ggClient.js";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const app = express();
@@ -114,6 +115,120 @@ app.post("/api/matsui/closest", async (req, res) => {
     res.json(data);
   } catch (err) {
     res.status(502).json({ error: "Failed to fetch closest Matsui colors", detail: err.message });
+  }
+});
+
+// Server-side Matsui color matching
+app.get("/api/matsui/match", async (req, res) => {
+  const { hex, series, limit: rawLimit } = req.query;
+
+  if (!hex) {
+    return res.status(400).json({ error: "Missing required query param: hex" });
+  }
+  const normHex = normalizeHex(hex);
+  if (!normHex) {
+    return res.status(400).json({ error: "Invalid hex format. Expected #RRGGBB or RRGGBB." });
+  }
+  if (!series) {
+    return res.status(400).json({ error: "Missing required query param: series" });
+  }
+
+  let limit = parseInt(rawLimit, 10);
+  if (isNaN(limit) || limit < 1) limit = 10;
+  if (limit > 50) limit = 50;
+
+  try {
+    // Try local data first, then fall back to API
+    let formulas = await getLocalFormulas(series, "");
+    if (!formulas) {
+      const apiRes = await matsuiPost("components/GetFormulas", {
+        formulaSeries: series,
+        formulaSearchQuery: "",
+        userCompany: "",
+        selectedCompany: "",
+        userEmail: "",
+      });
+      formulas = Array.isArray(apiRes) ? apiRes : [];
+    }
+
+    const targetRgb = hexToRgb(normHex);
+
+    const scored = formulas
+      .map((f) => {
+        const fHex = f.formulaSwatchColor?.formulaColor
+          ? `#${f.formulaSwatchColor.formulaColor}`
+          : f.formulaColor
+            ? `#${f.formulaColor}`
+            : null;
+        if (!fHex || fHex === "#888888") return null;
+        const fRgb = hexToRgb(fHex);
+        const distance = Math.round(rgbDistance(targetRgb, fRgb) * 100) / 100;
+        return { ...f, resolvedHex: fHex, distance };
+      })
+      .filter(Boolean);
+
+    scored.sort((a, b) => a.distance - b.distance);
+
+    res.json(scored.slice(0, limit));
+  } catch (err) {
+    res.status(500).json({ error: "Failed to match Matsui formulas", detail: err.message });
+  }
+});
+
+// --- Green Galaxy API proxy ---
+app.get("/api/gg/match", async (req, res) => {
+  const { hex, category, limit: rawLimit } = req.query;
+
+  if (!hex) {
+    return res.status(400).json({ error: "Missing required query param: hex" });
+  }
+  const normHex = normalizeHex(hex);
+  if (!normHex) {
+    return res.status(400).json({ error: "Invalid hex format. Expected #RRGGBB or RRGGBB." });
+  }
+
+  const cat = (category || "UD").toUpperCase();
+  if (cat !== "UD" && cat !== "CD") {
+    return res.status(400).json({ error: "Invalid category. Expected UD or CD." });
+  }
+
+  let limit = parseInt(rawLimit, 10);
+  if (isNaN(limit) || limit < 1) limit = 10;
+  if (limit > 50) limit = 50;
+
+  try {
+    const colors = await getGGColors(cat);
+    const targetRgb = hexToRgb(normHex);
+
+    const scored = colors.map((c) => {
+      const distance = Math.round(rgbDistance(targetRgb, { r: c.r, g: c.g, b: c.b }) * 100) / 100;
+      return { _id: c._id, code: c.code, name: c.name, hex: c.hex, distance };
+    });
+
+    scored.sort((a, b) => a.distance - b.distance);
+    res.json(scored.slice(0, limit));
+  } catch (err) {
+    res.status(502).json({ error: "Failed to fetch GG colors", detail: err.message });
+  }
+});
+
+app.get("/api/gg/formula", async (req, res) => {
+  const { code, category } = req.query;
+
+  if (!code) {
+    return res.status(400).json({ error: "Missing required query param: code" });
+  }
+
+  const cat = (category || "UD").toUpperCase();
+  if (cat !== "UD" && cat !== "CD") {
+    return res.status(400).json({ error: "Invalid category. Expected UD or CD." });
+  }
+
+  try {
+    const formula = await getGGFormula(code, cat);
+    res.json(formula);
+  } catch (err) {
+    res.status(502).json({ error: "Failed to fetch GG formula", detail: err.message });
   }
 });
 

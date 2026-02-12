@@ -1,4 +1,5 @@
-import { Search, Palette, FlaskConical } from 'lucide-react';
+import { useState } from 'react';
+import { Search, Palette, FlaskConical, ChevronDown, Beaker } from 'lucide-react';
 import { useLocation, Link } from 'react-router';
 
 interface NavItemProps {
@@ -6,13 +7,16 @@ interface NavItemProps {
   label: string;
   to: string;
   active?: boolean;
+  nested?: boolean;
 }
 
-function NavItem({ icon, label, to, active = false }: NavItemProps) {
+function NavItem({ icon, label, to, active = false, nested = false }: NavItemProps) {
   return (
     <Link
       to={to}
       className={`w-full flex items-center gap-3 px-4 py-2.5 rounded-lg transition-colors ${
+        nested ? 'pl-11' : ''
+      } ${
         active
           ? 'bg-[#0D9E7A] text-white'
           : 'text-gray-300 hover:bg-[#252541] hover:text-white'
@@ -24,8 +28,41 @@ function NavItem({ icon, label, to, active = false }: NavItemProps) {
   );
 }
 
+interface NavSectionProps {
+  icon: React.ReactNode;
+  label: string;
+  active: boolean;
+  expanded: boolean;
+  onToggle: () => void;
+  children: React.ReactNode;
+}
+
+function NavSection({ icon, label, active, expanded, onToggle, children }: NavSectionProps) {
+  return (
+    <div>
+      <button
+        onClick={onToggle}
+        className={`w-full flex items-center gap-3 px-4 py-2.5 rounded-lg transition-colors ${
+          active && !expanded
+            ? 'bg-[#0D9E7A]/20 text-[#0D9E7A]'
+            : 'text-gray-400 hover:bg-[#252541] hover:text-gray-200'
+        }`}
+      >
+        <div className="w-5 h-5">{icon}</div>
+        <span className="text-xs font-semibold uppercase tracking-wider flex-1 text-left">{label}</span>
+        <ChevronDown
+          className={`w-4 h-4 transition-transform ${expanded ? '' : '-rotate-90'}`}
+        />
+      </button>
+      {expanded && <div className="mt-1 space-y-1">{children}</div>}
+    </div>
+  );
+}
+
 export function Sidebar() {
   const location = useLocation();
+  const isMixingActive = location.pathname.startsWith('/mixing');
+  const [mixingExpanded, setMixingExpanded] = useState(isMixingActive || true);
 
   return (
     <aside className="w-[230px] bg-[#1B1B2F] h-screen sticky top-0 flex flex-col">
@@ -53,12 +90,38 @@ export function Sidebar() {
           to="/swatches"
           active={location.pathname === '/swatches'}
         />
-        <NavItem
-          icon={<FlaskConical />}
-          label="Matsui Formulas"
-          to="/formulas"
-          active={location.pathname === '/formulas'}
-        />
+
+        <div className="pt-2">
+          <NavSection
+            icon={<Beaker />}
+            label="Color Mixing"
+            active={isMixingActive}
+            expanded={mixingExpanded}
+            onToggle={() => setMixingExpanded(!mixingExpanded)}
+          >
+            <NavItem
+              icon={<FlaskConical />}
+              label="Matsui"
+              to="/mixing/matsui"
+              active={location.pathname === '/mixing/matsui'}
+              nested
+            />
+            <NavItem
+              icon={<Palette />}
+              label="Matsui Formulas"
+              to="/mixing/matsui/browse"
+              active={location.pathname === '/mixing/matsui/browse'}
+              nested
+            />
+            <NavItem
+              icon={<FlaskConical />}
+              label="Green Galaxy"
+              to="/mixing/greengalaxy"
+              active={location.pathname === '/mixing/greengalaxy'}
+              nested
+            />
+          </NavSection>
+        </div>
       </nav>
     </aside>
   );

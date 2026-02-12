@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { BrowserRouter, Routes, Route } from 'react-router';
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router';
 import { Sidebar } from './components/Sidebar';
 import { SearchCard } from './components/SearchCard';
 import { MessageBar } from './components/MessageBar';
@@ -7,6 +7,8 @@ import { ResultsCard } from './components/ResultsCard';
 import { SwatchLibrary } from './components/SwatchLibrary';
 import { MatsuiFormulas } from './components/MatsuiFormulas';
 import { MatsuiBridge } from './components/MatsuiBridge';
+import { MatsuiMix } from './components/MatsuiMix';
+import { GreenGalaxyMix } from './components/GreenGalaxyMix';
 
 interface PMSMatch {
   pms: string;
@@ -96,6 +98,10 @@ function SwatchLibraryPage() {
   );
 }
 
+function MatsuiMixPage() {
+  return <MatsuiMix />;
+}
+
 function MatsuiFormulasPage() {
   return (
     <>
@@ -118,7 +124,10 @@ export default function App() {
             <Routes>
               <Route path="/" element={<PmsFinderPage />} />
               <Route path="/swatches" element={<SwatchLibraryPage />} />
-              <Route path="/formulas" element={<MatsuiFormulasPage />} />
+              <Route path="/mixing/matsui" element={<MatsuiMixPage />} />
+              <Route path="/mixing/matsui/browse" element={<MatsuiFormulasPage />} />
+              <Route path="/mixing/greengalaxy" element={<GreenGalaxyMix />} />
+              <Route path="/formulas" element={<Navigate to="/mixing/matsui/browse" replace />} />
             </Routes>
           </div>
         </main>
