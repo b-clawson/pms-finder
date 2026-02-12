@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Search, Palette, FlaskConical, ChevronDown, Beaker } from 'lucide-react';
+import { Palette, FlaskConical, ChevronDown, Beaker, Bookmark } from 'lucide-react';
 import { useLocation, Link } from 'react-router';
 
 interface NavItemProps {
@@ -79,12 +79,6 @@ export function Sidebar() {
       {/* Navigation */}
       <nav className="flex-1 px-4 space-y-1">
         <NavItem
-          icon={<Search />}
-          label="PMS Finder"
-          to="/"
-          active={location.pathname === '/'}
-        />
-        <NavItem
           icon={<Palette />}
           label="Swatch Library"
           to="/swatches"
@@ -111,6 +105,13 @@ export function Sidebar() {
               label="Green Galaxy"
               to="/mixing/greengalaxy"
               active={location.pathname === '/mixing/greengalaxy'}
+              nested
+            />
+            <NavItem
+              icon={<Bookmark />}
+              label="Mixing Cards"
+              to="/mixing/cards"
+              active={location.pathname === '/mixing/cards'}
               nested
             />
           </NavSection>

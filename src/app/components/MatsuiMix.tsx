@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
-import { Search } from 'lucide-react';
+import { Search, Bookmark, Check } from 'lucide-react';
 import { FormulaDetail, resolveFormulaHex } from './MatsuiFormulas';
+import { useMixingCards } from '../hooks/useMixingCards';
 import type { MatsuiSeries, MatsuiFormula } from '../types/matsui';
 
 interface PMSMatch {
@@ -33,6 +34,8 @@ export function MatsuiMix() {
   const [hasSearched, setHasSearched] = useState(false);
 
   const [selectedFormula, setSelectedFormula] = useState<MatsuiFormula | null>(null);
+  const [saved, setSaved] = useState(false);
+  const { saveCard } = useMixingCards();
 
   // Validate hex input
   useEffect(() => {
@@ -110,11 +113,46 @@ export function MatsuiMix() {
   };
 
   if (selectedFormula) {
+    const hex = hexInput.trim();
+    const searchHex = hex.startsWith('#') ? hex : `#${hex}`;
+    const resolvedHex = resolveFormulaHex(selectedFormula);
+    const scoredFormula = matsuiResults.find((m) => m.formulaCode === selectedFormula.formulaCode);
+    const distance = scoredFormula?.distance ?? 0;
+
+    const handleSave = () => {
+      saveCard({
+        type: 'matsui',
+        name: selectedFormula.formulaCode,
+        searchHex,
+        series: selectedSeries,
+        formula: selectedFormula,
+        resolvedHex,
+        distance,
+        notes: '',
+      });
+      setSaved(true);
+      setTimeout(() => setSaved(false), 2000);
+    };
+
     return (
       <>
-        <div className="mb-8">
-          <h1 className="text-3xl mb-2">Color Mixing — Matsui</h1>
-          <p className="text-gray-600">Formula detail</p>
+        <div className="mb-8 flex items-start justify-between">
+          <div>
+            <h1 className="text-3xl mb-2">Color Mixing — Matsui</h1>
+            <p className="text-gray-600">Formula detail</p>
+          </div>
+          <button
+            onClick={handleSave}
+            disabled={saved}
+            className={`flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
+              saved
+                ? 'bg-green-100 text-green-800'
+                : 'bg-[#0D9E7A] text-white hover:bg-[#0b8566]'
+            }`}
+          >
+            {saved ? <Check className="w-4 h-4" /> : <Bookmark className="w-4 h-4" />}
+            {saved ? 'Saved!' : 'Save to Cards'}
+          </button>
         </div>
         <FormulaDetail formula={selectedFormula} onBack={() => setSelectedFormula(null)} />
       </>
