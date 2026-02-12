@@ -1,5 +1,9 @@
-import { useState, useEffect } from 'react';
-import { Search, ArrowLeft, ExternalLink, Bookmark, Check } from 'lucide-react';
+import { useState } from 'react';
+import { ArrowLeft, ExternalLink, Bookmark, Check } from 'lucide-react';
+import { HexSearchBar } from './HexSearchBar';
+import { PmsMatchList } from './PmsMatchList';
+import { DistanceBadge } from './DistanceBadge';
+import { useHexInput } from '../hooks/useHexInput';
 import { useMixingCards } from '../hooks/useMixingCards';
 import type { GGMatch, GGFormulaDetail } from '../types/greengalaxy';
 
@@ -174,9 +178,7 @@ export function GGFormulaDetailView({ formula }: { formula: GGFormulaDetail }) {
 }
 
 export function GreenGalaxyMix() {
-  const [hexInput, setHexInput] = useState('');
-  const [previewColor, setPreviewColor] = useState('#FF6A00');
-  const [isValid, setIsValid] = useState(true);
+  const hex = useHexInput();
   const [category, setCategory] = useState('UD');
 
   const [searching, setSearching] = useState(false);
@@ -192,28 +194,9 @@ export function GreenGalaxyMix() {
   const [saved, setSaved] = useState(false);
   const { saveCard } = useMixingCards();
 
-  // Validate hex input
-  useEffect(() => {
-    const hex = hexInput.trim();
-    if (hex === '') {
-      setPreviewColor('#FF6A00');
-      setIsValid(true);
-      return;
-    }
-    const hexPattern = /^#?([0-9A-Fa-f]{6}|[0-9A-Fa-f]{3})$/;
-    if (hexPattern.test(hex)) {
-      setPreviewColor(hex.startsWith('#') ? hex : `#${hex}`);
-      setIsValid(true);
-    } else {
-      setIsValid(false);
-    }
-  }, [hexInput]);
-
   const handleSearch = async () => {
-    const hex = hexInput.trim();
-    if (!hex || !isValid) return;
+    if (!hex.hexInput.trim() || !hex.isValid) return;
 
-    const normalizedHex = hex.startsWith('#') ? hex : `#${hex}`;
     setSearching(true);
     setError(null);
     setPmsResults([]);
@@ -224,8 +207,8 @@ export function GreenGalaxyMix() {
 
     try {
       const [pmsRes, ggRes] = await Promise.all([
-        fetch(`/api/pms?hex=${encodeURIComponent(normalizedHex)}&series=BOTH&limit=5`),
-        fetch(`/api/gg/match?hex=${encodeURIComponent(normalizedHex)}&category=${category}&limit=10`),
+        fetch(`/api/pms?hex=${encodeURIComponent(hex.normalizedHex)}&series=BOTH&limit=5`),
+        fetch(`/api/gg/match?hex=${encodeURIComponent(hex.normalizedHex)}&category=${category}&limit=10`),
       ]);
 
       const pmsData = await pmsRes.json();
@@ -245,10 +228,6 @@ export function GreenGalaxyMix() {
     } finally {
       setSearching(false);
     }
-  };
-
-  const handleKeyPress = (e: React.KeyboardEvent) => {
-    if (e.key === 'Enter') handleSearch();
   };
 
   const handleSelectFormula = async (match: GGMatch) => {
@@ -276,15 +255,12 @@ export function GreenGalaxyMix() {
 
   // Formula detail view
   if (selectedMatch && (formulaDetail || formulaLoading || formulaError)) {
-    const hex = hexInput.trim();
-    const searchHex = hex.startsWith('#') ? hex : `#${hex}`;
-
     const handleSave = () => {
       if (!formulaDetail) return;
       saveCard({
         type: 'greengalaxy',
         name: selectedMatch.code,
-        searchHex,
+        searchHex: hex.normalizedHex,
         category: category as 'UD' | 'CD',
         match: selectedMatch,
         formula: formulaDetail,
@@ -355,64 +331,23 @@ export function GreenGalaxyMix() {
         </p>
       </div>
 
-      {/* Search Bar */}
-      <div className="bg-white rounded-xl shadow-sm p-6 mb-6">
-        <div className="flex items-end gap-4">
-          {/* Hex Input */}
-          <div className="flex-1">
-            <label className="block text-sm text-gray-600 mb-2">HEX Color</label>
-            <div className="relative flex items-center">
-              <div
-                className="absolute left-3 w-[38px] h-[38px] rounded-md border border-gray-200 flex-shrink-0"
-                style={{ backgroundColor: isValid ? previewColor : '#e5e7eb' }}
-              />
-              <input
-                type="text"
-                value={hexInput}
-                onChange={(e) => setHexInput(e.target.value)}
-                onKeyDown={handleKeyPress}
-                placeholder="#FF6A00"
-                className="w-full pl-[54px] pr-4 py-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#0D9E7A] focus:border-transparent font-mono"
-                disabled={searching}
-              />
-            </div>
-            <p className="text-xs text-gray-500 mt-1">
-              {hexInput.trim() === ''
-                ? 'Enter a HEX color'
-                : isValid
-                  ? `Preview: ${previewColor}`
-                  : 'Invalid HEX'}
-            </p>
-          </div>
-
-          {/* Category */}
-          <div className="w-52">
-            <label className="block text-sm text-gray-600 mb-2">Category</label>
-            <select
-              value={category}
-              onChange={(e) => setCategory(e.target.value)}
-              disabled={searching}
-              className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#0D9E7A] focus:border-transparent bg-white"
-            >
-              {CATEGORIES.map((c) => (
-                <option key={c.value} value={c.value}>
-                  {c.label}
-                </option>
-              ))}
-            </select>
-          </div>
-
-          {/* Search Button */}
-          <button
-            onClick={handleSearch}
-            disabled={!isValid || !hexInput.trim() || searching}
-            className="px-6 py-3 bg-[#0D9E7A] text-white rounded-lg hover:bg-[#0b8566] disabled:bg-gray-300 disabled:cursor-not-allowed transition-colors flex items-center gap-2 whitespace-nowrap"
+      <HexSearchBar hexInput={hex} searching={searching} onSearch={handleSearch}>
+        <div className="w-52">
+          <label className="block text-sm text-gray-600 mb-2">Category</label>
+          <select
+            value={category}
+            onChange={(e) => setCategory(e.target.value)}
+            disabled={searching}
+            className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#0D9E7A] focus:border-transparent bg-white"
           >
-            <Search className="w-5 h-5" />
-            {searching ? 'Searching...' : 'Find matches'}
-          </button>
+            {CATEGORIES.map((c) => (
+              <option key={c.value} value={c.value}>
+                {c.label}
+              </option>
+            ))}
+          </select>
         </div>
-      </div>
+      </HexSearchBar>
 
       {/* Error */}
       {error && (
@@ -424,44 +359,7 @@ export function GreenGalaxyMix() {
       {/* Results */}
       {hasSearched && !searching && (
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-          {/* PMS Matches */}
-          <div className="bg-white rounded-xl shadow-sm overflow-hidden">
-            <div className="px-6 py-4 border-b border-gray-100">
-              <h3 className="text-lg font-medium">Closest PMS Matches</h3>
-              <p className="text-xs text-gray-500 mt-0.5">{pmsResults.length} results</p>
-            </div>
-            <div className="divide-y divide-gray-100">
-              {pmsResults.length === 0 && (
-                <div className="text-center py-8 text-gray-500 text-sm">No PMS matches found</div>
-              )}
-              {pmsResults.map((m) => (
-                <div
-                  key={`${m.pms}-${m.series}`}
-                  className="flex items-center gap-3 px-6 py-3 hover:bg-gray-50 transition-colors"
-                >
-                  <div
-                    className="w-10 h-10 rounded-md border border-gray-200 flex-shrink-0"
-                    style={{ backgroundColor: m.hex }}
-                  />
-                  <div className="flex-1 min-w-0">
-                    <div className="font-semibold text-sm">{m.name || m.pms}</div>
-                    <div className="text-xs text-gray-400 font-mono">{m.hex}</div>
-                  </div>
-                  <span
-                    className={`inline-block px-2 py-0.5 rounded-full text-xs ${
-                      m.distance < 10
-                        ? 'bg-green-100 text-green-800'
-                        : m.distance < 30
-                          ? 'bg-yellow-100 text-yellow-800'
-                          : 'bg-red-100 text-red-800'
-                    }`}
-                  >
-                    {m.distance.toFixed(1)}
-                  </span>
-                </div>
-              ))}
-            </div>
-          </div>
+          <PmsMatchList results={pmsResults} />
 
           {/* GG Fusion Matches */}
           <div className="bg-white rounded-xl shadow-sm overflow-hidden">
@@ -492,17 +390,7 @@ export function GreenGalaxyMix() {
                     <div className="text-xs text-gray-500 truncate">{m.name}</div>
                     <div className="text-xs text-gray-400 font-mono">{m.hex}</div>
                   </div>
-                  <span
-                    className={`inline-block px-2 py-0.5 rounded-full text-xs ${
-                      m.distance < 10
-                        ? 'bg-green-100 text-green-800'
-                        : m.distance < 30
-                          ? 'bg-yellow-100 text-yellow-800'
-                          : 'bg-red-100 text-red-800'
-                    }`}
-                  >
-                    {m.distance.toFixed(1)}
-                  </span>
+                  <DistanceBadge distance={m.distance} />
                 </div>
               ))}
             </div>

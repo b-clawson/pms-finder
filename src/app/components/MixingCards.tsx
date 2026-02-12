@@ -3,6 +3,7 @@ import { Search, Trash2, ChevronDown, ChevronUp } from 'lucide-react';
 import { useMixingCards, type MixingCard } from '../hooks/useMixingCards';
 import { FormulaDetail } from './MatsuiFormulas';
 import { GGFormulaDetailView } from './GreenGalaxyMix';
+import { DistanceBadge } from './DistanceBadge';
 
 function timeAgo(iso: string): string {
   const seconds = Math.floor((Date.now() - new Date(iso).getTime()) / 1000);
@@ -15,22 +16,6 @@ function timeAgo(iso: string): string {
   if (days < 30) return `${days}d ago`;
   const months = Math.floor(days / 30);
   return `${months}mo ago`;
-}
-
-function DistanceBadge({ distance, type }: { distance: number; type: 'matsui' | 'greengalaxy' }) {
-  const thresholds = type === 'matsui' ? [20, 80] : [10, 30];
-  const colorClass =
-    distance < thresholds[0]
-      ? 'bg-green-100 text-green-800'
-      : distance < thresholds[1]
-        ? 'bg-yellow-100 text-yellow-800'
-        : 'bg-red-100 text-red-800';
-
-  return (
-    <span className={`inline-block px-2 py-0.5 rounded-full text-xs ${colorClass}`}>
-      {distance.toFixed(1)}
-    </span>
-  );
 }
 
 function CardItem({
@@ -159,7 +144,7 @@ function CardItem({
           <span className="font-mono">{card.searchHex}</span>
           <span className="text-gray-300">&rarr;</span>
           <span className="font-mono">{swatchHex}</span>
-          <DistanceBadge distance={card.distance} type={card.type} />
+          <DistanceBadge distance={card.distance} thresholds={card.type === 'matsui' ? [20, 80] : [10, 30]} />
         </div>
 
         {/* Component count + date */}
