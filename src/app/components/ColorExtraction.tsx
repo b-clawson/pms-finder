@@ -1,6 +1,6 @@
-import { useState, useRef, useCallback } from 'react';
+import { useState, useRef, useCallback, useEffect } from 'react';
 import { useNavigate } from 'react-router';
-import { Upload, FlaskConical, Copy, Check, ImageIcon } from 'lucide-react';
+import { Upload, FlaskConical, Copy, Check, Pipette } from 'lucide-react';
 import ColorThief from 'colorthief';
 import { DistanceBadge } from './DistanceBadge';
 import { getContrastColor } from '../utils/colorMath';
@@ -35,8 +35,11 @@ export function ColorExtraction() {
   const [error, setError] = useState<string | null>(null);
   const [copiedIdx, setCopiedIdx] = useState<number | null>(null);
   const [dragOver, setDragOver] = useState(false);
+  const [pickingIdx, setPickingIdx] = useState<number | null>(null);
   const fileInputRef = useRef<HTMLInputElement>(null);
   const imgRef = useRef<HTMLImageElement>(null);
+  const canvasRef = useRef<HTMLCanvasElement>(null);
+  const loadedImgRef = useRef<HTMLImageElement | null>(null);
 
   const extractColors = useCallback(async (img: HTMLImageElement) => {
     setExtracting(true);
@@ -111,6 +114,15 @@ export function ColorExtraction() {
       const img = new Image();
       img.crossOrigin = 'anonymous';
       img.onload = () => {
+        loadedImgRef.current = img;
+        // Draw to hidden canvas for eyedropper sampling
+        const canvas = canvasRef.current;
+        if (canvas) {
+          canvas.width = img.naturalWidth;
+          canvas.height = img.naturalHeight;
+          const ctx = canvas.getContext('2d');
+          if (ctx) ctx.drawImage(img, 0, 0);
+        }
         extractColors(img);
       };
       img.onerror = () => {
@@ -150,6 +162,70 @@ export function ColorExtraction() {
     setCopiedIdx(idx);
     setTimeout(() => setCopiedIdx(null), 1500);
   };
+
+  // Fetch PMS match for a single swatch and update it in place
+  const fetchPmsForIndex = useCallback(async (idx: number, hex: string) => {
+    setColors((prev) =>
+      prev.map((c, i) => (i === idx ? { ...c, loading: true, pmsMatch: null } : c))
+    );
+    try {
+      const res = await fetch(`/api/pms?hex=${encodeURIComponent(hex)}&series=BOTH&limit=1`);
+      const data = await res.json();
+      const match = res.ok && data.results?.length > 0 ? (data.results[0] as PMSMatch) : null;
+      setColors((prev) =>
+        prev.map((c, i) => (i === idx ? { ...c, pmsMatch: match, loading: false } : c))
+      );
+    } catch {
+      setColors((prev) =>
+        prev.map((c, i) => (i === idx ? { ...c, loading: false } : c))
+      );
+    }
+  }, []);
+
+  // Eyedropper: sample pixel from canvas at click position on the displayed image
+  const handleImagePick = useCallback(
+    (e: React.MouseEvent<HTMLImageElement>) => {
+      if (pickingIdx === null) return;
+      const canvas = canvasRef.current;
+      const img = imgRef.current;
+      if (!canvas || !img) return;
+
+      const rect = img.getBoundingClientRect();
+      const scaleX = canvas.width / rect.width;
+      const scaleY = canvas.height / rect.height;
+      const x = Math.round((e.clientX - rect.left) * scaleX);
+      const y = Math.round((e.clientY - rect.top) * scaleY);
+
+      const ctx = canvas.getContext('2d');
+      if (!ctx) return;
+
+      const pixel = ctx.getImageData(x, y, 1, 1).data;
+      const r = pixel[0];
+      const g = pixel[1];
+      const b = pixel[2];
+      const hex = rgbToHex(r, g, b);
+
+      const idx = pickingIdx;
+      setColors((prev) =>
+        prev.map((c, i) =>
+          i === idx ? { ...c, hex, r, g, b, pmsMatch: null, loading: true } : c
+        )
+      );
+      setPickingIdx(null);
+      fetchPmsForIndex(idx, hex);
+    },
+    [pickingIdx, fetchPmsForIndex]
+  );
+
+  // Cancel pick mode on Escape
+  useEffect(() => {
+    if (pickingIdx === null) return;
+    const handler = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') setPickingIdx(null);
+    };
+    window.addEventListener('keydown', handler);
+    return () => window.removeEventListener('keydown', handler);
+  }, [pickingIdx]);
 
   return (
     <>
@@ -195,14 +271,40 @@ export function ColorExtraction() {
         </div>
       )}
 
+      {/* Hidden canvas for pixel sampling */}
+      <canvas ref={canvasRef} className="hidden" />
+
+      {/* Pick mode banner */}
+      {pickingIdx !== null && (
+        <div className="rounded-lg bg-[#0D9E7A]/10 border border-[#0D9E7A] text-[#0D9E7A] px-4 py-3 text-sm mb-4 flex items-center justify-between">
+          <span className="flex items-center gap-2">
+            <Pipette className="w-4 h-4" />
+            Click on the image to pick a color for swatch {pickingIdx + 1}
+          </span>
+          <button
+            onClick={() => setPickingIdx(null)}
+            className="text-xs font-medium hover:underline"
+          >
+            Cancel (Esc)
+          </button>
+        </div>
+      )}
+
       {/* Image Preview */}
       {imageUrl && (
-        <div className="bg-white rounded-xl shadow-sm p-4 mb-6">
+        <div
+          className={`bg-white rounded-xl shadow-sm p-4 mb-6 transition-shadow ${
+            pickingIdx !== null ? 'ring-2 ring-[#0D9E7A]' : ''
+          }`}
+        >
           <img
             ref={imgRef}
             src={imageUrl}
             alt="Uploaded artwork"
-            className="max-w-full max-h-80 mx-auto rounded-lg object-contain"
+            onClick={handleImagePick}
+            className={`max-w-full max-h-80 mx-auto rounded-lg object-contain ${
+              pickingIdx !== null ? 'cursor-crosshair' : ''
+            }`}
           />
         </div>
       )}
@@ -228,7 +330,7 @@ export function ColorExtraction() {
               >
                 {/* Color Swatch */}
                 <div
-                  className="h-28 flex items-end px-4 pb-3"
+                  className="h-28 flex items-end justify-between px-4 pb-3"
                   style={{ backgroundColor: color.hex }}
                 >
                   <button
@@ -245,6 +347,19 @@ export function ColorExtraction() {
                       <Copy className="w-3.5 h-3.5" />
                     )}
                     {copiedIdx === i ? 'Copied!' : color.hex}
+                  </button>
+                  <button
+                    onClick={() => setPickingIdx(pickingIdx === i ? null : i)}
+                    title="Pick color from image"
+                    className={`flex items-center gap-1 px-2 py-1 rounded text-sm transition-colors ${
+                      pickingIdx === i ? 'ring-2 ring-white' : ''
+                    }`}
+                    style={{
+                      color: getContrastColor(color.hex),
+                      backgroundColor: 'rgba(0,0,0,0.15)',
+                    }}
+                  >
+                    <Pipette className="w-3.5 h-3.5" />
                   </button>
                 </div>
 
