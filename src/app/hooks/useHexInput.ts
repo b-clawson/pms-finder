@@ -2,8 +2,8 @@ import { useState, useEffect } from 'react';
 
 const HEX_PATTERN = /^#?([0-9A-Fa-f]{6}|[0-9A-Fa-f]{3})$/;
 
-export function useHexInput() {
-  const [hexInput, setHexInput] = useState('');
+export function useHexInput(initialValue?: string) {
+  const [hexInput, setHexInput] = useState(initialValue ?? '');
   const [previewColor, setPreviewColor] = useState('#FF6A00');
   const [isValid, setIsValid] = useState(true);
 

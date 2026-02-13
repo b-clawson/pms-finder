@@ -1,4 +1,5 @@
-import { useState } from 'react';
+import { useState, useEffect, useRef, useCallback } from 'react';
+import { useSearchParams } from 'react-router';
 import { ArrowLeft, ExternalLink, Bookmark, Check } from 'lucide-react';
 import { HexSearchBar } from './HexSearchBar';
 import { PmsMatchList } from './PmsMatchList';
@@ -178,7 +179,9 @@ export function GGFormulaDetailView({ formula }: { formula: GGFormulaDetail }) {
 }
 
 export function GreenGalaxyMix() {
-  const hex = useHexInput();
+  const [searchParams] = useSearchParams();
+  const initialHex = searchParams.get('hex') || undefined;
+  const hex = useHexInput(initialHex);
   const [category, setCategory] = useState('UD');
 
   const [searching, setSearching] = useState(false);
@@ -193,8 +196,9 @@ export function GreenGalaxyMix() {
   const [formulaError, setFormulaError] = useState<string | null>(null);
   const [saved, setSaved] = useState(false);
   const { saveCard } = useMixingCards();
+  const autoSearched = useRef(false);
 
-  const handleSearch = async () => {
+  const handleSearch = useCallback(async () => {
     if (!hex.hexInput.trim() || !hex.isValid) return;
 
     setSearching(true);
@@ -228,7 +232,15 @@ export function GreenGalaxyMix() {
     } finally {
       setSearching(false);
     }
-  };
+  }, [hex.hexInput, hex.isValid, hex.normalizedHex, category]);
+
+  // Auto-search when navigated with ?hex= param
+  useEffect(() => {
+    if (initialHex && hex.isValid && hex.hexInput.trim() && !autoSearched.current) {
+      autoSearched.current = true;
+      handleSearch();
+    }
+  }, [initialHex, hex.isValid, hex.hexInput, handleSearch]);
 
   const handleSelectFormula = async (match: GGMatch) => {
     setSelectedMatch(match);

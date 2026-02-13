@@ -1,6 +1,7 @@
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router';
 import { Sidebar } from './components/Sidebar';
 import { SwatchLibrary } from './components/SwatchLibrary';
+import { ColorExtraction } from './components/ColorExtraction';
 import { MatsuiMix } from './components/MatsuiMix';
 import { GreenGalaxyMix } from './components/GreenGalaxyMix';
 import { MixingCards } from './components/MixingCards';
@@ -27,6 +28,7 @@ export default function App() {
             <Routes>
               <Route path="/" element={<Navigate to="/swatches" replace />} />
               <Route path="/swatches" element={<SwatchLibraryPage />} />
+              <Route path="/extract" element={<ColorExtraction />} />
               <Route path="/mixing/matsui" element={<MatsuiMix />} />
               <Route path="/mixing/greengalaxy" element={<GreenGalaxyMix />} />
               <Route path="/mixing/cards" element={<MixingCards />} />

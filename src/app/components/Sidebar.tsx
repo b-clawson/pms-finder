@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Palette, FlaskConical, ChevronDown, Beaker, Bookmark } from 'lucide-react';
+import { Palette, FlaskConical, ChevronDown, Beaker, Bookmark, Pipette } from 'lucide-react';
 import { useLocation, Link } from 'react-router';
 
 interface NavItemProps {
@@ -83,6 +83,12 @@ export function Sidebar() {
           label="Swatch Library"
           to="/swatches"
           active={location.pathname === '/swatches'}
+        />
+        <NavItem
+          icon={<Pipette />}
+          label="Color Extraction"
+          to="/extract"
+          active={location.pathname === '/extract'}
         />
 
         <div className="pt-2">

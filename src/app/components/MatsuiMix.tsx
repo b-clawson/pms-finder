@@ -1,4 +1,5 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef, useCallback } from 'react';
+import { useSearchParams } from 'react-router';
 import { Bookmark, Check } from 'lucide-react';
 import { FormulaDetail, resolveFormulaHex } from './MatsuiFormulas';
 import { HexSearchBar } from './HexSearchBar';
@@ -23,7 +24,9 @@ interface ScoredFormula extends MatsuiFormula {
 }
 
 export function MatsuiMix() {
-  const hex = useHexInput();
+  const [searchParams] = useSearchParams();
+  const initialHex = searchParams.get('hex') || undefined;
+  const hex = useHexInput(initialHex);
 
   const [seriesList, setSeriesList] = useState<MatsuiSeries[]>([]);
   const [selectedSeries, setSelectedSeries] = useState('301 RC Neo');
@@ -38,6 +41,7 @@ export function MatsuiMix() {
   const [selectedFormula, setSelectedFormula] = useState<MatsuiFormula | null>(null);
   const [saved, setSaved] = useState(false);
   const { saveCard } = useMixingCards();
+  const autoSearched = useRef(false);
 
   // Load series on mount
   useEffect(() => {
@@ -56,7 +60,7 @@ export function MatsuiMix() {
       .catch(() => setSeriesLoading(false));
   }, []);
 
-  const handleSearch = async () => {
+  const handleSearch = useCallback(async () => {
     if (!hex.hexInput.trim() || !hex.isValid) return;
 
     setSearching(true);
@@ -89,7 +93,15 @@ export function MatsuiMix() {
     } finally {
       setSearching(false);
     }
-  };
+  }, [hex.hexInput, hex.isValid, hex.normalizedHex, selectedSeries]);
+
+  // Auto-search when navigated with ?hex= param
+  useEffect(() => {
+    if (initialHex && hex.isValid && hex.hexInput.trim() && !seriesLoading && !autoSearched.current) {
+      autoSearched.current = true;
+      handleSearch();
+    }
+  }, [initialHex, hex.isValid, hex.hexInput, seriesLoading, handleSearch]);
 
   if (selectedFormula) {
     const resolvedHex = resolveFormulaHex(selectedFormula);
