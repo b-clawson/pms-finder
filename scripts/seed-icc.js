@@ -19,7 +19,7 @@ const __dirname = dirname(fileURLToPath(import.meta.url));
 const OUTPUT_PATH = resolve(__dirname, "../data/icc_7500_coated.json");
 const SWATCHES_PATH = resolve(__dirname, "../data/pantone_swatches.json");
 
-const ICC_BASE = "https://www.ultramixmanager.com";
+const ICC_BASE = "https://www.iccultramix.com";
 const FAMILY_ID = 7; // 7500 Coated
 const DELAY_MS = 100;
 
@@ -59,7 +59,10 @@ function loadSwatchMap() {
 
 function resolveHex(formulaName, swatchMap) {
   if (!formulaName) return null;
-  const upper = formulaName.toUpperCase().trim();
+  let upper = formulaName.toUpperCase().trim();
+
+  // Normalize "100C" → "100 C", "100U" → "100 U" (add space before trailing C/U suffix)
+  upper = upper.replace(/(\d)([CU])$/, "$1 $2");
 
   // Try direct match
   if (swatchMap.has(upper)) return swatchMap.get(upper);
