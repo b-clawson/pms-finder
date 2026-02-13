@@ -1,6 +1,7 @@
 import https from "node:https";
 
 const FNINK_API = "https://fnink-mixing-server.herokuapp.com/api";
+const agent = new https.Agent({ rejectUnauthorized: false });
 
 const cache = new Map();
 const CACHE_TTL = 10 * 60 * 1000; // 10 minutes
@@ -29,6 +30,7 @@ function graphqlPost(query, { useCache = false, cacheKey = "" } = {}) {
     port: 443,
     path: url.pathname,
     method: "POST",
+    agent,
     headers: {
       "Content-Type": "application/json",
       "Content-Length": Buffer.byteLength(body),
