@@ -3,6 +3,8 @@ import { Search, Trash2, ChevronDown, ChevronUp } from 'lucide-react';
 import { useMixingCards, type MixingCard } from '../hooks/useMixingCards';
 import { FormulaDetail } from './MatsuiFormulas';
 import { GGFormulaDetailView } from './GreenGalaxyMix';
+import { FnInkFormulaDetailView } from './FnInkMix';
+import { IccFormulaDetailView } from './IccMix';
 import { DistanceBadge } from './DistanceBadge';
 
 function timeAgo(iso: string): string {
@@ -35,19 +37,29 @@ function CardItem({
   const [confirmDelete, setConfirmDelete] = useState(false);
 
   const swatchHex =
-    card.type === 'matsui' ? card.resolvedHex : card.match.hex;
+    card.type === 'matsui'
+      ? card.resolvedHex
+      : card.type === 'greengalaxy'
+        ? card.match.hex
+        : card.match.hex;
 
   const seriesLabel =
     card.type === 'matsui'
       ? card.series
-      : card.category === 'UD'
-        ? 'Uncoated Direct'
-        : 'Coated Direct';
+      : card.type === 'greengalaxy'
+        ? (card.category === 'UD' ? 'Uncoated Direct' : 'Coated Direct')
+        : card.type === 'fnink'
+          ? 'FN-INK'
+          : card.family;
 
   const componentCount =
     card.type === 'matsui'
       ? card.formula.components.length
-      : card.formula.materials.length;
+      : card.type === 'greengalaxy'
+        ? card.formula.materials.length
+        : card.type === 'fnink'
+          ? card.match.formula.materials.length
+          : card.match.lines.length;
 
   const handleNameBlur = () => {
     setEditingName(false);
@@ -131,10 +143,20 @@ function CardItem({
             className={`inline-block px-2 py-0.5 rounded-full text-xs font-medium ${
               card.type === 'matsui'
                 ? 'bg-indigo-100 text-indigo-800'
-                : 'bg-emerald-100 text-emerald-800'
+                : card.type === 'greengalaxy'
+                  ? 'bg-emerald-100 text-emerald-800'
+                  : card.type === 'fnink'
+                    ? 'bg-orange-100 text-orange-800'
+                    : 'bg-sky-100 text-sky-800'
             }`}
           >
-            {card.type === 'matsui' ? 'Matsui' : 'Green Galaxy'}
+            {card.type === 'matsui'
+              ? 'Matsui'
+              : card.type === 'greengalaxy'
+                ? 'Green Galaxy'
+                : card.type === 'fnink'
+                  ? 'FN-INK'
+                  : 'ICC UltraMix'}
           </span>
           <span className="text-xs text-gray-500">{seriesLabel}</span>
         </div>
@@ -206,8 +228,12 @@ function CardItem({
         <div className="border-t border-gray-100 p-4">
           {card.type === 'matsui' ? (
             <FormulaDetail formula={card.formula} onBack={() => setExpanded(false)} />
-          ) : (
+          ) : card.type === 'greengalaxy' ? (
             <GGFormulaDetailView formula={card.formula} />
+          ) : card.type === 'fnink' ? (
+            <FnInkFormulaDetailView match={card.match} />
+          ) : (
+            <IccFormulaDetailView match={card.match} />
           )}
         </div>
       )}
@@ -218,7 +244,7 @@ function CardItem({
 export function MixingCards() {
   const { cards, updateCard, deleteCard } = useMixingCards();
   const [search, setSearch] = useState('');
-  const [typeFilter, setTypeFilter] = useState<'all' | 'matsui' | 'greengalaxy'>('all');
+  const [typeFilter, setTypeFilter] = useState<'all' | 'matsui' | 'greengalaxy' | 'fnink' | 'icc'>('all');
 
   const filtered = useMemo(() => {
     let result = cards;
@@ -234,7 +260,9 @@ export function MixingCards() {
           c.name.toLowerCase().includes(q) ||
           c.searchHex.toLowerCase().includes(q) ||
           (c.type === 'matsui' && c.formula.formulaCode.toLowerCase().includes(q)) ||
-          (c.type === 'greengalaxy' && c.match.code.toLowerCase().includes(q))
+          (c.type === 'greengalaxy' && c.match.code.toLowerCase().includes(q)) ||
+          (c.type === 'fnink' && c.match.code.toLowerCase().includes(q)) ||
+          (c.type === 'icc' && c.match.code.toLowerCase().includes(q))
       );
     }
 
@@ -246,7 +274,7 @@ export function MixingCards() {
       <div className="mb-8">
         <h1 className="text-3xl mb-2">Mixing Cards</h1>
         <p className="text-gray-600">
-          Your saved formula results from Matsui and Green Galaxy mixing
+          Your saved formula results from Matsui, Green Galaxy, FN-INK, and ICC mixing
         </p>
       </div>
 
@@ -276,6 +304,8 @@ export function MixingCards() {
               <option value="all">All ({cards.length})</option>
               <option value="matsui">Matsui ({cards.filter((c) => c.type === 'matsui').length})</option>
               <option value="greengalaxy">Green Galaxy ({cards.filter((c) => c.type === 'greengalaxy').length})</option>
+              <option value="fnink">FN-INK ({cards.filter((c) => c.type === 'fnink').length})</option>
+              <option value="icc">ICC UltraMix ({cards.filter((c) => c.type === 'icc').length})</option>
             </select>
           </div>
         </div>
@@ -286,7 +316,7 @@ export function MixingCards() {
         <div className="text-center py-16 text-gray-500">
           <p className="text-lg mb-2">No mixing cards saved yet</p>
           <p className="text-sm">
-            Save formulas from the Matsui or Green Galaxy mixing pages to see them here.
+            Save formulas from the Matsui, Green Galaxy, FN-INK, or ICC mixing pages to see them here.
           </p>
         </div>
       )}

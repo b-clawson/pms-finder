@@ -114,6 +114,20 @@ export function Sidebar() {
               nested
             />
             <NavItem
+              icon={<FlaskConical />}
+              label="FN-INK"
+              to="/mixing/fnink"
+              active={location.pathname === '/mixing/fnink'}
+              nested
+            />
+            <NavItem
+              icon={<FlaskConical />}
+              label="ICC UltraMix"
+              to="/mixing/icc"
+              active={location.pathname === '/mixing/icc'}
+              nested
+            />
+            <NavItem
               icon={<Bookmark />}
               label="Mixing Cards"
               to="/mixing/cards"

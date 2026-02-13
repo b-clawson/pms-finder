@@ -4,6 +4,8 @@ import { SwatchLibrary } from './components/SwatchLibrary';
 import { ColorExtraction } from './components/ColorExtraction';
 import { MatsuiMix } from './components/MatsuiMix';
 import { GreenGalaxyMix } from './components/GreenGalaxyMix';
+import { FnInkMix } from './components/FnInkMix';
+import { IccMix } from './components/IccMix';
 import { MixingCards } from './components/MixingCards';
 
 function SwatchLibraryPage() {
@@ -31,6 +33,8 @@ export default function App() {
               <Route path="/extract" element={<ColorExtraction />} />
               <Route path="/mixing/matsui" element={<MatsuiMix />} />
               <Route path="/mixing/greengalaxy" element={<GreenGalaxyMix />} />
+              <Route path="/mixing/fnink" element={<FnInkMix />} />
+              <Route path="/mixing/icc" element={<IccMix />} />
               <Route path="/mixing/cards" element={<MixingCards />} />
             </Routes>
           </div>

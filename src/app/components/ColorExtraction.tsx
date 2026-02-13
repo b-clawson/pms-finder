@@ -388,16 +388,16 @@ export function ColorExtraction() {
                   )}
 
                   {/* Action Buttons */}
-                  <div className="flex gap-2">
+                  <div className="grid grid-cols-2 gap-1.5">
                     <button
                       onClick={() =>
                         navigate(
                           `/mixing/matsui?hex=${encodeURIComponent(color.hex)}`
                         )
                       }
-                      className="flex-1 flex items-center justify-center gap-1.5 px-3 py-2 text-xs font-medium rounded-lg bg-[#0D9E7A] text-white hover:bg-[#0b8566] transition-colors"
+                      className="flex items-center justify-center gap-1 px-2 py-1.5 text-xs font-medium rounded-lg bg-[#0D9E7A] text-white hover:bg-[#0b8566] transition-colors"
                     >
-                      <FlaskConical className="w-3.5 h-3.5" />
+                      <FlaskConical className="w-3 h-3" />
                       Matsui
                     </button>
                     <button
@@ -406,10 +406,32 @@ export function ColorExtraction() {
                           `/mixing/greengalaxy?hex=${encodeURIComponent(color.hex)}`
                         )
                       }
-                      className="flex-1 flex items-center justify-center gap-1.5 px-3 py-2 text-xs font-medium rounded-lg bg-[#1B1B2F] text-white hover:bg-[#2a2a4a] transition-colors"
+                      className="flex items-center justify-center gap-1 px-2 py-1.5 text-xs font-medium rounded-lg bg-[#1B1B2F] text-white hover:bg-[#2a2a4a] transition-colors"
                     >
-                      <FlaskConical className="w-3.5 h-3.5" />
+                      <FlaskConical className="w-3 h-3" />
                       Green Galaxy
+                    </button>
+                    <button
+                      onClick={() =>
+                        navigate(
+                          `/mixing/fnink?hex=${encodeURIComponent(color.hex)}`
+                        )
+                      }
+                      className="flex items-center justify-center gap-1 px-2 py-1.5 text-xs font-medium rounded-lg bg-orange-500 text-white hover:bg-orange-600 transition-colors"
+                    >
+                      <FlaskConical className="w-3 h-3" />
+                      FN-INK
+                    </button>
+                    <button
+                      onClick={() =>
+                        navigate(
+                          `/mixing/icc?hex=${encodeURIComponent(color.hex)}`
+                        )
+                      }
+                      className="flex items-center justify-center gap-1 px-2 py-1.5 text-xs font-medium rounded-lg bg-sky-500 text-white hover:bg-sky-600 transition-colors"
+                    >
+                      <FlaskConical className="w-3 h-3" />
+                      ICC
                     </button>
                   </div>
                 </div>

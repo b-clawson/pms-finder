@@ -8,6 +8,7 @@
     "dev:server": "node server/index.js",
     "dev:client": "vite",
     "build": "vite build",
+    "seed:icc": "node scripts/seed-icc.js",
     "start": "node server/index.js"
   },
   "dependencies": {

@@ -1,6 +1,8 @@
 import { useState, useEffect, useCallback } from 'react';
 import type { MatsuiFormula } from '../types/matsui';
 import type { GGMatch, GGFormulaDetail } from '../types/greengalaxy';
+import type { FnInkMatch } from '../types/fnink';
+import type { IccMatch } from '../types/icc';
 
 type MixingCardBase = {
   id: string;
@@ -26,7 +28,20 @@ type GreenGalaxyCard = MixingCardBase & {
   distance: number;
 };
 
-export type MixingCard = MatsuiCard | GreenGalaxyCard;
+type FnInkCard = MixingCardBase & {
+  type: 'fnink';
+  match: FnInkMatch;
+  distance: number;
+};
+
+type IccCard = MixingCardBase & {
+  type: 'icc';
+  family: string;
+  match: IccMatch;
+  distance: number;
+};
+
+export type MixingCard = MatsuiCard | GreenGalaxyCard | FnInkCard | IccCard;
 
 const STORAGE_KEY = 'mixing-cards';
 

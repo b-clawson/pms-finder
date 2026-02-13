@@ -7,6 +7,8 @@ import { matchPms, getAllSwatches } from "./matcher.js";
 import { matsuiGet, matsuiPost } from "./matsuiClient.js";
 import { getLocalFormulas } from "./matsuiData.js";
 import { getGGColors, getGGFormula } from "./ggClient.js";
+import { getAllFnInkColors, getFnInkMaterials } from "./fninkClient.js";
+import { getIccFormulas, getIccFamilyNames } from "./iccData.js";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const app = express();
@@ -230,6 +232,116 @@ app.get("/api/gg/formula", async (req, res) => {
   } catch (err) {
     res.status(502).json({ error: "Failed to fetch GG formula", detail: err.message });
   }
+});
+
+// --- FN-INK API proxy ---
+app.get("/api/fnink/match", async (req, res) => {
+  const { hex, limit: rawLimit } = req.query;
+
+  if (!hex) {
+    return res.status(400).json({ error: "Missing required query param: hex" });
+  }
+  const normHex = normalizeHex(hex);
+  if (!normHex) {
+    return res.status(400).json({ error: "Invalid hex format. Expected #RRGGBB or RRGGBB." });
+  }
+
+  let limit = parseInt(rawLimit, 10);
+  if (isNaN(limit) || limit < 1) limit = 10;
+  if (limit > 50) limit = 50;
+
+  try {
+    const colors = await getAllFnInkColors();
+    const targetRgb = hexToRgb(normHex);
+
+    const scored = colors
+      .map((c) => {
+        if (!c.hex) return null;
+        const cHex = c.hex.startsWith("#") ? c.hex : `#${c.hex}`;
+        const cRgb = hexToRgb(cHex);
+        if (!cRgb) return null;
+        const distance = Math.round(rgbDistance(targetRgb, cRgb) * 100) / 100;
+        return {
+          id: c.id,
+          code: c.code,
+          name: c.name,
+          hex: cHex,
+          distance,
+          formula: c.formula,
+        };
+      })
+      .filter(Boolean);
+
+    scored.sort((a, b) => a.distance - b.distance);
+    res.json(scored.slice(0, limit));
+  } catch (err) {
+    res.status(502).json({ error: "Failed to fetch FN-INK colors", detail: err.message });
+  }
+});
+
+app.get("/api/fnink/materials", async (req, res) => {
+  try {
+    const materials = await getFnInkMaterials();
+    res.json(materials);
+  } catch (err) {
+    res.status(502).json({ error: "Failed to fetch FN-INK materials", detail: err.message });
+  }
+});
+
+// --- ICC UltraMix routes ---
+app.get("/api/icc/match", async (req, res) => {
+  const { hex, family, limit: rawLimit } = req.query;
+
+  if (!hex) {
+    return res.status(400).json({ error: "Missing required query param: hex" });
+  }
+  const normHex = normalizeHex(hex);
+  if (!normHex) {
+    return res.status(400).json({ error: "Invalid hex format. Expected #RRGGBB or RRGGBB." });
+  }
+
+  const familyName = family || "7500 Coated";
+
+  let limit = parseInt(rawLimit, 10);
+  if (isNaN(limit) || limit < 1) limit = 10;
+  if (limit > 50) limit = 50;
+
+  try {
+    const formulas = await getIccFormulas(familyName);
+    if (!formulas) {
+      return res.status(404).json({ error: `No ICC data for family: ${familyName}` });
+    }
+
+    const targetRgb = hexToRgb(normHex);
+
+    const scored = formulas
+      .map((f) => {
+        if (!f.hex) return null;
+        const fHex = f.hex.startsWith("#") ? f.hex : `#${f.hex}`;
+        const fRgb = hexToRgb(fHex);
+        if (!fRgb) return null;
+        const distance = Math.round(rgbDistance(targetRgb, fRgb) * 100) / 100;
+        return {
+          id: f.id || f.code,
+          code: f.code,
+          name: f.name,
+          hex: fHex,
+          distance,
+          family: familyName,
+          lines: f.lines || [],
+        };
+      })
+      .filter(Boolean);
+
+    scored.sort((a, b) => a.distance - b.distance);
+    res.json(scored.slice(0, limit));
+  } catch (err) {
+    res.status(500).json({ error: "Failed to match ICC formulas", detail: err.message });
+  }
+});
+
+app.get("/api/icc/families", async (req, res) => {
+  res.json(getIccFamilyNames());
 });
 
 // SPA fallback — serve index.html for non-API routes (production build)
