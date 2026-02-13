@@ -13,7 +13,7 @@ function SwatchLibraryPage() {
     <>
       <div className="mb-8">
         <h1 className="text-3xl mb-2">Swatch Library</h1>
-        <p className="text-gray-600">Browse all 901 Pantone swatches — click any swatch to copy its hex</p>
+        <p className="text-gray-600">Browse Pantone swatches — click any swatch to copy its hex</p>
       </div>
       <SwatchLibrary />
     </>
