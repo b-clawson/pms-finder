@@ -4,6 +4,7 @@ import { resolve, dirname } from "node:path";
 import { fileURLToPath } from "node:url";
 import { stubSwatches } from "./stubSwatches.js";
 import { normalizeHex, hexToRgb, rgbDistance } from "./color.js";
+import { PantoneSwatchSchema, validateRecords } from "../shared/schemas.js";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const DATA_PATH = resolve(__dirname, "../data/pantone_swatches.json");
@@ -19,6 +20,11 @@ async function loadSwatches() {
     try {
       const raw = await readFile(DATA_PATH, "utf-8");
       swatches = JSON.parse(raw);
+      const { valid, invalid, errors } = validateRecords(swatches, PantoneSwatchSchema, "Pantone Swatches");
+      if (invalid > 0) {
+        console.warn(`[Pantone] ${invalid}/${valid + invalid} swatches failed validation`);
+        for (const e of errors.slice(0, 5)) console.warn(`  ${e.id}: ${e.issues.join("; ")}`);
+      }
       mode = "live";
       console.log(`Loaded ${swatches.length} swatches from ${DATA_PATH}`);
       return;

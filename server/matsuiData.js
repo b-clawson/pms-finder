@@ -2,6 +2,7 @@ import { readFile } from "node:fs/promises";
 import { existsSync } from "node:fs";
 import { resolve, dirname } from "node:path";
 import { fileURLToPath } from "node:url";
+import { MatsuiFormulaSchema, validateRecords } from "../shared/schemas.js";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
@@ -26,6 +27,11 @@ async function loadSeries(seriesName) {
   try {
     const raw = await readFile(filePath, "utf-8");
     const formulas = JSON.parse(raw);
+    const { valid, invalid, errors } = validateRecords(formulas, MatsuiFormulaSchema, seriesName);
+    if (invalid > 0) {
+      console.warn(`[Matsui] ${seriesName}: ${invalid}/${valid + invalid} records failed validation`);
+      for (const e of errors.slice(0, 5)) console.warn(`  ${e.id}: ${e.issues.join("; ")}`);
+    }
     cache.set(seriesName, formulas);
     console.log(`Loaded ${formulas.length} local Matsui formulas for ${seriesName}`);
     return formulas;

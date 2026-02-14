@@ -2,6 +2,7 @@ import XLSX from "xlsx";
 import { readFileSync, writeFileSync } from "node:fs";
 import { resolve, dirname } from "node:path";
 import { fileURLToPath } from "node:url";
+import { MatsuiFormulaSchema, validateRecords } from "../shared/schemas.js";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const dataDir = resolve(__dirname, "../data");
@@ -196,6 +197,8 @@ function convertFile(seriesName, inputFile, outputFile) {
     return a.formulaCode.localeCompare(b.formulaCode);
   });
 
+  const { valid, invalid } = validateRecords(formulas, MatsuiFormulaSchema, seriesName);
+  if (invalid > 0) console.warn(`  Validation: ${invalid}/${formulas.length} records failed schema check`);
   writeFileSync(outputPath, JSON.stringify(formulas, null, 2));
   console.log(`  Wrote ${formulas.length} formulas to ${outputFile} (${pmsMatched} PMS matched, ${formulas.length - pmsMatched} blended)`);
   if (missingHex > 0) {
@@ -210,3 +213,4 @@ for (const s of SERIES) {
   total += convertFile(s.name, s.input, s.output);
 }
 console.log(`\n=== Total: ${total} formulas across ${SERIES.length} series ===`);
+console.log(`Run "npm run validate:data" for full integrity checks.`);

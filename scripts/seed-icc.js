@@ -14,6 +14,7 @@ import https from "node:https";
 import { readFileSync, writeFileSync, existsSync } from "node:fs";
 import { resolve, dirname } from "node:path";
 import { fileURLToPath } from "node:url";
+import { IccFormulaSchema, validateRecords } from "../shared/schemas.js";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const OUTPUT_PATH = resolve(__dirname, "../data/icc_7500_coated.json");
@@ -208,7 +209,7 @@ async function main() {
         const lines = data.lines || data.formula_lines || [];
         const hex = resolveHex(name, swatchMap);
 
-        results.push({
+        const formula = {
           id: String(id),
           code: name,
           name: name,
@@ -222,7 +223,12 @@ async function main() {
             category: l.category || l.type || "",
             density: parseFloat(l.density || 0),
           })),
-        });
+        };
+        const check = IccFormulaSchema.safeParse(formula);
+        if (!check.success) {
+          console.warn(`  Schema warning for formula ${id}: ${check.error.issues.map(i => i.message).join("; ")}`);
+        }
+        results.push(formula);
         existingIds.add(String(id));
         fetched++;
       }
@@ -243,8 +249,10 @@ async function main() {
     await sleep(DELAY_MS);
   }
 
+  const { valid, invalid } = validateRecords(results, IccFormulaSchema, "ICC 7500 Coated");
+  console.log(`\nValidation: ${valid} valid, ${invalid} invalid out of ${results.length}`);
   writeFileSync(OUTPUT_PATH, JSON.stringify(results, null, 2));
-  console.log(`\nDone! ${results.length} total formulas saved to ${OUTPUT_PATH}`);
+  console.log(`Done! ${results.length} total formulas saved to ${OUTPUT_PATH}`);
   console.log(`Fetched: ${fetched}, Skipped: ${skipped}, Errors: ${errors}`);
 }
 

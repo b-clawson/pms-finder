@@ -2,6 +2,7 @@ import { readFile } from "node:fs/promises";
 import { existsSync } from "node:fs";
 import { resolve, dirname } from "node:path";
 import { fileURLToPath } from "node:url";
+import { IccFormulaSchema, validateRecords } from "../shared/schemas.js";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
@@ -21,6 +22,11 @@ async function loadFamily(familyName) {
   try {
     const raw = await readFile(filePath, "utf-8");
     const formulas = JSON.parse(raw);
+    const { valid, invalid, errors } = validateRecords(formulas, IccFormulaSchema, familyName);
+    if (invalid > 0) {
+      console.warn(`[ICC] ${familyName}: ${invalid}/${valid + invalid} records failed validation`);
+      for (const e of errors.slice(0, 5)) console.warn(`  ${e.id}: ${e.issues.join("; ")}`);
+    }
     cache.set(familyName, formulas);
     console.log(`Loaded ${formulas.length} ICC formulas for ${familyName}`);
     return formulas;
