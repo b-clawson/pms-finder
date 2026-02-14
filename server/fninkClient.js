@@ -2,6 +2,7 @@ import https from "node:https";
 
 const FNINK_API = "https://fnink-mixing-server.herokuapp.com/api";
 const agent = new https.Agent({ rejectUnauthorized: false });
+const REQUEST_TIMEOUT = 15_000;
 
 const cache = new Map();
 const CACHE_TTL = 10 * 60 * 1000; // 10 minutes
@@ -14,6 +15,31 @@ function getCached(key) {
 
 function setCache(key, data) {
   cache.set(key, { data, ts: Date.now() });
+}
+
+/** Lightweight shape check for GraphQL response data. */
+function looksValidGraphQL(cacheKey, data) {
+  if (data == null || typeof data !== "object") {
+    console.warn(`[FN-INK] Invalid GraphQL data for ${cacheKey}: not an object`);
+    return false;
+  }
+  if (cacheKey === "fnink:colors" && data.colors) {
+    if (!Array.isArray(data.colors)) {
+      console.warn(`[FN-INK] Expected colors array for ${cacheKey}`);
+      return false;
+    }
+    if (data.colors.length > 0 && typeof data.colors[0].code !== "string") {
+      console.warn(`[FN-INK] First color missing 'code' field`);
+      return false;
+    }
+  }
+  if (cacheKey === "fnink:materials" && data.materials) {
+    if (!Array.isArray(data.materials)) {
+      console.warn(`[FN-INK] Expected materials array for ${cacheKey}`);
+      return false;
+    }
+  }
+  return true;
 }
 
 function graphqlPost(query, { useCache = false, cacheKey = "" } = {}) {
@@ -48,7 +74,13 @@ function graphqlPost(query, { useCache = false, cacheKey = "" } = {}) {
             reject(new Error(parsed.errors[0]?.message || "GraphQL error"));
             return;
           }
-          if (useCache && cacheKey) setCache(cacheKey, parsed.data);
+          if (useCache && cacheKey) {
+            if (looksValidGraphQL(cacheKey, parsed.data)) {
+              setCache(cacheKey, parsed.data);
+            } else {
+              console.warn(`[FN-INK] Skipping cache for ${cacheKey} due to invalid response`);
+            }
+          }
           resolve(parsed.data);
         } catch (e) {
           reject(new Error("Invalid JSON from FN-INK API"));
@@ -56,6 +88,9 @@ function graphqlPost(query, { useCache = false, cacheKey = "" } = {}) {
       });
     });
     req.on("error", reject);
+    req.setTimeout(REQUEST_TIMEOUT, () => {
+      req.destroy(new Error(`FN-INK API timeout after ${REQUEST_TIMEOUT}ms`));
+    });
     req.write(body);
     req.end();
   });

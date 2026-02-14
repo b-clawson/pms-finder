@@ -4,8 +4,8 @@ import { z } from "zod";
 const IccLineSchema = z.object({
   part_number: z.string(),
   name: z.string(),
-  percent: z.number(),
-  weight: z.number(),
+  percent: z.number().min(0),
+  weight: z.number().min(0),
   category: z.string(),
   density: z.number(),
 });
@@ -23,8 +23,8 @@ export const IccFormulaSchema = z.object({
 const MatsuiComponentSchema = z.object({
   componentCode: z.string(),
   componentDescription: z.string(),
-  percentage: z.number(),
-  hex: z.string().regex(/^[0-9A-Fa-f]{6}$/).or(z.literal("")),
+  percentage: z.number().min(0),
+  hex: z.string().regex(/^[0-9A-Fa-f]{6}$/).nullable(),
   isBase: z.boolean(),
 });
 

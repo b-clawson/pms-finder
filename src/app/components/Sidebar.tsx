@@ -62,7 +62,7 @@ function NavSection({ icon, label, active, expanded, onToggle, children }: NavSe
 export function Sidebar() {
   const location = useLocation();
   const isMixingActive = location.pathname.startsWith('/mixing');
-  const [mixingExpanded, setMixingExpanded] = useState(isMixingActive || true);
+  const [mixingExpanded, setMixingExpanded] = useState<boolean>(isMixingActive || true);
 
   return (
     <aside className="w-[230px] bg-[#1B1B2F] h-screen sticky top-0 flex flex-col">

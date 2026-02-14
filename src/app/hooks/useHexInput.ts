@@ -23,7 +23,8 @@ function fetchSwatches(): Promise<Swatch[]> {
       swatchCache = data.swatches as Swatch[];
       return swatchCache;
     })
-    .catch(() => {
+    .catch((err) => {
+      console.warn('[useHexInput] Failed to fetch swatches:', err);
       swatchPromise = null;
       return [] as Swatch[];
     });

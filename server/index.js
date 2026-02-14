@@ -10,6 +10,31 @@ import { getGGColors, getGGFormula } from "./ggClient.js";
 import { getAllFnInkColors, getFnInkMaterials } from "./fninkClient.js";
 import { getIccFormulas, getIccFamilyNames } from "./iccData.js";
 
+// --- Shared validation helpers ---
+
+/** Validate & normalize hex from query. Sends 400 and returns null if invalid. */
+function parseHex(req, res) {
+  const { hex } = req.query;
+  if (!hex) {
+    res.status(400).json({ error: "Missing required query param: hex" });
+    return null;
+  }
+  const normHex = normalizeHex(hex);
+  if (!normHex) {
+    res.status(400).json({ error: "Invalid hex format. Expected #RRGGBB or RRGGBB." });
+    return null;
+  }
+  return normHex;
+}
+
+/** Parse & clamp a limit value. */
+function parseLimit(raw, { min = 1, max = 50, defaultVal = 10 } = {}) {
+  let limit = parseInt(raw, 10);
+  if (isNaN(limit) || limit < min) limit = defaultVal;
+  if (limit > max) limit = max;
+  return limit;
+}
+
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -23,28 +48,18 @@ app.use(express.json());
 
 // API endpoint
 app.get("/api/pms", async (req, res) => {
-  const { hex, series: rawSeries, limit: rawLimit } = req.query;
+  const { series: rawSeries, limit: rawLimit } = req.query;
 
-  // --- Validate hex ---
-  if (!hex) {
-    return res.status(400).json({ error: "Missing required query param: hex" });
-  }
-  const normHex = normalizeHex(hex);
-  if (!normHex) {
-    return res.status(400).json({ error: "Invalid hex format. Expected #RRGGBB or RRGGBB." });
-  }
+  const normHex = parseHex(req, res);
+  if (!normHex) return;
 
-  // --- Validate series ---
   const VALID_SERIES = ["C", "U", "BOTH"];
   const series = rawSeries ? rawSeries.toUpperCase() : "BOTH";
   if (!VALID_SERIES.includes(series)) {
     return res.status(400).json({ error: `Invalid series. Expected one of: ${VALID_SERIES.join(", ")}` });
   }
 
-  // --- Validate limit ---
-  let limit = parseInt(rawLimit, 10);
-  if (isNaN(limit) || limit < 1) limit = 10;
-  if (limit > 50) limit = 50;
+  const limit = parseLimit(rawLimit);
 
   try {
     const { results, mode } = await matchPms(normHex, series, limit);
@@ -122,22 +137,16 @@ app.post("/api/matsui/closest", async (req, res) => {
 
 // Server-side Matsui color matching
 app.get("/api/matsui/match", async (req, res) => {
-  const { hex, series, limit: rawLimit } = req.query;
+  const { series, limit: rawLimit } = req.query;
 
-  if (!hex) {
-    return res.status(400).json({ error: "Missing required query param: hex" });
-  }
-  const normHex = normalizeHex(hex);
-  if (!normHex) {
-    return res.status(400).json({ error: "Invalid hex format. Expected #RRGGBB or RRGGBB." });
-  }
+  const normHex = parseHex(req, res);
+  if (!normHex) return;
+
   if (!series) {
     return res.status(400).json({ error: "Missing required query param: series" });
   }
 
-  let limit = parseInt(rawLimit, 10);
-  if (isNaN(limit) || limit < 1) limit = 10;
-  if (limit > 50) limit = 50;
+  const limit = parseLimit(rawLimit);
 
   try {
     // Try local data first, then fall back to API
@@ -179,24 +188,17 @@ app.get("/api/matsui/match", async (req, res) => {
 
 // --- Green Galaxy API proxy ---
 app.get("/api/gg/match", async (req, res) => {
-  const { hex, category, limit: rawLimit } = req.query;
+  const { category, limit: rawLimit } = req.query;
 
-  if (!hex) {
-    return res.status(400).json({ error: "Missing required query param: hex" });
-  }
-  const normHex = normalizeHex(hex);
-  if (!normHex) {
-    return res.status(400).json({ error: "Invalid hex format. Expected #RRGGBB or RRGGBB." });
-  }
+  const normHex = parseHex(req, res);
+  if (!normHex) return;
 
   const cat = (category || "UD").toUpperCase();
   if (cat !== "UD" && cat !== "CD") {
     return res.status(400).json({ error: "Invalid category. Expected UD or CD." });
   }
 
-  let limit = parseInt(rawLimit, 10);
-  if (isNaN(limit) || limit < 1) limit = 10;
-  if (limit > 50) limit = 50;
+  const limit = parseLimit(rawLimit);
 
   try {
     const colors = await getGGColors(cat);
@@ -236,19 +238,12 @@ app.get("/api/gg/formula", async (req, res) => {
 
 // --- FN-INK API proxy ---
 app.get("/api/fnink/match", async (req, res) => {
-  const { hex, limit: rawLimit } = req.query;
+  const { limit: rawLimit } = req.query;
 
-  if (!hex) {
-    return res.status(400).json({ error: "Missing required query param: hex" });
-  }
-  const normHex = normalizeHex(hex);
-  if (!normHex) {
-    return res.status(400).json({ error: "Invalid hex format. Expected #RRGGBB or RRGGBB." });
-  }
+  const normHex = parseHex(req, res);
+  if (!normHex) return;
 
-  let limit = parseInt(rawLimit, 10);
-  if (isNaN(limit) || limit < 1) limit = 10;
-  if (limit > 50) limit = 50;
+  const limit = parseLimit(rawLimit);
 
   try {
     const colors = await getAllFnInkColors();
@@ -290,21 +285,13 @@ app.get("/api/fnink/materials", async (req, res) => {
 
 // --- ICC UltraMix routes ---
 app.get("/api/icc/match", async (req, res) => {
-  const { hex, family, limit: rawLimit } = req.query;
+  const { family, limit: rawLimit } = req.query;
 
-  if (!hex) {
-    return res.status(400).json({ error: "Missing required query param: hex" });
-  }
-  const normHex = normalizeHex(hex);
-  if (!normHex) {
-    return res.status(400).json({ error: "Invalid hex format. Expected #RRGGBB or RRGGBB." });
-  }
+  const normHex = parseHex(req, res);
+  if (!normHex) return;
 
   const familyName = family || "7500 Coated";
-
-  let limit = parseInt(rawLimit, 10);
-  if (isNaN(limit) || limit < 1) limit = 10;
-  if (limit > 50) limit = 50;
+  const limit = parseLimit(rawLimit);
 
   try {
     const formulas = await getIccFormulas(familyName);

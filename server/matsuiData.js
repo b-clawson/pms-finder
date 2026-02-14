@@ -18,6 +18,18 @@ const LOCAL_FILES = {
 // In-memory cache: series name → formula array
 const cache = new Map();
 
+/** Returns true if a formula is junk data (test/duplicate/bad sums). */
+function isJunkFormula(formula) {
+  const code = formula.formulaCode || "";
+  if (code.startsWith("COPY:")) return true;
+  if (code === "TEST") return true;
+  const pctSum = (formula.components || []).reduce(
+    (sum, c) => sum + (c.percentage || 0),
+    0
+  );
+  return pctSum > 110;
+}
+
 async function loadSeries(seriesName) {
   if (cache.has(seriesName)) return cache.get(seriesName);
 
@@ -26,11 +38,16 @@ async function loadSeries(seriesName) {
 
   try {
     const raw = await readFile(filePath, "utf-8");
-    const formulas = JSON.parse(raw);
-    const { valid, invalid, errors } = validateRecords(formulas, MatsuiFormulaSchema, seriesName);
+    const allFormulas = JSON.parse(raw);
+    const { valid, invalid, errors } = validateRecords(allFormulas, MatsuiFormulaSchema, seriesName);
     if (invalid > 0) {
       console.warn(`[Matsui] ${seriesName}: ${invalid}/${valid + invalid} records failed validation`);
       for (const e of errors.slice(0, 5)) console.warn(`  ${e.id}: ${e.issues.join("; ")}`);
+    }
+    const formulas = allFormulas.filter((f) => !isJunkFormula(f));
+    const filtered = allFormulas.length - formulas.length;
+    if (filtered > 0) {
+      console.log(`[Matsui] ${seriesName}: filtered ${filtered} junk records (COPY/TEST/bad sums)`);
     }
     cache.set(seriesName, formulas);
     console.log(`Loaded ${formulas.length} local Matsui formulas for ${seriesName}`);

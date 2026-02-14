@@ -147,7 +147,7 @@ function convertFile(seriesName, inputFile, outputFile) {
       });
     }
     const compCode = String(row.ComponentCode || "").trim();
-    const hex = COMP_HEX[compCode] || "";
+    const hex = COMP_HEX[compCode] || null;
     grouped.get(code).components.push({
       componentCode: compCode,
       componentDescription: String(row.ComponentDescription || "").trim(),

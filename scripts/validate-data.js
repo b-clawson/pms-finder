@@ -135,6 +135,17 @@ for (const { label, file, minRecords } of FILES.matsui) {
   printResult(result);
   checkMinRecords(data, label, minRecords);
   checkPercentageSums(data, label, "formulaCode", "components", "percentage", 5);
+  // Report junk records that would be filtered at runtime
+  let junkCount = 0;
+  for (const record of data) {
+    const code = record.formulaCode || "";
+    if (code.startsWith("COPY:") || code === "TEST") { junkCount++; continue; }
+    const pctSum = (record.components || []).reduce((s, c) => s + (c.percentage || 0), 0);
+    if (pctSum > 110) junkCount++;
+  }
+  if (junkCount > 0) {
+    console.log(`  INFO: ${junkCount} junk records filtered at runtime (COPY/TEST/bad sums)`);
+  }
 }
 
 // 3. Pantone

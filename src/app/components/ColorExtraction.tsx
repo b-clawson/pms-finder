@@ -21,6 +21,7 @@ interface ExtractedColor {
   b: number;
   pmsMatch: PMSMatch | null;
   loading: boolean;
+  apiError: boolean;
 }
 
 function rgbToHex(r: number, g: number, b: number): string {
@@ -67,6 +68,7 @@ export function ColorExtraction() {
         b,
         pmsMatch: null,
         loading: true,
+        apiError: false,
       }));
       setColors(initial);
 
@@ -77,10 +79,12 @@ export function ColorExtraction() {
           const res = await fetch(`/api/pms?hex=${encodeURIComponent(hex)}&series=BOTH&limit=1`);
           const data = await res.json();
           if (res.ok && data.results?.length > 0) {
-            return { index: i, match: data.results[0] as PMSMatch };
+            return { index: i, match: data.results[0] as PMSMatch, apiError: false };
           }
-        } catch { /* ignore individual failures */ }
-        return { index: i, match: null };
+          return { index: i, match: null, apiError: false };
+        } catch {
+          return { index: i, match: null, apiError: true };
+        }
       });
 
       const results = await Promise.all(promises);
@@ -88,7 +92,7 @@ export function ColorExtraction() {
       setColors((prev) =>
         prev.map((c, i) => {
           const result = results.find((r) => r.index === i);
-          return { ...c, pmsMatch: result?.match ?? null, loading: false };
+          return { ...c, pmsMatch: result?.match ?? null, loading: false, apiError: result?.apiError ?? false };
         })
       );
     } catch {
@@ -166,18 +170,18 @@ export function ColorExtraction() {
   // Fetch PMS match for a single swatch and update it in place
   const fetchPmsForIndex = useCallback(async (idx: number, hex: string) => {
     setColors((prev) =>
-      prev.map((c, i) => (i === idx ? { ...c, loading: true, pmsMatch: null } : c))
+      prev.map((c, i) => (i === idx ? { ...c, loading: true, pmsMatch: null, apiError: false } : c))
     );
     try {
       const res = await fetch(`/api/pms?hex=${encodeURIComponent(hex)}&series=BOTH&limit=1`);
       const data = await res.json();
       const match = res.ok && data.results?.length > 0 ? (data.results[0] as PMSMatch) : null;
       setColors((prev) =>
-        prev.map((c, i) => (i === idx ? { ...c, pmsMatch: match, loading: false } : c))
+        prev.map((c, i) => (i === idx ? { ...c, pmsMatch: match, loading: false, apiError: false } : c))
       );
     } catch {
       setColors((prev) =>
-        prev.map((c, i) => (i === idx ? { ...c, loading: false } : c))
+        prev.map((c, i) => (i === idx ? { ...c, loading: false, apiError: true } : c))
       );
     }
   }, []);
@@ -384,7 +388,9 @@ export function ColorExtraction() {
                       <DistanceBadge distance={color.pmsMatch.distance} />
                     </div>
                   ) : (
-                    <p className="text-sm text-gray-400 mb-3">No PMS match found</p>
+                    <p className="text-sm text-gray-400 mb-3">
+                      {color.apiError ? 'PMS lookup failed' : 'No PMS match found'}
+                    </p>
                   )}
 
                   {/* Action Buttons */}

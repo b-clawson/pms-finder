@@ -1,3 +1,4 @@
+/// <reference types="vitest" />
 import { defineConfig } from 'vite'
 import path from 'path'
 import tailwindcss from '@tailwindcss/vite'
@@ -16,6 +17,9 @@ export default defineConfig({
   assetsInclude: ['**/*.svg', '**/*.csv'],
   build: {
     outDir: 'dist',
+  },
+  test: {
+    include: ['tests/**/*.test.{ts,js}'],
   },
   server: {
     port: 5173,

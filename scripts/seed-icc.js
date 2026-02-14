@@ -58,11 +58,74 @@ function loadSwatchMap() {
   return map;
 }
 
+// Standard Pantone reference hex values for specialty colors
+const SPECIALTY_HEX = {
+  "BLACK C": "#2D2926",
+  "BLACK 2 C": "#332F21",
+  "BLACK 3 C": "#212721",
+  "BLACK 4 C": "#31261D",
+  "BLACK 5 C": "#3E3D2D",
+  "BLACK 6 C": "#101820",
+  "BLACK 7 C": "#3D3935",
+  "BLUE 072 C": "#0018A8",
+  "BRIGHT RED C": "#F93822",
+  "COOL GRAY 1 C": "#D9D9D6",
+  "COOL GRAY 2 C": "#D0D0CE",
+  "COOL GRAY 3 C": "#C8C9C7",
+  "COOL GRAY 4 C": "#BBBCBC",
+  "COOL GRAY 5 C": "#B1B3B3",
+  "COOL GRAY 6 C": "#A7A8AA",
+  "COOL GRAY 7 C": "#97999B",
+  "COOL GRAY 8 C": "#888B8D",
+  "COOL GRAY 9 C": "#75787B",
+  "COOL GRAY 10 C": "#63666A",
+  "COOL GRAY 11 C": "#53565A",
+  "DARK BLUE C": "#00239C",
+  "GREEN C": "#00AB84",
+  "MEDIUM PURPLE C": "#4E008E",
+  "ORANGE 021 C": "#FE5000",
+  "PINK C": "#D62598",
+  "PROCESS BLACK C": "#2D2926",
+  "PROCESS BLUE C": "#0085CA",
+  "PROCESS CYAN C": "#009FE3",
+  "PROCESS MAGENTA C": "#D6006E",
+  "PROCESS YELLOW C": "#FFD500",
+  "PURPLE C": "#BB29BB",
+  "RED 032 C": "#EF3340",
+  "REFLEX BLUE C": "#001489",
+  "RHODAMINE RED C": "#E10098",
+  "RUBINE RED C": "#CE0058",
+  "VIOLET C": "#440099",
+  "VIOLET V2 C": "#440099",
+  "WARM GRAY 1 C": "#D7D2CB",
+  "WARM GRAY 2 C": "#CBC4BC",
+  "WARM GRAY 3 C": "#BFB8AF",
+  "WARM GRAY 4 C": "#B6ADA5",
+  "WARM GRAY 5 C": "#ACA39A",
+  "WARM GRAY 6 C": "#A59C94",
+  "WARM GRAY 7 C": "#968C83",
+  "WARM GRAY 8 C": "#8C8279",
+  "WARM GRAY 9 C": "#83786F",
+  "WARM GRAY 10 C": "#796E65",
+  "WARM GRAY 10C": "#796E65",
+  "WARM GRAY 11 C": "#6D6662",
+  "WARM RED C": "#F9423A",
+  "YELLOW C": "#FEDD00",
+  "YELLOW 012 C": "#FFD700",
+  "YELLOW PY12 C": "#FFD700",
+};
+
 function resolveHex(formulaName, swatchMap) {
   if (!formulaName) return null;
   let upper = formulaName.toUpperCase().trim();
 
-  // Normalize "100C" → "100 C", "100U" → "100 U" (add space before trailing C/U suffix)
+  // Check specialty map first
+  if (SPECIALTY_HEX[upper]) return SPECIALTY_HEX[upper];
+
+  // Strip date suffixes: "113C - 6-2023", "282C - 8-2-24", "152C 10-29-24"
+  upper = upper.replace(/\s*-?\s*\d{1,2}-\d{1,2}-?\d{2,4}$/, "");
+
+  // Normalize "100C" → "100 C", "100U" → "100 U"
   upper = upper.replace(/(\d)([CU])$/, "$1 $2");
 
   // Try direct match

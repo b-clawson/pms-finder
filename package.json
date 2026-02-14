@@ -8,8 +8,11 @@
     "dev:server": "node server/index.js",
     "dev:client": "vite",
     "build": "vite build",
+    "patch:icc": "node scripts/patch-icc-hex.js",
     "seed:icc": "node scripts/seed-icc.js",
     "start": "node server/index.js",
+    "test": "vitest run",
+    "test:watch": "vitest",
     "validate:data": "node scripts/validate-data.js"
   },
   "dependencies": {
@@ -76,9 +79,13 @@
   },
   "devDependencies": {
     "@tailwindcss/vite": "4.1.12",
+    "@types/react": "^19.2.14",
+    "@types/react-dom": "^19.2.3",
     "@vitejs/plugin-react": "4.7.0",
     "tailwindcss": "4.1.12",
+    "typescript": "^5.9.3",
     "vite": "6.3.5",
+    "vitest": "^4.0.18",
     "xlsx": "^0.18.5"
   }
 }

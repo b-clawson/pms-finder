@@ -43,6 +43,9 @@ type IccCard = MixingCardBase & {
 
 export type MixingCard = MatsuiCard | GreenGalaxyCard | FnInkCard | IccCard;
 
+type DistributiveOmit<T, K extends keyof T> = T extends unknown ? Omit<T, K> : never;
+export type NewMixingCard = DistributiveOmit<MixingCard, 'id' | 'createdAt'>;
+
 const STORAGE_KEY = 'mixing-cards';
 
 function loadCards(): MixingCard[] {
@@ -73,7 +76,7 @@ export function useMixingCards() {
     return () => window.removeEventListener('storage', handler);
   }, []);
 
-  const saveCard = useCallback((card: Omit<MixingCard, 'id' | 'createdAt'>) => {
+  const saveCard = useCallback((card: NewMixingCard) => {
     setCards((prev) => {
       const newCard = {
         ...card,

@@ -36,6 +36,7 @@ export function MatsuiMix() {
   const [pmsResults, setPmsResults] = useState<PMSMatch[]>([]);
   const [matsuiResults, setMatsuiResults] = useState<ScoredFormula[]>([]);
   const [error, setError] = useState<string | null>(null);
+  const [pmsError, setPmsError] = useState<string | null>(null);
   const [hasSearched, setHasSearched] = useState(false);
 
   const [selectedFormula, setSelectedFormula] = useState<MatsuiFormula | null>(null);
@@ -65,31 +66,37 @@ export function MatsuiMix() {
 
     setSearching(true);
     setError(null);
+    setPmsError(null);
     setPmsResults([]);
     setMatsuiResults([]);
     setHasSearched(true);
     setSelectedFormula(null);
 
     try {
-      const [pmsRes, matsuiRes] = await Promise.all([
-        fetch(`/api/pms?hex=${encodeURIComponent(hex.normalizedHex)}&series=BOTH&limit=5`),
-        fetch(`/api/matsui/match?hex=${encodeURIComponent(hex.normalizedHex)}&series=${encodeURIComponent(selectedSeries)}&limit=10`),
+      await Promise.all([
+        (async () => {
+          try {
+            const res = await fetch(`/api/pms?hex=${encodeURIComponent(hex.normalizedHex)}&series=BOTH&limit=5`);
+            const data = await res.json();
+            if (res.ok && data.results) setPmsResults(data.results);
+          } catch {
+            setPmsError('Failed to load PMS matches');
+          }
+        })(),
+        (async () => {
+          try {
+            const res = await fetch(`/api/matsui/match?hex=${encodeURIComponent(hex.normalizedHex)}&series=${encodeURIComponent(selectedSeries)}&limit=10`);
+            const data = await res.json();
+            if (res.ok && Array.isArray(data)) {
+              setMatsuiResults(data);
+            } else if (data.error) {
+              setError(data.error);
+            }
+          } catch {
+            setError('Network error — is the server running?');
+          }
+        })(),
       ]);
-
-      const pmsData = await pmsRes.json();
-      const matsuiData = await matsuiRes.json();
-
-      if (pmsRes.ok && pmsData.results) {
-        setPmsResults(pmsData.results);
-      }
-
-      if (matsuiRes.ok && Array.isArray(matsuiData)) {
-        setMatsuiResults(matsuiData);
-      } else if (matsuiData.error) {
-        setError(matsuiData.error);
-      }
-    } catch {
-      setError('Network error — is the server running?');
     } finally {
       setSearching(false);
     }
@@ -174,10 +181,15 @@ export function MatsuiMix() {
         </div>
       </HexSearchBar>
 
-      {/* Error */}
+      {/* Errors */}
       {error && (
         <div className="rounded-lg bg-red-50 border border-red-200 text-red-800 px-4 py-3 text-sm mb-6">
           {error}
+        </div>
+      )}
+      {pmsError && (
+        <div className="rounded-lg bg-amber-50 border border-amber-200 text-amber-800 px-4 py-3 text-sm mb-6">
+          {pmsError}
         </div>
       )}
 

@@ -504,7 +504,7 @@
     "id": "4605",
     "code": "113C - 6-2023",
     "name": "113C - 6-2023",
-    "hex": null,
+    "hex": "#F9E55B",
     "family": "7500 Coated",
     "lines": [
       {
@@ -41798,7 +41798,7 @@
     "id": "5651",
     "code": "BLACK 2 C",
     "name": "BLACK 2 C",
-    "hex": null,
+    "hex": "#332F21",
     "family": "7500 Coated",
     "lines": [
       {
@@ -41839,7 +41839,7 @@
     "id": "5652",
     "code": "BLACK 3 C",
     "name": "BLACK 3 C",
-    "hex": null,
+    "hex": "#212721",
     "family": "7500 Coated",
     "lines": [
       {
@@ -41880,7 +41880,7 @@
     "id": "5653",
     "code": "BLACK 4 C",
     "name": "BLACK 4 C",
-    "hex": null,
+    "hex": "#31261D",
     "family": "7500 Coated",
     "lines": [
       {
@@ -41921,7 +41921,7 @@
     "id": "5654",
     "code": "BLACK 5 C",
     "name": "BLACK 5 C",
-    "hex": null,
+    "hex": "#3E3D2D",
     "family": "7500 Coated",
     "lines": [
       {
@@ -41962,7 +41962,7 @@
     "id": "5655",
     "code": "BLACK 6 C",
     "name": "BLACK 6 C",
-    "hex": null,
+    "hex": "#101820",
     "family": "7500 Coated",
     "lines": [
       {
@@ -42003,7 +42003,7 @@
     "id": "5656",
     "code": "BLACK 7 C",
     "name": "BLACK 7 C",
-    "hex": null,
+    "hex": "#3D3935",
     "family": "7500 Coated",
     "lines": [
       {
@@ -42044,7 +42044,7 @@
     "id": "5657",
     "code": "BLACK C",
     "name": "BLACK C",
-    "hex": null,
+    "hex": "#2D2926",
     "family": "7500 Coated",
     "lines": [
       {
@@ -42085,7 +42085,7 @@
     "id": "5658",
     "code": "BLUE 072 C",
     "name": "BLUE 072 C",
-    "hex": null,
+    "hex": "#0018A8",
     "family": "7500 Coated",
     "lines": [
       {
@@ -42126,7 +42126,7 @@
     "id": "5659",
     "code": "COOL GRAY 1 C",
     "name": "COOL GRAY 1 C",
-    "hex": null,
+    "hex": "#D9D9D6",
     "family": "7500 Coated",
     "lines": [
       {
@@ -42167,7 +42167,7 @@
     "id": "5660",
     "code": "COOL GRAY 10 C",
     "name": "COOL GRAY 10 C",
-    "hex": null,
+    "hex": "#63666A",
     "family": "7500 Coated",
     "lines": [
       {
@@ -42208,7 +42208,7 @@
     "id": "5661",
     "code": "COOL GRAY 11 C",
     "name": "COOL GRAY 11 C",
-    "hex": null,
+    "hex": "#53565A",
     "family": "7500 Coated",
     "lines": [
       {
@@ -42249,7 +42249,7 @@
     "id": "5662",
     "code": "COOL GRAY 2 C",
     "name": "COOL GRAY 2 C",
-    "hex": null,
+    "hex": "#D0D0CE",
     "family": "7500 Coated",
     "lines": [
       {
@@ -42290,7 +42290,7 @@
     "id": "5663",
     "code": "COOL GRAY 3 C",
     "name": "COOL GRAY 3 C",
-    "hex": null,
+    "hex": "#C8C9C7",
     "family": "7500 Coated",
     "lines": [
       {
@@ -42331,7 +42331,7 @@
     "id": "5664",
     "code": "COOL GRAY 4 C",
     "name": "COOL GRAY 4 C",
-    "hex": null,
+    "hex": "#BBBCBC",
     "family": "7500 Coated",
     "lines": [
       {
@@ -42372,7 +42372,7 @@
     "id": "5665",
     "code": "COOL GRAY 5 C",
     "name": "COOL GRAY 5 C",
-    "hex": null,
+    "hex": "#B1B3B3",
     "family": "7500 Coated",
     "lines": [
       {
@@ -42413,7 +42413,7 @@
     "id": "5666",
     "code": "COOL GRAY 6 C",
     "name": "COOL GRAY 6 C",
-    "hex": null,
+    "hex": "#A7A8AA",
     "family": "7500 Coated",
     "lines": [
       {
@@ -42454,7 +42454,7 @@
     "id": "5667",
     "code": "COOL GRAY 7 C",
     "name": "COOL GRAY 7 C",
-    "hex": null,
+    "hex": "#97999B",
     "family": "7500 Coated",
     "lines": [
       {
@@ -42495,7 +42495,7 @@
     "id": "5668",
     "code": "COOL GRAY 8 C",
     "name": "COOL GRAY 8 C",
-    "hex": null,
+    "hex": "#888B8D",
     "family": "7500 Coated",
     "lines": [
       {
@@ -42536,7 +42536,7 @@
     "id": "5669",
     "code": "COOL GRAY 9 C",
     "name": "COOL GRAY 9 C",
-    "hex": null,
+    "hex": "#75787B",
     "family": "7500 Coated",
     "lines": [
       {
@@ -42577,7 +42577,7 @@
     "id": "5670",
     "code": "GREEN C",
     "name": "GREEN C",
-    "hex": null,
+    "hex": "#00AB84",
     "family": "7500 Coated",
     "lines": [
       {
@@ -42618,7 +42618,7 @@
     "id": "5671",
     "code": "ORANGE 021 C",
     "name": "ORANGE 021 C",
-    "hex": null,
+    "hex": "#FE5000",
     "family": "7500 Coated",
     "lines": [
       {
@@ -42659,7 +42659,7 @@
     "id": "5672",
     "code": "PROCESS BLACK C",
     "name": "PROCESS BLACK C",
-    "hex": null,
+    "hex": "#2D2926",
     "family": "7500 Coated",
     "lines": [
       {
@@ -42692,7 +42692,7 @@
     "id": "5673",
     "code": "PROCESS BLUE C",
     "name": "PROCESS BLUE C",
-    "hex": null,
+    "hex": "#0085CA",
     "family": "7500 Coated",
     "lines": [
       {
@@ -42725,7 +42725,7 @@
     "id": "5674",
     "code": "PROCESS CYAN C",
     "name": "PROCESS CYAN C",
-    "hex": null,
+    "hex": "#009FE3",
     "family": "7500 Coated",
     "lines": [
       {
@@ -42758,7 +42758,7 @@
     "id": "5675",
     "code": "PROCESS MAGENTA C",
     "name": "PROCESS MAGENTA C",
-    "hex": null,
+    "hex": "#D6006E",
     "family": "7500 Coated",
     "lines": [
       {
@@ -42791,7 +42791,7 @@
     "id": "5676",
     "code": "PROCESS YELLOW C",
     "name": "PROCESS YELLOW C",
-    "hex": null,
+    "hex": "#FFD500",
     "family": "7500 Coated",
     "lines": [
       {
@@ -42824,7 +42824,7 @@
     "id": "5677",
     "code": "PURPLE C",
     "name": "PURPLE C",
-    "hex": null,
+    "hex": "#BB29BB",
     "family": "7500 Coated",
     "lines": [
       {
@@ -42865,7 +42865,7 @@
     "id": "5679",
     "code": "REFLEX BLUE C",
     "name": "REFLEX BLUE C",
-    "hex": null,
+    "hex": "#001489",
     "family": "7500 Coated",
     "lines": [
       {
@@ -42906,7 +42906,7 @@
     "id": "5680",
     "code": "RHODAMINE RED C",
     "name": "RHODAMINE RED C",
-    "hex": null,
+    "hex": "#E10098",
     "family": "7500 Coated",
     "lines": [
       {
@@ -42947,7 +42947,7 @@
     "id": "5681",
     "code": "RUBINE RED C",
     "name": "RUBINE RED C",
-    "hex": null,
+    "hex": "#CE0058",
     "family": "7500 Coated",
     "lines": [
       {
@@ -42988,7 +42988,7 @@
     "id": "5682",
     "code": "VIOLET C",
     "name": "VIOLET C",
-    "hex": null,
+    "hex": "#440099",
     "family": "7500 Coated",
     "lines": [
       {
@@ -43029,7 +43029,7 @@
     "id": "5683",
     "code": "WARM GRAY 1 C",
     "name": "WARM GRAY 1 C",
-    "hex": null,
+    "hex": "#D7D2CB",
     "family": "7500 Coated",
     "lines": [
       {
@@ -43070,7 +43070,7 @@
     "id": "5685",
     "code": "WARM GRAY 11 C",
     "name": "WARM GRAY 11 C",
-    "hex": null,
+    "hex": "#6D6662",
     "family": "7500 Coated",
     "lines": [
       {
@@ -43111,7 +43111,7 @@
     "id": "5686",
     "code": "WARM GRAY 2 C",
     "name": "WARM GRAY 2 C",
-    "hex": null,
+    "hex": "#CBC4BC",
     "family": "7500 Coated",
     "lines": [
       {
@@ -43152,7 +43152,7 @@
     "id": "5687",
     "code": "WARM GRAY 3 C",
     "name": "WARM GRAY 3 C",
-    "hex": null,
+    "hex": "#BFB8AF",
     "family": "7500 Coated",
     "lines": [
       {
@@ -43193,7 +43193,7 @@
     "id": "5688",
     "code": "WARM GRAY 4 C",
     "name": "WARM GRAY 4 C",
-    "hex": null,
+    "hex": "#B6ADA5",
     "family": "7500 Coated",
     "lines": [
       {
@@ -43234,7 +43234,7 @@
     "id": "5689",
     "code": "WARM GRAY 5 C",
     "name": "WARM GRAY 5 C",
-    "hex": null,
+    "hex": "#ACA39A",
     "family": "7500 Coated",
     "lines": [
       {
@@ -43275,7 +43275,7 @@
     "id": "5690",
     "code": "WARM GRAY 6 C",
     "name": "WARM GRAY 6 C",
-    "hex": null,
+    "hex": "#A59C94",
     "family": "7500 Coated",
     "lines": [
       {
@@ -43316,7 +43316,7 @@
     "id": "5691",
     "code": "WARM GRAY 7 C",
     "name": "WARM GRAY 7 C",
-    "hex": null,
+    "hex": "#968C83",
     "family": "7500 Coated",
     "lines": [
       {
@@ -43357,7 +43357,7 @@
     "id": "5692",
     "code": "WARM GRAY 8 C",
     "name": "WARM GRAY 8 C",
-    "hex": null,
+    "hex": "#8C8279",
     "family": "7500 Coated",
     "lines": [
       {
@@ -43398,7 +43398,7 @@
     "id": "5693",
     "code": "WARM GRAY 9 C",
     "name": "WARM GRAY 9 C",
-    "hex": null,
+    "hex": "#83786F",
     "family": "7500 Coated",
     "lines": [
       {
@@ -43439,7 +43439,7 @@
     "id": "5694",
     "code": "WARM RED C",
     "name": "WARM RED C",
-    "hex": null,
+    "hex": "#F9423A",
     "family": "7500 Coated",
     "lines": [
       {
@@ -43472,7 +43472,7 @@
     "id": "5695",
     "code": "YELLOW 012 C",
     "name": "YELLOW 012 C",
-    "hex": null,
+    "hex": "#FFD700",
     "family": "7500 Coated",
     "lines": [
       {
@@ -43497,7 +43497,7 @@
     "id": "5696",
     "code": "YELLOW C",
     "name": "YELLOW C",
-    "hex": null,
+    "hex": "#FEDD00",
     "family": "7500 Coated",
     "lines": [
       {
@@ -51123,7 +51123,7 @@
     "id": "19924",
     "code": "PINK C",
     "name": "PINK C",
-    "hex": null,
+    "hex": "#D62598",
     "family": "7500 Coated",
     "lines": [
       {
@@ -54133,7 +54133,7 @@
     "id": "20955",
     "code": "WARM GRAY 10C",
     "name": "WARM GRAY 10C",
-    "hex": null,
+    "hex": "#796E65",
     "family": "7500 Coated",
     "lines": [
       {
@@ -54740,7 +54740,7 @@
     "id": "21050",
     "code": "RED 032 C",
     "name": "RED 032 C",
-    "hex": null,
+    "hex": "#EF3340",
     "family": "7500 Coated",
     "lines": [
       {
@@ -55913,7 +55913,7 @@
     "id": "21461",
     "code": "BRIGHT RED C",
     "name": "BRIGHT RED C",
-    "hex": null,
+    "hex": "#F93822",
     "family": "7500 Coated",
     "lines": [
       {
@@ -65159,7 +65159,7 @@
     "id": "21951",
     "code": "MEDIUM PURPLE C",
     "name": "MEDIUM PURPLE C",
-    "hex": null,
+    "hex": "#4E008E",
     "family": "7500 Coated",
     "lines": [
       {
@@ -86090,7 +86090,7 @@
     "id": "29871",
     "code": "DARK BLUE C",
     "name": "DARK BLUE C",
-    "hex": null,
+    "hex": "#00239C",
     "family": "7500 Coated",
     "lines": [
       {
@@ -91265,7 +91265,7 @@
     "id": "30195",
     "code": "VIOLET V2 C",
     "name": "VIOLET V2 C",
-    "hex": null,
+    "hex": "#440099",
     "family": "7500 Coated",
     "lines": [
       {
@@ -91306,7 +91306,7 @@
     "id": "30196",
     "code": "YELLOW PY12 C",
     "name": "YELLOW PY12 C",
-    "hex": null,
+    "hex": "#FFD700",
     "family": "7500 Coated",
     "lines": [
       {
@@ -101444,7 +101444,7 @@
     "id": "30662",
     "code": "801C - 9-2023",
     "name": "801C - 9-2023",
-    "hex": null,
+    "hex": "#00AACC",
     "family": "7500 Coated",
     "lines": [
       {
@@ -101477,7 +101477,7 @@
     "id": "30663",
     "code": "802C - 9-2023",
     "name": "802C - 9-2023",
-    "hex": null,
+    "hex": "#60DD49",
     "family": "7500 Coated",
     "lines": [
       {
@@ -101518,7 +101518,7 @@
     "id": "30664",
     "code": "803C - 9-2023",
     "name": "803C - 9-2023",
-    "hex": null,
+    "hex": "#FFED38",
     "family": "7500 Coated",
     "lines": [
       {
@@ -101559,7 +101559,7 @@
     "id": "30665",
     "code": "804C - 9-2023",
     "name": "804C - 9-2023",
-    "hex": null,
+    "hex": "#FF9338",
     "family": "7500 Coated",
     "lines": [
       {
@@ -101592,7 +101592,7 @@
     "id": "30666",
     "code": "805C - 9-2023",
     "name": "805C - 9-2023",
-    "hex": null,
+    "hex": "#F95951",
     "family": "7500 Coated",
     "lines": [
       {
@@ -101633,7 +101633,7 @@
     "id": "30667",
     "code": "806C - 9-2023",
     "name": "806C - 9-2023",
-    "hex": null,
+    "hex": "#FF0093",
     "family": "7500 Coated",
     "lines": [
       {
@@ -101658,7 +101658,7 @@
     "id": "30668",
     "code": "807C - 9-2023",
     "name": "807C - 9-2023",
-    "hex": null,
+    "hex": "#D6009E",
     "family": "7500 Coated",
     "lines": [
       {
@@ -102439,7 +102439,7 @@
     "id": "30689",
     "code": "808C - 9-2023",
     "name": "808C - 9-2023",
-    "hex": null,
+    "hex": "#00B59B",
     "family": "7500 Coated",
     "lines": [
       {
@@ -102472,7 +102472,7 @@
     "id": "30690",
     "code": "809C - 9-2023",
     "name": "809C - 9-2023",
-    "hex": null,
+    "hex": "#DDE00F",
     "family": "7500 Coated",
     "lines": [
       {
@@ -102513,7 +102513,7 @@
     "id": "30691",
     "code": "810C - 9-2023",
     "name": "810C - 9-2023",
-    "hex": null,
+    "hex": "#FFCC1E",
     "family": "7500 Coated",
     "lines": [
       {
@@ -102554,7 +102554,7 @@
     "id": "30692",
     "code": "811C - 9-2023",
     "name": "811C - 9-2023",
-    "hex": null,
+    "hex": "#FF7247",
     "family": "7500 Coated",
     "lines": [
       {
@@ -102595,7 +102595,7 @@
     "id": "30693",
     "code": "812C - 9-2023",
     "name": "812C - 9-2023",
-    "hex": null,
+    "hex": "#FC2366",
     "family": "7500 Coated",
     "lines": [
       {
@@ -102636,7 +102636,7 @@
     "id": "30694",
     "code": "813C - 9-2023",
     "name": "813C - 9-2023",
-    "hex": null,
+    "hex": "#E50099",
     "family": "7500 Coated",
     "lines": [
       {
@@ -102669,7 +102669,7 @@
     "id": "30695",
     "code": "814C - 9-2023",
     "name": "814C - 9-2023",
-    "hex": null,
+    "hex": "#8C60C1",
     "family": "7500 Coated",
     "lines": [
       {
@@ -103458,7 +103458,7 @@
     "id": "31042",
     "code": "282C - 8-2-24",
     "name": "282C - 8-2-24",
-    "hex": null,
+    "hex": "#002654",
     "family": "7500 Coated",
     "lines": [
       {
@@ -103754,7 +103754,7 @@
     "id": "31158",
     "code": "152C 10-29-24",
     "name": "152C 10-29-24",
-    "hex": null,
+    "hex": "#DD7500",
     "family": "7500 Coated",
     "lines": [
       {

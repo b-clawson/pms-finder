@@ -182,12 +182,13 @@ export function GreenGalaxyMix() {
   const [searchParams] = useSearchParams();
   const initialHex = searchParams.get('hex') || undefined;
   const hex = useHexInput(initialHex);
-  const [category, setCategory] = useState('UD');
+  const [category, setCategory] = useState<'UD' | 'CD'>('UD');
 
   const [searching, setSearching] = useState(false);
   const [pmsResults, setPmsResults] = useState<PMSMatch[]>([]);
   const [ggResults, setGgResults] = useState<GGMatch[]>([]);
   const [error, setError] = useState<string | null>(null);
+  const [pmsError, setPmsError] = useState<string | null>(null);
   const [hasSearched, setHasSearched] = useState(false);
 
   const [selectedMatch, setSelectedMatch] = useState<GGMatch | null>(null);
@@ -203,6 +204,7 @@ export function GreenGalaxyMix() {
 
     setSearching(true);
     setError(null);
+    setPmsError(null);
     setPmsResults([]);
     setGgResults([]);
     setHasSearched(true);
@@ -210,25 +212,30 @@ export function GreenGalaxyMix() {
     setFormulaDetail(null);
 
     try {
-      const [pmsRes, ggRes] = await Promise.all([
-        fetch(`/api/pms?hex=${encodeURIComponent(hex.normalizedHex)}&series=BOTH&limit=5`),
-        fetch(`/api/gg/match?hex=${encodeURIComponent(hex.normalizedHex)}&category=${category}&limit=10`),
+      await Promise.all([
+        (async () => {
+          try {
+            const res = await fetch(`/api/pms?hex=${encodeURIComponent(hex.normalizedHex)}&series=BOTH&limit=5`);
+            const data = await res.json();
+            if (res.ok && data.results) setPmsResults(data.results);
+          } catch {
+            setPmsError('Failed to load PMS matches');
+          }
+        })(),
+        (async () => {
+          try {
+            const res = await fetch(`/api/gg/match?hex=${encodeURIComponent(hex.normalizedHex)}&category=${category}&limit=10`);
+            const data = await res.json();
+            if (res.ok && Array.isArray(data)) {
+              setGgResults(data);
+            } else if (data.error) {
+              setError(data.error);
+            }
+          } catch {
+            setError('Network error — is the server running?');
+          }
+        })(),
       ]);
-
-      const pmsData = await pmsRes.json();
-      const ggData = await ggRes.json();
-
-      if (pmsRes.ok && pmsData.results) {
-        setPmsResults(pmsData.results);
-      }
-
-      if (ggRes.ok && Array.isArray(ggData)) {
-        setGgResults(ggData);
-      } else if (ggData.error) {
-        setError(ggData.error);
-      }
-    } catch {
-      setError('Network error — is the server running?');
     } finally {
       setSearching(false);
     }
@@ -273,7 +280,7 @@ export function GreenGalaxyMix() {
         type: 'greengalaxy',
         name: selectedMatch.code,
         searchHex: hex.normalizedHex,
-        category: category as 'UD' | 'CD',
+        category,
         match: selectedMatch,
         formula: formulaDetail,
         distance: selectedMatch.distance,
@@ -348,7 +355,7 @@ export function GreenGalaxyMix() {
           <label className="block text-sm text-gray-600 mb-2">Category</label>
           <select
             value={category}
-            onChange={(e) => setCategory(e.target.value)}
+            onChange={(e) => setCategory(e.target.value as 'UD' | 'CD')}
             disabled={searching}
             className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#0D9E7A] focus:border-transparent bg-white"
           >
@@ -361,10 +368,15 @@ export function GreenGalaxyMix() {
         </div>
       </HexSearchBar>
 
-      {/* Error */}
+      {/* Errors */}
       {error && (
         <div className="rounded-lg bg-red-50 border border-red-200 text-red-800 px-4 py-3 text-sm mb-6">
           {error}
+        </div>
+      )}
+      {pmsError && (
+        <div className="rounded-lg bg-amber-50 border border-amber-200 text-amber-800 px-4 py-3 text-sm mb-6">
+          {pmsError}
         </div>
       )}
 

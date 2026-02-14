@@ -152,6 +152,7 @@ export function FnInkMix() {
   const [pmsResults, setPmsResults] = useState<PMSMatch[]>([]);
   const [fninkResults, setFninkResults] = useState<FnInkMatch[]>([]);
   const [error, setError] = useState<string | null>(null);
+  const [pmsError, setPmsError] = useState<string | null>(null);
   const [hasSearched, setHasSearched] = useState(false);
 
   const [selectedMatch, setSelectedMatch] = useState<FnInkMatch | null>(null);
@@ -164,31 +165,37 @@ export function FnInkMix() {
 
     setSearching(true);
     setError(null);
+    setPmsError(null);
     setPmsResults([]);
     setFninkResults([]);
     setHasSearched(true);
     setSelectedMatch(null);
 
     try {
-      const [pmsRes, fninkRes] = await Promise.all([
-        fetch(`/api/pms?hex=${encodeURIComponent(hex.normalizedHex)}&series=BOTH&limit=5`),
-        fetch(`/api/fnink/match?hex=${encodeURIComponent(hex.normalizedHex)}&limit=10`),
+      await Promise.all([
+        (async () => {
+          try {
+            const res = await fetch(`/api/pms?hex=${encodeURIComponent(hex.normalizedHex)}&series=BOTH&limit=5`);
+            const data = await res.json();
+            if (res.ok && data.results) setPmsResults(data.results);
+          } catch {
+            setPmsError('Failed to load PMS matches');
+          }
+        })(),
+        (async () => {
+          try {
+            const res = await fetch(`/api/fnink/match?hex=${encodeURIComponent(hex.normalizedHex)}&limit=10`);
+            const data = await res.json();
+            if (res.ok && Array.isArray(data)) {
+              setFninkResults(data);
+            } else if (data.error) {
+              setError(data.error);
+            }
+          } catch {
+            setError('Network error — is the server running?');
+          }
+        })(),
       ]);
-
-      const pmsData = await pmsRes.json();
-      const fninkData = await fninkRes.json();
-
-      if (pmsRes.ok && pmsData.results) {
-        setPmsResults(pmsData.results);
-      }
-
-      if (fninkRes.ok && Array.isArray(fninkData)) {
-        setFninkResults(fninkData);
-      } else if (fninkData.error) {
-        setError(fninkData.error);
-      }
-    } catch {
-      setError('Network error — is the server running?');
     } finally {
       setSearching(false);
     }
@@ -262,10 +269,15 @@ export function FnInkMix() {
 
       <HexSearchBar hexInput={hex} searching={searching} onSearch={handleSearch} />
 
-      {/* Error */}
+      {/* Errors */}
       {error && (
         <div className="rounded-lg bg-red-50 border border-red-200 text-red-800 px-4 py-3 text-sm mb-6">
           {error}
+        </div>
+      )}
+      {pmsError && (
+        <div className="rounded-lg bg-amber-50 border border-amber-200 text-amber-800 px-4 py-3 text-sm mb-6">
+          {pmsError}
         </div>
       )}
 
