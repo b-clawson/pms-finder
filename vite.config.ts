@@ -19,7 +19,8 @@ export default defineConfig({
     outDir: 'dist',
   },
   test: {
-    include: ['tests/**/*.test.{ts,js}'],
+    include: ['tests/**/*.test.{ts,js,tsx}'],
+    environment: 'jsdom',
   },
   server: {
     port: 5173,

@@ -1,4 +1,5 @@
 import express from "express";
+import helmet from "helmet";
 import { fileURLToPath } from "node:url";
 import { dirname, resolve } from "node:path";
 import { existsSync } from "node:fs";
@@ -38,6 +39,24 @@ function parseLimit(raw, { min = 1, max = 50, defaultVal = 10 } = {}) {
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const app = express();
 const PORT = process.env.PORT || 3000;
+
+// Security headers
+app.use(
+  helmet({
+    contentSecurityPolicy: {
+      directives: {
+        defaultSrc: ["'self'"],
+        scriptSrc: ["'self'"],
+        styleSrc: ["'self'", "'unsafe-inline'"],   // Tailwind/Emotion inject inline styles
+        imgSrc: ["'self'", "data:", "blob:"],       // data: for ColorThief, blob: for image preview
+        connectSrc: ["'self'"],
+        fontSrc: ["'self'"],
+        objectSrc: ["'none'"],
+        frameAncestors: ["'none'"],
+      },
+    },
+  })
+);
 
 // Serve Vite build output (production) or old web/ dir as fallback
 const distDir = resolve(__dirname, "../dist");

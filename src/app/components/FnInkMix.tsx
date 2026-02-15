@@ -1,21 +1,11 @@
-import { useState, useEffect, useRef, useCallback } from 'react';
-import { useSearchParams } from 'react-router';
+import { useState, useCallback } from 'react';
 import { ArrowLeft, Bookmark, Check } from 'lucide-react';
 import { HexSearchBar } from './HexSearchBar';
 import { PmsMatchList } from './PmsMatchList';
 import { DistanceBadge } from './DistanceBadge';
-import { useHexInput } from '../hooks/useHexInput';
+import { useMixingSearch } from '../hooks/useMixingSearch';
 import { useMixingCards } from '../hooks/useMixingCards';
 import type { FnInkMatch } from '../types/fnink';
-
-interface PMSMatch {
-  pms: string;
-  series: string;
-  hex: string;
-  distance: number;
-  name: string;
-  notes: string;
-}
 
 type WeightUnit = 'g' | 'kg' | 'lb';
 
@@ -144,70 +134,16 @@ export function FnInkFormulaDetailView({ match }: { match: FnInkMatch }) {
 }
 
 export function FnInkMix() {
-  const [searchParams] = useSearchParams();
-  const initialHex = searchParams.get('hex') || undefined;
-  const hex = useHexInput(initialHex);
-
-  const [searching, setSearching] = useState(false);
-  const [pmsResults, setPmsResults] = useState<PMSMatch[]>([]);
-  const [fninkResults, setFninkResults] = useState<FnInkMatch[]>([]);
-  const [error, setError] = useState<string | null>(null);
-  const [pmsError, setPmsError] = useState<string | null>(null);
-  const [hasSearched, setHasSearched] = useState(false);
+  const vendorUrl = useCallback(
+    (hex: string) => `/api/fnink/match?hex=${encodeURIComponent(hex)}&limit=10`,
+    []
+  );
+  const { hex, searching, pmsResults, vendorResults: fninkResults, error, pmsError, hasSearched, handleSearch } =
+    useMixingSearch<FnInkMatch>({ vendorUrl });
 
   const [selectedMatch, setSelectedMatch] = useState<FnInkMatch | null>(null);
   const [saved, setSaved] = useState(false);
   const { saveCard } = useMixingCards();
-  const autoSearched = useRef(false);
-
-  const handleSearch = useCallback(async () => {
-    if (!hex.hexInput.trim() || !hex.isValid) return;
-
-    setSearching(true);
-    setError(null);
-    setPmsError(null);
-    setPmsResults([]);
-    setFninkResults([]);
-    setHasSearched(true);
-    setSelectedMatch(null);
-
-    try {
-      await Promise.all([
-        (async () => {
-          try {
-            const res = await fetch(`/api/pms?hex=${encodeURIComponent(hex.normalizedHex)}&series=BOTH&limit=5`);
-            const data = await res.json();
-            if (res.ok && data.results) setPmsResults(data.results);
-          } catch {
-            setPmsError('Failed to load PMS matches');
-          }
-        })(),
-        (async () => {
-          try {
-            const res = await fetch(`/api/fnink/match?hex=${encodeURIComponent(hex.normalizedHex)}&limit=10`);
-            const data = await res.json();
-            if (res.ok && Array.isArray(data)) {
-              setFninkResults(data);
-            } else if (data.error) {
-              setError(data.error);
-            }
-          } catch {
-            setError('Network error — is the server running?');
-          }
-        })(),
-      ]);
-    } finally {
-      setSearching(false);
-    }
-  }, [hex.hexInput, hex.isValid, hex.normalizedHex]);
-
-  // Auto-search when navigated with ?hex= param
-  useEffect(() => {
-    if (initialHex && hex.isValid && hex.hexInput.trim() && !autoSearched.current) {
-      autoSearched.current = true;
-      handleSearch();
-    }
-  }, [initialHex, hex.isValid, hex.hexInput, handleSearch]);
 
   // Formula detail view (inline — no second fetch needed)
   if (selectedMatch) {

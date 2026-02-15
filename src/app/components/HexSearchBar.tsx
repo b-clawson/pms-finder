@@ -32,6 +32,7 @@ export function HexSearchBar({ hexInput: hex, searching, onSearch, children }: H
               onChange={(e) => hex.setHexInput(e.target.value)}
               onKeyDown={handleKeyDown}
               placeholder="#FF6A00 or 185 C"
+              aria-label="HEX color code or PMS code"
               className={`w-full pl-[54px] pr-4 py-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#0D9E7A] focus:border-transparent ${isPmsMode ? '' : 'font-mono'}`}
               disabled={searching}
             />

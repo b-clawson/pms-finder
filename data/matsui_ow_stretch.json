@@ -47551,35 +47551,35 @@
       {
         "componentCode": "CLR 301C",
         "componentDescription": "Clear 301C",
-        "percentage": 1760,
+        "percentage": 72.13,
         "hex": "FFFFFF",
         "isBase": true
       },
       {
         "componentCode": "ST WHT 301",
         "componentDescription": "Stretch White 301",
-        "percentage": 646,
+        "percentage": 26.48,
         "hex": "FFFFFF",
         "isBase": true
       },
       {
         "componentCode": "GRN MB",
         "componentDescription": "Neo Green MB",
-        "percentage": 12.8,
+        "percentage": 0.52,
         "hex": "00A073",
         "isBase": false
       },
       {
         "componentCode": "RED MFB",
         "componentDescription": "Neo Red MFB",
-        "percentage": 5.2,
+        "percentage": 0.21,
         "hex": "C92A4F",
         "isBase": false
       },
       {
         "componentCode": "YEL M3G",
         "componentDescription": "Neo Yellow M3G",
-        "percentage": 16,
+        "percentage": 0.66,
         "hex": "FADC00",
         "isBase": false
       }
@@ -95585,21 +95585,21 @@
       {
         "componentCode": "ST CLR 301",
         "componentDescription": "Stretch Clear 301",
-        "percentage": 3453.6,
+        "percentage": 86.34,
         "hex": "FFFFFF",
         "isBase": true
       },
       {
         "componentCode": "BLU MG",
         "componentDescription": "Neo Blue MG",
-        "percentage": 532,
+        "percentage": 13.3,
         "hex": "008EB9",
         "isBase": false
       },
       {
         "componentCode": "BLK MK",
         "componentDescription": "Neo Black MK",
-        "percentage": 14.4,
+        "percentage": 0.36,
         "hex": "3E3D39",
         "isBase": false
       }

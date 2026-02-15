@@ -1,23 +1,13 @@
-import { useState, useEffect, useRef, useCallback } from 'react';
-import { useSearchParams } from 'react-router';
+import { useState, useCallback } from 'react';
 import { ArrowLeft, ExternalLink, Bookmark, Check } from 'lucide-react';
 import { HexSearchBar } from './HexSearchBar';
 import { PmsMatchList } from './PmsMatchList';
 import { DistanceBadge } from './DistanceBadge';
-import { useHexInput } from '../hooks/useHexInput';
+import { useMixingSearch } from '../hooks/useMixingSearch';
 import { useMixingCards } from '../hooks/useMixingCards';
 import type { GGMatch, GGFormulaDetail } from '../types/greengalaxy';
 
 export type { GGMatch, GGFormulaDetail };
-
-interface PMSMatch {
-  pms: string;
-  series: string;
-  hex: string;
-  distance: number;
-  name: string;
-  notes: string;
-}
 
 type WeightUnit = 'g' | 'kg' | 'lb';
 
@@ -179,17 +169,14 @@ export function GGFormulaDetailView({ formula }: { formula: GGFormulaDetail }) {
 }
 
 export function GreenGalaxyMix() {
-  const [searchParams] = useSearchParams();
-  const initialHex = searchParams.get('hex') || undefined;
-  const hex = useHexInput(initialHex);
   const [category, setCategory] = useState<'UD' | 'CD'>('UD');
 
-  const [searching, setSearching] = useState(false);
-  const [pmsResults, setPmsResults] = useState<PMSMatch[]>([]);
-  const [ggResults, setGgResults] = useState<GGMatch[]>([]);
-  const [error, setError] = useState<string | null>(null);
-  const [pmsError, setPmsError] = useState<string | null>(null);
-  const [hasSearched, setHasSearched] = useState(false);
+  const vendorUrl = useCallback(
+    (hex: string) => `/api/gg/match?hex=${encodeURIComponent(hex)}&category=${category}&limit=10`,
+    [category]
+  );
+  const { hex, searching, pmsResults, vendorResults: ggResults, error, pmsError, hasSearched, handleSearch } =
+    useMixingSearch<GGMatch>({ vendorUrl, extraDeps: [category] });
 
   const [selectedMatch, setSelectedMatch] = useState<GGMatch | null>(null);
   const [formulaDetail, setFormulaDetail] = useState<GGFormulaDetail | null>(null);
@@ -197,57 +184,6 @@ export function GreenGalaxyMix() {
   const [formulaError, setFormulaError] = useState<string | null>(null);
   const [saved, setSaved] = useState(false);
   const { saveCard } = useMixingCards();
-  const autoSearched = useRef(false);
-
-  const handleSearch = useCallback(async () => {
-    if (!hex.hexInput.trim() || !hex.isValid) return;
-
-    setSearching(true);
-    setError(null);
-    setPmsError(null);
-    setPmsResults([]);
-    setGgResults([]);
-    setHasSearched(true);
-    setSelectedMatch(null);
-    setFormulaDetail(null);
-
-    try {
-      await Promise.all([
-        (async () => {
-          try {
-            const res = await fetch(`/api/pms?hex=${encodeURIComponent(hex.normalizedHex)}&series=BOTH&limit=5`);
-            const data = await res.json();
-            if (res.ok && data.results) setPmsResults(data.results);
-          } catch {
-            setPmsError('Failed to load PMS matches');
-          }
-        })(),
-        (async () => {
-          try {
-            const res = await fetch(`/api/gg/match?hex=${encodeURIComponent(hex.normalizedHex)}&category=${category}&limit=10`);
-            const data = await res.json();
-            if (res.ok && Array.isArray(data)) {
-              setGgResults(data);
-            } else if (data.error) {
-              setError(data.error);
-            }
-          } catch {
-            setError('Network error — is the server running?');
-          }
-        })(),
-      ]);
-    } finally {
-      setSearching(false);
-    }
-  }, [hex.hexInput, hex.isValid, hex.normalizedHex, category]);
-
-  // Auto-search when navigated with ?hex= param
-  useEffect(() => {
-    if (initialHex && hex.isValid && hex.hexInput.trim() && !autoSearched.current) {
-      autoSearched.current = true;
-      handleSearch();
-    }
-  }, [initialHex, hex.isValid, hex.hexInput, handleSearch]);
 
   const handleSelectFormula = async (match: GGMatch) => {
     setSelectedMatch(match);

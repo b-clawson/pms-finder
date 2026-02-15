@@ -1,4 +1,5 @@
-import { useState, useEffect, useMemo } from 'react';
+import { useState, useEffect, useMemo, useRef, memo, type CSSProperties, type ReactElement } from 'react';
+import { Grid } from 'react-window';
 import { Search, Copy, Check } from 'lucide-react';
 import { getContrastColor } from '../utils/colorMath';
 
@@ -10,7 +11,11 @@ interface Swatch {
   notes: string;
 }
 
-function SwatchCard({ swatch }: { swatch: Swatch }) {
+const GAP = 16;
+const MIN_CARD_WIDTH = 160;
+const ROW_HEIGHT = 156; // card height + gap
+
+const SwatchCard = memo(function SwatchCard({ swatch }: { swatch: Swatch }) {
   const [copied, setCopied] = useState(false);
   const contrast = getContrastColor(swatch.hex);
 
@@ -21,11 +26,15 @@ function SwatchCard({ swatch }: { swatch: Swatch }) {
   };
 
   return (
-    <div className="group bg-white rounded-xl shadow-sm overflow-hidden hover:shadow-md transition-shadow">
+    <div className="group bg-white rounded-xl shadow-sm overflow-hidden hover:shadow-md transition-shadow h-full">
       <div
+        role="button"
+        tabIndex={0}
+        aria-label={`PMS ${swatch.pms}, ${swatch.hex} — click to copy`}
         className="h-24 relative cursor-pointer"
         style={{ backgroundColor: swatch.hex }}
         onClick={handleCopy}
+        onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); handleCopy(); } }}
       >
         <div
           className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity"
@@ -50,6 +59,53 @@ function SwatchCard({ swatch }: { swatch: Swatch }) {
       </div>
     </div>
   );
+});
+
+interface SwatchCellProps {
+  swatches: Swatch[];
+  columnCount: number;
+}
+
+function SwatchCell({
+  columnIndex,
+  rowIndex,
+  style,
+  swatches,
+  columnCount,
+}: {
+  ariaAttributes: { 'aria-colindex': number; role: 'gridcell' };
+  columnIndex: number;
+  rowIndex: number;
+  style: CSSProperties;
+  swatches: Swatch[];
+  columnCount: number;
+}): ReactElement | null {
+  const idx = rowIndex * columnCount + columnIndex;
+  if (idx >= swatches.length) return <div style={style} />;
+  const swatch = swatches[idx];
+
+  return (
+    <div style={{ ...style, paddingRight: GAP, paddingBottom: GAP }}>
+      <SwatchCard swatch={swatch} />
+    </div>
+  );
+}
+
+function useContainerWidth(ref: React.RefObject<HTMLDivElement | null>) {
+  const [width, setWidth] = useState(0);
+
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+
+    const observer = new ResizeObserver(([entry]) => {
+      setWidth(entry.contentRect.width);
+    });
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, [ref]);
+
+  return width;
 }
 
 export function SwatchLibrary() {
@@ -57,15 +113,20 @@ export function SwatchLibrary() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
   const [search, setSearch] = useState('');
+  const containerRef = useRef<HTMLDivElement>(null);
+  const containerWidth = useContainerWidth(containerRef);
 
   useEffect(() => {
     fetch('/api/swatches')
-      .then((res) => res.json())
+      .then((res) => {
+        if (!res.ok) throw new Error(`${res.status} ${res.statusText}`);
+        return res.json();
+      })
       .then((data) => {
         setSwatches(data.swatches);
         setLoading(false);
       })
-      .catch((err) => {
+      .catch(() => {
         setError('Failed to load swatches — is the server running?');
         setLoading(false);
       });
@@ -81,6 +142,11 @@ export function SwatchLibrary() {
         (s.name && s.name.toLowerCase().includes(q))
     );
   }, [swatches, search]);
+
+  const columnCount = Math.max(1, Math.floor((containerWidth + GAP) / (MIN_CARD_WIDTH + GAP)));
+  const columnWidth = containerWidth > 0 ? containerWidth / columnCount : MIN_CARD_WIDTH;
+  const rowCount = Math.ceil(filtered.length / columnCount);
+  const gridHeight = Math.min(rowCount * ROW_HEIGHT, window.innerHeight - 250);
 
   if (loading) {
     return (
@@ -118,17 +184,24 @@ export function SwatchLibrary() {
       </div>
 
       {/* Swatch Grid */}
-      {filtered.length === 0 ? (
-        <div className="text-center py-16 text-gray-500">
-          No swatches match "{search}"
-        </div>
-      ) : (
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-4">
-          {filtered.map((swatch) => (
-            <SwatchCard key={`${swatch.pms}-${swatch.series}`} swatch={swatch} />
-          ))}
-        </div>
-      )}
+      <div ref={containerRef}>
+        {filtered.length === 0 ? (
+          <div className="text-center py-16 text-gray-500">
+            No swatches match &ldquo;{search}&rdquo;
+          </div>
+        ) : containerWidth > 0 ? (
+          <Grid<SwatchCellProps>
+            cellComponent={SwatchCell}
+            cellProps={{ swatches: filtered, columnCount }}
+            columnCount={columnCount}
+            columnWidth={columnWidth}
+            rowCount={rowCount}
+            rowHeight={ROW_HEIGHT}
+            overscanCount={4}
+            style={{ height: gridHeight, width: containerWidth }}
+          />
+        ) : null}
+      </div>
     </div>
   );
 }

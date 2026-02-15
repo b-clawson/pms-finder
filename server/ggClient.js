@@ -1,7 +1,9 @@
 import https from "node:https";
 
 const GG_BASE = "https://gg-fusion-dba9a0f2a2e0.herokuapp.com/api/v2";
-const agent = new https.Agent({ rejectUnauthorized: false });
+const agent = new https.Agent({
+  rejectUnauthorized: process.env.NODE_ENV === "production",
+});
 const REQUEST_TIMEOUT = 15_000;
 
 const cache = new Map();

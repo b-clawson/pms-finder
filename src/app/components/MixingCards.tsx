@@ -131,7 +131,7 @@ function CardItem({
                 ? 'bg-red-100 text-red-600'
                 : 'text-gray-400 hover:text-red-500 hover:bg-red-50'
             }`}
-            title={confirmDelete ? 'Click again to confirm' : 'Delete card'}
+            aria-label={confirmDelete ? 'Confirm delete card' : `Delete card ${card.name}`}
           >
             <Trash2 className="w-3.5 h-3.5" />
           </button>
@@ -207,6 +207,8 @@ function CardItem({
         {/* Expand toggle */}
         <button
           onClick={() => setExpanded(!expanded)}
+          aria-expanded={expanded}
+          aria-label={expanded ? 'Hide formula details' : 'Show formula details'}
           className="w-full flex items-center justify-center gap-1 text-xs text-gray-400 hover:text-[#0D9E7A] transition-colors pt-1 border-t border-gray-100"
         >
           {expanded ? (

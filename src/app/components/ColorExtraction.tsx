@@ -242,10 +242,14 @@ export function ColorExtraction() {
 
       {/* Upload Area */}
       <div
+        role="button"
+        tabIndex={0}
+        aria-label="Upload artwork image — drop a file or click to browse"
         onDrop={handleDrop}
         onDragOver={handleDragOver}
         onDragLeave={handleDragLeave}
         onClick={() => fileInputRef.current?.click()}
+        onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); fileInputRef.current?.click(); } }}
         className={`bg-white rounded-xl shadow-sm p-8 mb-6 border-2 border-dashed transition-colors cursor-pointer text-center ${
           dragOver
             ? 'border-[#0D9E7A] bg-[#0D9E7A]/5'
@@ -258,6 +262,7 @@ export function ColorExtraction() {
           accept="image/png,image/jpeg,image/gif,image/webp"
           onChange={handleFileInput}
           className="hidden"
+          aria-hidden="true"
         />
         <Upload className="w-10 h-10 text-gray-400 mx-auto mb-3" />
         <p className="text-gray-600 font-medium">
@@ -339,6 +344,7 @@ export function ColorExtraction() {
                 >
                   <button
                     onClick={() => copyHex(color.hex, i)}
+                    aria-label={`Copy ${color.hex} to clipboard`}
                     className="flex items-center gap-1.5 px-2 py-1 rounded text-sm font-mono transition-colors"
                     style={{
                       color: getContrastColor(color.hex),
@@ -355,6 +361,8 @@ export function ColorExtraction() {
                   <button
                     onClick={() => setPickingIdx(pickingIdx === i ? null : i)}
                     title="Pick color from image"
+                    aria-label={`Pick color from image for swatch ${i + 1}`}
+                    aria-pressed={pickingIdx === i}
                     className={`flex items-center gap-1 px-2 py-1 rounded text-sm transition-colors ${
                       pickingIdx === i ? 'ring-2 ring-white' : ''
                     }`}

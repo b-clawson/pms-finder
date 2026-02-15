@@ -1,7 +1,9 @@
 import https from "node:https";
 
 const FNINK_API = "https://fnink-mixing-server.herokuapp.com/api";
-const agent = new https.Agent({ rejectUnauthorized: false });
+const agent = new https.Agent({
+  rejectUnauthorized: process.env.NODE_ENV === "production",
+});
 const REQUEST_TIMEOUT = 15_000;
 
 const cache = new Map();

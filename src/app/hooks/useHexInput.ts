@@ -18,13 +18,15 @@ function fetchSwatches(): Promise<Swatch[]> {
   if (swatchCache) return Promise.resolve(swatchCache);
   if (swatchPromise) return swatchPromise;
   swatchPromise = fetch('/api/swatches')
-    .then((res) => res.json())
+    .then((res) => {
+      if (!res.ok) throw new Error(`${res.status}`);
+      return res.json();
+    })
     .then((data) => {
       swatchCache = data.swatches as Swatch[];
       return swatchCache;
     })
-    .catch((err) => {
-      console.warn('[useHexInput] Failed to fetch swatches:', err);
+    .catch(() => {
       swatchPromise = null;
       return [] as Swatch[];
     });

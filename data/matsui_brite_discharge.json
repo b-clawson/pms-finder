@@ -75131,35 +75131,35 @@
       {
         "componentCode": "BRITE DSCHRG BASE",
         "componentDescription": "Brite Discharge Base",
-        "percentage": 814.815,
+        "percentage": 75.39,
         "hex": "FFFFFF",
         "isBase": true
       },
       {
         "componentCode": "BRITE DSCHRG WHT",
         "componentDescription": "Brite Discharge White",
-        "percentage": 207.491,
+        "percentage": 19.2,
         "hex": "FFFFFF",
         "isBase": true
       },
       {
         "componentCode": "GRN MB",
         "componentDescription": "Neo Green MB",
-        "percentage": 34.414,
+        "percentage": 3.18,
         "hex": "00A073",
         "isBase": false
       },
       {
         "componentCode": "RED MFB",
         "componentDescription": "Neo Red MFB",
-        "percentage": 11.112,
+        "percentage": 1.03,
         "hex": "C92A4F",
         "isBase": false
       },
       {
         "componentCode": "GLDYEL MFR",
         "componentDescription": "Neo G.Yellow MFR",
-        "percentage": 12.962,
+        "percentage": 1.2,
         "hex": "FFBD0D",
         "isBase": false
       }
@@ -81123,35 +81123,35 @@
       {
         "componentCode": "HM DSCHRG BASE",
         "componentDescription": "HM Discharge Base",
-        "percentage": 1101.375,
+        "percentage": 73.42,
         "hex": "FFFFFF",
         "isBase": true
       },
       {
         "componentCode": "BRT DSCHRG WHT",
         "componentDescription": "Brite Discharge White",
-        "percentage": 367.125,
+        "percentage": 24.48,
         "hex": "FFFFFF",
         "isBase": true
       },
       {
         "componentCode": "GRN MB",
         "componentDescription": "Neo Green MB",
-        "percentage": 15,
+        "percentage": 1,
         "hex": "00A073",
         "isBase": false
       },
       {
         "componentCode": "RED MFB",
         "componentDescription": "Neo Red MFB",
-        "percentage": 1.5,
+        "percentage": 0.1,
         "hex": "C92A4F",
         "isBase": false
       },
       {
         "componentCode": "YEL M3G",
         "componentDescription": "Neo Yellow M3G",
-        "percentage": 15,
+        "percentage": 1,
         "hex": "FADC00",
         "isBase": false
       }
@@ -81403,21 +81403,21 @@
       {
         "componentCode": "BR DSCHRG BASE",
         "componentDescription": "Bright Discharge Base",
-        "percentage": 400,
+        "percentage": 49.97,
         "hex": "FFFFFF",
         "isBase": true
       },
       {
         "componentCode": "ALPHA TRANS WHITE",
         "componentDescription": "Alpha Trans White",
-        "percentage": 400,
+        "percentage": 49.97,
         "hex": "FFFFFF",
         "isBase": true
       },
       {
         "componentCode": "BLK MK",
         "componentDescription": "Neo Black MK",
-        "percentage": 0.48,
+        "percentage": 0.06,
         "hex": "3E3D39",
         "isBase": false
       }
@@ -82845,35 +82845,35 @@
       {
         "componentCode": "BRITE DSCHRG BASE",
         "componentDescription": "Brite Discharge Base",
-        "percentage": 814.815,
+        "percentage": 75.39,
         "hex": "FFFFFF",
         "isBase": true
       },
       {
         "componentCode": "BRITE DSCHRG WHT",
         "componentDescription": "Brite Discharge White",
-        "percentage": 207.491,
+        "percentage": 19.2,
         "hex": "FFFFFF",
         "isBase": true
       },
       {
         "componentCode": "GRN MB",
         "componentDescription": "Neo Green MB",
-        "percentage": 34.414,
+        "percentage": 3.18,
         "hex": "00A073",
         "isBase": false
       },
       {
         "componentCode": "RED MFB",
         "componentDescription": "Neo Red MFB",
-        "percentage": 11.112,
+        "percentage": 1.03,
         "hex": "C92A4F",
         "isBase": false
       },
       {
         "componentCode": "GLDYEL MFR",
         "componentDescription": "Neo G.Yellow MFR",
-        "percentage": 12.962,
+        "percentage": 1.2,
         "hex": "FFBD0D",
         "isBase": false
       }
@@ -83090,35 +83090,35 @@
       {
         "componentCode": "BRITE DSCHRG BASE",
         "componentDescription": "Brite Discharge Base",
-        "percentage": 814.815,
+        "percentage": 75.39,
         "hex": "FFFFFF",
         "isBase": true
       },
       {
         "componentCode": "BRITE DSCHRG WHT",
         "componentDescription": "Brite Discharge White",
-        "percentage": 207.491,
+        "percentage": 19.2,
         "hex": "FFFFFF",
         "isBase": true
       },
       {
         "componentCode": "GRN MB",
         "componentDescription": "Neo Green MB",
-        "percentage": 34.414,
+        "percentage": 3.18,
         "hex": "00A073",
         "isBase": false
       },
       {
         "componentCode": "RED MFB",
         "componentDescription": "Neo Red MFB",
-        "percentage": 11.112,
+        "percentage": 1.03,
         "hex": "C92A4F",
         "isBase": false
       },
       {
         "componentCode": "GLDYEL MFR",
         "componentDescription": "Neo G.Yellow MFR",
-        "percentage": 12.962,
+        "percentage": 1.2,
         "hex": "FFBD0D",
         "isBase": false
       }

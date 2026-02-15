@@ -42,6 +42,7 @@ function NavSection({ icon, label, active, expanded, onToggle, children }: NavSe
     <div>
       <button
         onClick={onToggle}
+        aria-expanded={expanded}
         className={`w-full flex items-center gap-3 px-4 py-2.5 rounded-lg transition-colors ${
           active && !expanded
             ? 'bg-[#0D9E7A]/20 text-[#0D9E7A]'
@@ -77,7 +78,7 @@ export function Sidebar() {
       </div>
 
       {/* Navigation */}
-      <nav className="flex-1 px-4 space-y-1">
+      <nav className="flex-1 px-4 space-y-1" aria-label="Main navigation">
         <NavItem
           icon={<Palette />}
           label="Swatch Library"

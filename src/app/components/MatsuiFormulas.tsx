@@ -243,7 +243,10 @@ export function MatsuiFormulas() {
   // Load series on mount
   useEffect(() => {
     fetch('/api/matsui/series')
-      .then((res) => res.json())
+      .then((res) => {
+        if (!res.ok) throw new Error(`${res.status}`);
+        return res.json();
+      })
       .then((data) => {
         const filtered = data.filter(
           (s: MatsuiSeries) => s.seriesName.toLowerCase() !== 'test'

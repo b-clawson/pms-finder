@@ -24,7 +24,9 @@ const ICC_BASE = "https://www.iccultramix.com";
 const FAMILY_ID = 7; // 7500 Coated
 const DELAY_MS = 100;
 
-const agent = new https.Agent({ rejectUnauthorized: false });
+const agent = new https.Agent({
+  rejectUnauthorized: process.env.NODE_ENV === "production",
+});
 
 function sleep(ms) {
   return new Promise((r) => setTimeout(r, ms));

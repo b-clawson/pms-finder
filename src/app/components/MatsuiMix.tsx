@@ -1,22 +1,12 @@
-import { useState, useEffect, useRef, useCallback } from 'react';
-import { useSearchParams } from 'react-router';
+import { useState, useEffect, useCallback } from 'react';
 import { Bookmark, Check } from 'lucide-react';
 import { FormulaDetail, resolveFormulaHex } from './MatsuiFormulas';
 import { HexSearchBar } from './HexSearchBar';
 import { PmsMatchList } from './PmsMatchList';
 import { DistanceBadge } from './DistanceBadge';
-import { useHexInput } from '../hooks/useHexInput';
+import { useMixingSearch } from '../hooks/useMixingSearch';
 import { useMixingCards } from '../hooks/useMixingCards';
 import type { MatsuiSeries, MatsuiFormula } from '../types/matsui';
-
-interface PMSMatch {
-  pms: string;
-  series: string;
-  hex: string;
-  distance: number;
-  name: string;
-  notes: string;
-}
 
 interface ScoredFormula extends MatsuiFormula {
   resolvedHex: string;
@@ -24,30 +14,32 @@ interface ScoredFormula extends MatsuiFormula {
 }
 
 export function MatsuiMix() {
-  const [searchParams] = useSearchParams();
-  const initialHex = searchParams.get('hex') || undefined;
-  const hex = useHexInput(initialHex);
-
   const [seriesList, setSeriesList] = useState<MatsuiSeries[]>([]);
   const [selectedSeries, setSelectedSeries] = useState('301 RC Neo');
   const [seriesLoading, setSeriesLoading] = useState(true);
 
-  const [searching, setSearching] = useState(false);
-  const [pmsResults, setPmsResults] = useState<PMSMatch[]>([]);
-  const [matsuiResults, setMatsuiResults] = useState<ScoredFormula[]>([]);
-  const [error, setError] = useState<string | null>(null);
-  const [pmsError, setPmsError] = useState<string | null>(null);
-  const [hasSearched, setHasSearched] = useState(false);
+  const vendorUrl = useCallback(
+    (hex: string) => `/api/matsui/match?hex=${encodeURIComponent(hex)}&series=${encodeURIComponent(selectedSeries)}&limit=10`,
+    [selectedSeries]
+  );
+  const { hex, searching, pmsResults, vendorResults: matsuiResults, error, pmsError, hasSearched, handleSearch } =
+    useMixingSearch<ScoredFormula>({
+      vendorUrl,
+      extraDeps: [selectedSeries],
+      readyForAutoSearch: !seriesLoading,
+    });
 
   const [selectedFormula, setSelectedFormula] = useState<MatsuiFormula | null>(null);
   const [saved, setSaved] = useState(false);
   const { saveCard } = useMixingCards();
-  const autoSearched = useRef(false);
 
   // Load series on mount
   useEffect(() => {
     fetch('/api/matsui/series')
-      .then((res) => res.json())
+      .then((res) => {
+        if (!res.ok) throw new Error();
+        return res.json();
+      })
       .then((data) => {
         const filtered = data.filter(
           (s: MatsuiSeries) => s.seriesName.toLowerCase() !== 'test'
@@ -60,55 +52,6 @@ export function MatsuiMix() {
       })
       .catch(() => setSeriesLoading(false));
   }, []);
-
-  const handleSearch = useCallback(async () => {
-    if (!hex.hexInput.trim() || !hex.isValid) return;
-
-    setSearching(true);
-    setError(null);
-    setPmsError(null);
-    setPmsResults([]);
-    setMatsuiResults([]);
-    setHasSearched(true);
-    setSelectedFormula(null);
-
-    try {
-      await Promise.all([
-        (async () => {
-          try {
-            const res = await fetch(`/api/pms?hex=${encodeURIComponent(hex.normalizedHex)}&series=BOTH&limit=5`);
-            const data = await res.json();
-            if (res.ok && data.results) setPmsResults(data.results);
-          } catch {
-            setPmsError('Failed to load PMS matches');
-          }
-        })(),
-        (async () => {
-          try {
-            const res = await fetch(`/api/matsui/match?hex=${encodeURIComponent(hex.normalizedHex)}&series=${encodeURIComponent(selectedSeries)}&limit=10`);
-            const data = await res.json();
-            if (res.ok && Array.isArray(data)) {
-              setMatsuiResults(data);
-            } else if (data.error) {
-              setError(data.error);
-            }
-          } catch {
-            setError('Network error — is the server running?');
-          }
-        })(),
-      ]);
-    } finally {
-      setSearching(false);
-    }
-  }, [hex.hexInput, hex.isValid, hex.normalizedHex, selectedSeries]);
-
-  // Auto-search when navigated with ?hex= param
-  useEffect(() => {
-    if (initialHex && hex.isValid && hex.hexInput.trim() && !seriesLoading && !autoSearched.current) {
-      autoSearched.current = true;
-      handleSearch();
-    }
-  }, [initialHex, hex.isValid, hex.hexInput, seriesLoading, handleSearch]);
 
   if (selectedFormula) {
     const resolvedHex = resolveFormulaHex(selectedFormula);
