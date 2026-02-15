@@ -13,7 +13,7 @@ interface Swatch {
 
 const GAP = 16;
 const MIN_CARD_WIDTH = 160;
-const ROW_HEIGHT = 156; // card height + gap
+const ROW_HEIGHT = 162; // card height + gap
 
 const SwatchCard = memo(function SwatchCard({ swatch }: { swatch: Swatch }) {
   const [copied, setCopied] = useState(false);
@@ -53,9 +53,9 @@ const SwatchCard = memo(function SwatchCard({ swatch }: { swatch: Swatch }) {
           )}
         </div>
       </div>
-      <div className="px-3 py-2.5">
+      <div className="px-3 pt-2.5 pb-3.5">
         <div className="font-semibold text-sm text-gray-900">PMS {swatch.pms}</div>
-        <div className="text-xs text-gray-500 font-mono">{swatch.hex}</div>
+        <div className="text-xs text-gray-500 font-mono mt-0.5">{swatch.hex}</div>
       </div>
     </div>
   );
