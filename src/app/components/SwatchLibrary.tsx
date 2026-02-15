@@ -1,4 +1,4 @@
-import { useState, useEffect, useMemo, useRef, memo, type CSSProperties, type ReactElement } from 'react';
+import { useState, useEffect, useMemo, useRef, useCallback, memo, type CSSProperties, type ReactElement } from 'react';
 import { Grid } from 'react-window';
 import { Search, Copy, Check } from 'lucide-react';
 import { getContrastColor } from '../utils/colorMath';
@@ -91,21 +91,27 @@ function SwatchCell({
   );
 }
 
-function useContainerWidth(ref: React.RefObject<HTMLDivElement | null>) {
+function useContainerWidth() {
   const [width, setWidth] = useState(0);
+  const observerRef = useRef<ResizeObserver | null>(null);
 
-  useEffect(() => {
-    const el = ref.current;
+  const callbackRef = useCallback((el: HTMLDivElement | null) => {
+    // Disconnect previous observer
+    if (observerRef.current) {
+      observerRef.current.disconnect();
+      observerRef.current = null;
+    }
+
     if (!el) return;
 
     const observer = new ResizeObserver(([entry]) => {
       setWidth(entry.contentRect.width);
     });
     observer.observe(el);
-    return () => observer.disconnect();
-  }, [ref]);
+    observerRef.current = observer;
+  }, []);
 
-  return width;
+  return { width, callbackRef };
 }
 
 export function SwatchLibrary() {
@@ -113,8 +119,7 @@ export function SwatchLibrary() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
   const [search, setSearch] = useState('');
-  const containerRef = useRef<HTMLDivElement>(null);
-  const containerWidth = useContainerWidth(containerRef);
+  const { width: containerWidth, callbackRef: containerRef } = useContainerWidth();
 
   useEffect(() => {
     fetch('/api/swatches')
