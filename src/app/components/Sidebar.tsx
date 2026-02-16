@@ -76,7 +76,10 @@ export function Sidebar() {
       {/* Brand */}
       <div className="px-4 py-6">
         <div className="flex items-center gap-2">
-          <div className="w-8 h-8 bg-[#E6007E] rounded-lg flex items-center justify-center">
+          <div
+            className="w-8 h-8 rounded-lg flex items-center justify-center"
+            style={{ background: 'linear-gradient(135deg, #00AEEF, #E6007E, #FFD100)' }}
+          >
             <Palette className="w-5 h-5 text-white" />
           </div>
           <span className="text-white text-lg font-semibold">Cercado</span>
