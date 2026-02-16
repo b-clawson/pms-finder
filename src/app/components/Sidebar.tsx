@@ -2,15 +2,20 @@ import { useState } from 'react';
 import { Palette, FlaskConical, ChevronDown, Beaker, Bookmark, Pipette } from 'lucide-react';
 import { useLocation, Link } from 'react-router';
 
+const CMYK_CYCLE = ['#00AEEF', '#E6007E', '#FFD100'] as const;
+
 interface NavItemProps {
   icon: React.ReactNode;
   label: string;
   to: string;
   active?: boolean;
   nested?: boolean;
+  accent?: string;
 }
 
-function NavItem({ icon, label, to, active = false, nested = false }: NavItemProps) {
+function NavItem({ icon, label, to, active = false, nested = false, accent = '#E6007E' }: NavItemProps) {
+  const textOnAccent = accent === '#FFD100' ? '#222222' : '#ffffff';
+
   return (
     <Link
       to={to}
@@ -18,9 +23,10 @@ function NavItem({ icon, label, to, active = false, nested = false }: NavItemPro
         nested ? 'pl-11' : ''
       } ${
         active
-          ? 'bg-[#E6007E] text-white'
+          ? ''
           : 'text-gray-300 hover:bg-[#333333] hover:text-white'
       }`}
+      style={active ? { backgroundColor: accent, color: textOnAccent } : undefined}
     >
       <div className="w-5 h-5">{icon}</div>
       <span className="text-sm">{label}</span>
@@ -84,12 +90,14 @@ export function Sidebar() {
           label="Swatch Library"
           to="/swatches"
           active={location.pathname === '/swatches'}
+          accent={CMYK_CYCLE[0]}
         />
         <NavItem
           icon={<Pipette />}
           label="Color Extraction"
           to="/extract"
           active={location.pathname === '/extract'}
+          accent={CMYK_CYCLE[1]}
         />
 
         <div className="pt-2">
@@ -105,6 +113,7 @@ export function Sidebar() {
               label="Matsui"
               to="/mixing/matsui"
               active={location.pathname === '/mixing/matsui'}
+              accent={CMYK_CYCLE[2]}
               nested
             />
             <NavItem
@@ -112,6 +121,7 @@ export function Sidebar() {
               label="Green Galaxy"
               to="/mixing/greengalaxy"
               active={location.pathname === '/mixing/greengalaxy'}
+              accent={CMYK_CYCLE[0]}
               nested
             />
             <NavItem
@@ -119,6 +129,7 @@ export function Sidebar() {
               label="FN-INK"
               to="/mixing/fnink"
               active={location.pathname === '/mixing/fnink'}
+              accent={CMYK_CYCLE[1]}
               nested
             />
             <NavItem
@@ -126,6 +137,7 @@ export function Sidebar() {
               label="ICC UltraMix"
               to="/mixing/icc"
               active={location.pathname === '/mixing/icc'}
+              accent={CMYK_CYCLE[2]}
               nested
             />
             <NavItem
@@ -133,6 +145,7 @@ export function Sidebar() {
               label="Mixing Cards"
               to="/mixing/cards"
               active={location.pathname === '/mixing/cards'}
+              accent={CMYK_CYCLE[0]}
               nested
             />
           </NavSection>
