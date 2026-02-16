@@ -112,11 +112,11 @@ function CardItem({
                     setEditingName(false);
                   }
                 }}
-                className="w-full text-sm font-semibold text-gray-900 border border-[#0D9E7A] rounded px-1.5 py-0.5 focus:outline-none focus:ring-1 focus:ring-[#0D9E7A]"
+                className="w-full text-sm font-semibold text-gray-900 border border-[#E6007E] rounded px-1.5 py-0.5 focus:outline-none focus:ring-1 focus:ring-[#E6007E]"
               />
             ) : (
               <h3
-                className="text-sm font-semibold text-gray-900 truncate cursor-pointer hover:text-[#0D9E7A]"
+                className="text-sm font-semibold text-gray-900 truncate cursor-pointer hover:text-[#E6007E]"
                 onClick={() => setEditingName(true)}
                 title="Click to edit name"
               >
@@ -190,7 +190,7 @@ function CardItem({
                 }
               }}
               placeholder="Add notes..."
-              className="w-full text-xs text-gray-600 border border-[#0D9E7A] rounded px-2 py-1.5 focus:outline-none focus:ring-1 focus:ring-[#0D9E7A] resize-none"
+              className="w-full text-xs text-gray-600 border border-[#E6007E] rounded px-2 py-1.5 focus:outline-none focus:ring-1 focus:ring-[#E6007E] resize-none"
               rows={2}
             />
           ) : (
@@ -209,7 +209,7 @@ function CardItem({
           onClick={() => setExpanded(!expanded)}
           aria-expanded={expanded}
           aria-label={expanded ? 'Hide formula details' : 'Show formula details'}
-          className="w-full flex items-center justify-center gap-1 text-xs text-gray-400 hover:text-[#0D9E7A] transition-colors pt-1 border-t border-gray-100"
+          className="w-full flex items-center justify-center gap-1 text-xs text-gray-400 hover:text-[#E6007E] transition-colors pt-1 border-t border-gray-100"
         >
           {expanded ? (
             <>
@@ -292,7 +292,7 @@ export function MixingCards() {
                 value={search}
                 onChange={(e) => setSearch(e.target.value)}
                 placeholder="Search by name, code, or hex..."
-                className="w-full pl-10 pr-4 py-2.5 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#0D9E7A] focus:border-transparent"
+                className="w-full pl-10 pr-4 py-2.5 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#E6007E] focus:border-transparent"
               />
             </div>
           </div>
@@ -301,7 +301,7 @@ export function MixingCards() {
             <select
               value={typeFilter}
               onChange={(e) => setTypeFilter(e.target.value as typeof typeFilter)}
-              className="w-full px-4 py-2.5 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#0D9E7A] focus:border-transparent bg-white"
+              className="w-full px-4 py-2.5 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#E6007E] focus:border-transparent bg-white"
             >
               <option value="all">All ({cards.length})</option>
               <option value="matsui">Matsui ({cards.filter((c) => c.type === 'matsui').length})</option>

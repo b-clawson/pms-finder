@@ -111,7 +111,7 @@ export function FormulaDetail({ formula, onBack }: { formula: MatsuiFormula; onB
                       <div className="flex items-center gap-2">
                         <div className="w-24 bg-gray-100 rounded-full h-2">
                           <div
-                            className="h-2 rounded-full bg-[#0D9E7A]"
+                            className="h-2 rounded-full bg-[#E6007E]"
                             style={{ width: `${Math.min(comp.percentage, 100)}%` }}
                           />
                         </div>
@@ -168,7 +168,7 @@ export function FormulaDetail({ formula, onBack }: { formula: MatsuiFormula; onB
               type="number"
               value={weight}
               onChange={(e) => setWeight(Math.max(0, Number(e.target.value)))}
-              className="w-32 px-4 py-2.5 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#0D9E7A] focus:border-transparent"
+              className="w-32 px-4 py-2.5 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#E6007E] focus:border-transparent"
             />
           </div>
           <div>
@@ -176,7 +176,7 @@ export function FormulaDetail({ formula, onBack }: { formula: MatsuiFormula; onB
             <select
               value={unit}
               onChange={(e) => setUnit(e.target.value as 'g' | 'kg' | 'lb')}
-              className="px-4 py-2.5 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#0D9E7A] focus:border-transparent bg-white"
+              className="px-4 py-2.5 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#E6007E] focus:border-transparent bg-white"
             >
               <option value="g">Grams (g)</option>
               <option value="kg">Kilograms (kg)</option>
@@ -312,7 +312,7 @@ export function MatsuiFormulas() {
               value={selectedSeries}
               onChange={(e) => setSelectedSeries(e.target.value)}
               disabled={seriesLoading}
-              className="w-full px-4 py-2.5 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#0D9E7A] focus:border-transparent bg-white"
+              className="w-full px-4 py-2.5 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#E6007E] focus:border-transparent bg-white"
             >
               {seriesLoading && <option>Loading...</option>}
               {series.map((s) => (
@@ -331,7 +331,7 @@ export function MatsuiFormulas() {
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
                 placeholder="Search by color name or code..."
-                className="w-full pl-10 pr-4 py-2.5 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#0D9E7A] focus:border-transparent"
+                className="w-full pl-10 pr-4 py-2.5 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#E6007E] focus:border-transparent"
               />
             </div>
           </div>

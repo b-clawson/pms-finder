@@ -33,7 +33,7 @@ export function HexSearchBar({ hexInput: hex, searching, onSearch, children }: H
               onKeyDown={handleKeyDown}
               placeholder="#FF6A00 or 185 C"
               aria-label="HEX color code or PMS code"
-              className={`w-full pl-[54px] pr-4 py-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#0D9E7A] focus:border-transparent ${isPmsMode ? '' : 'font-mono'}`}
+              className={`w-full pl-[54px] pr-4 py-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#E6007E] focus:border-transparent ${isPmsMode ? '' : 'font-mono'}`}
               disabled={searching}
             />
           </div>
@@ -57,7 +57,7 @@ export function HexSearchBar({ hexInput: hex, searching, onSearch, children }: H
         <button
           onClick={onSearch}
           disabled={!hex.isValid || !hex.hexInput.trim() || searching || hex.resolving}
-          className="px-6 py-3 bg-[#0D9E7A] text-white rounded-lg hover:bg-[#0b8566] disabled:bg-gray-300 disabled:cursor-not-allowed transition-colors flex items-center gap-2 whitespace-nowrap"
+          className="px-6 py-3 bg-[#E6007E] text-white rounded-lg hover:bg-[#B80065] disabled:bg-gray-300 disabled:cursor-not-allowed transition-colors flex items-center gap-2 whitespace-nowrap"
         >
           <Search className="w-5 h-5" />
           {searching ? 'Searching...' : 'Find matches'}

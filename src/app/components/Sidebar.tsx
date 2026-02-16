@@ -18,8 +18,8 @@ function NavItem({ icon, label, to, active = false, nested = false }: NavItemPro
         nested ? 'pl-11' : ''
       } ${
         active
-          ? 'bg-[#0D9E7A] text-white'
-          : 'text-gray-300 hover:bg-[#252541] hover:text-white'
+          ? 'bg-[#E6007E] text-white'
+          : 'text-gray-300 hover:bg-[#333333] hover:text-white'
       }`}
     >
       <div className="w-5 h-5">{icon}</div>
@@ -45,8 +45,8 @@ function NavSection({ icon, label, active, expanded, onToggle, children }: NavSe
         aria-expanded={expanded}
         className={`w-full flex items-center gap-3 px-4 py-2.5 rounded-lg transition-colors ${
           active && !expanded
-            ? 'bg-[#0D9E7A]/20 text-[#0D9E7A]'
-            : 'text-gray-400 hover:bg-[#252541] hover:text-gray-200'
+            ? 'bg-[#E6007E]/15 text-[#E6007E]'
+            : 'text-gray-400 hover:bg-[#333333] hover:text-gray-200'
         }`}
       >
         <div className="w-5 h-5">{icon}</div>
@@ -66,11 +66,11 @@ export function Sidebar() {
   const [mixingExpanded, setMixingExpanded] = useState<boolean>(isMixingActive || true);
 
   return (
-    <aside className="w-[230px] bg-[#1B1B2F] h-screen sticky top-0 flex flex-col">
+    <aside className="w-[230px] bg-[#222222] h-screen sticky top-0 flex flex-col">
       {/* Brand */}
       <div className="px-4 py-6">
         <div className="flex items-center gap-2">
-          <div className="w-8 h-8 bg-[#0D9E7A] rounded-lg flex items-center justify-center">
+          <div className="w-8 h-8 bg-[#E6007E] rounded-lg flex items-center justify-center">
             <Palette className="w-5 h-5 text-white" />
           </div>
           <span className="text-white text-lg font-semibold">Cercado</span>

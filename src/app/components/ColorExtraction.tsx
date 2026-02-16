@@ -252,7 +252,7 @@ export function ColorExtraction() {
         onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); fileInputRef.current?.click(); } }}
         className={`bg-white rounded-xl shadow-sm p-8 mb-6 border-2 border-dashed transition-colors cursor-pointer text-center ${
           dragOver
-            ? 'border-[#0D9E7A] bg-[#0D9E7A]/5'
+            ? 'border-[#E6007E] bg-[#E6007E]/5'
             : 'border-gray-300 hover:border-gray-400'
         }`}
       >
@@ -285,7 +285,7 @@ export function ColorExtraction() {
 
       {/* Pick mode banner */}
       {pickingIdx !== null && (
-        <div className="rounded-lg bg-[#0D9E7A]/10 border border-[#0D9E7A] text-[#0D9E7A] px-4 py-3 text-sm mb-4 flex items-center justify-between">
+        <div className="rounded-lg bg-[#E6007E]/10 border border-[#E6007E] text-[#E6007E] px-4 py-3 text-sm mb-4 flex items-center justify-between">
           <span className="flex items-center gap-2">
             <Pipette className="w-4 h-4" />
             Click on the image to pick a color for swatch {pickingIdx + 1}
@@ -303,7 +303,7 @@ export function ColorExtraction() {
       {imageUrl && (
         <div
           className={`bg-white rounded-xl shadow-sm p-4 mb-6 transition-shadow ${
-            pickingIdx !== null ? 'ring-2 ring-[#0D9E7A]' : ''
+            pickingIdx !== null ? 'ring-2 ring-[#E6007E]' : ''
           }`}
         >
           <img
@@ -409,7 +409,7 @@ export function ColorExtraction() {
                           `/mixing/matsui?hex=${encodeURIComponent(color.hex)}`
                         )
                       }
-                      className="flex items-center justify-center gap-1 px-2 py-1.5 text-xs font-medium rounded-lg bg-[#0D9E7A] text-white hover:bg-[#0b8566] transition-colors"
+                      className="flex items-center justify-center gap-1 px-2 py-1.5 text-xs font-medium rounded-lg bg-[#E6007E] text-white hover:bg-[#B80065] transition-colors"
                     >
                       <FlaskConical className="w-3 h-3" />
                       Matsui
@@ -420,7 +420,7 @@ export function ColorExtraction() {
                           `/mixing/greengalaxy?hex=${encodeURIComponent(color.hex)}`
                         )
                       }
-                      className="flex items-center justify-center gap-1 px-2 py-1.5 text-xs font-medium rounded-lg bg-[#1B1B2F] text-white hover:bg-[#2a2a4a] transition-colors"
+                      className="flex items-center justify-center gap-1 px-2 py-1.5 text-xs font-medium rounded-lg bg-[#222222] text-white hover:bg-[#2a2a4a] transition-colors"
                     >
                       <FlaskConical className="w-3 h-3" />
                       Green Galaxy

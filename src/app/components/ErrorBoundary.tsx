@@ -23,7 +23,7 @@ export class ErrorBoundary extends Component<Props, State> {
   render() {
     if (this.state.hasError) {
       return (
-        <div className="flex items-center justify-center min-h-screen bg-[#F3F4F6]">
+        <div className="flex items-center justify-center min-h-screen bg-[#FAFAFA]">
           <div className="bg-white rounded-lg shadow-lg p-8 max-w-md text-center">
             <h1 className="text-2xl font-semibold text-gray-800 mb-2">Something went wrong</h1>
             <p className="text-gray-500 mb-4">
@@ -31,7 +31,7 @@ export class ErrorBoundary extends Component<Props, State> {
             </p>
             <button
               onClick={() => this.setState({ hasError: false, error: null })}
-              className="px-4 py-2 bg-[#0D9E7A] text-white rounded-md hover:bg-[#0B8A6A] transition-colors"
+              className="px-4 py-2 bg-[#E6007E] text-white rounded-md hover:bg-[#B80065] transition-colors"
             >
               Try again
             </button>

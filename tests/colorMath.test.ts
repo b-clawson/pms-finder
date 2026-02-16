@@ -65,7 +65,7 @@ describe('getContrastColor', () => {
   });
 
   it('returns dark for light colors', () => {
-    expect(getContrastColor('#FFFFFF')).toBe('#1B1B2F');
+    expect(getContrastColor('#FFFFFF')).toBe('#222222');
   });
 
   it('returns white for mid-dark colors', () => {

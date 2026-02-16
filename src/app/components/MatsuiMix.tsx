@@ -86,7 +86,7 @@ export function MatsuiMix() {
             className={`flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
               saved
                 ? 'bg-green-100 text-green-800'
-                : 'bg-[#0D9E7A] text-white hover:bg-[#0b8566]'
+                : 'bg-[#E6007E] text-white hover:bg-[#B80065]'
             }`}
           >
             {saved ? <Check className="w-4 h-4" /> : <Bookmark className="w-4 h-4" />}
@@ -112,7 +112,7 @@ export function MatsuiMix() {
             value={selectedSeries}
             onChange={(e) => setSelectedSeries(e.target.value)}
             disabled={seriesLoading || searching}
-            className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#0D9E7A] focus:border-transparent bg-white"
+            className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#E6007E] focus:border-transparent bg-white"
           >
             {seriesLoading && <option>Loading...</option>}
             {seriesList.map((s) => (

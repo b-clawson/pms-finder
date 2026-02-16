@@ -27,7 +27,7 @@ export default function App() {
       <BrowserRouter>
         <div className="flex min-h-screen">
           <Sidebar />
-          <main className="flex-1 bg-[#F3F4F6] overflow-y-auto">
+          <main className="flex-1 bg-[#FAFAFA] overflow-y-auto">
             <div className="max-w-7xl mx-auto px-8 py-8">
               <Routes>
                 <Route path="/" element={<Navigate to="/swatches" replace />} />

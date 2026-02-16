@@ -100,7 +100,7 @@ export function IccFormulaDetailView({ match }: { match: IccMatch }) {
               type="number"
               value={totalWeight}
               onChange={(e) => setTotalWeight(Math.max(0, parseFloat(e.target.value) || 0))}
-              className="w-full px-4 py-2 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#0D9E7A] focus:border-transparent font-mono"
+              className="w-full px-4 py-2 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#E6007E] focus:border-transparent font-mono"
               min={0}
               step={10}
             />
@@ -110,7 +110,7 @@ export function IccFormulaDetailView({ match }: { match: IccMatch }) {
             <select
               value={weightUnit}
               onChange={(e) => setWeightUnit(e.target.value as WeightUnit)}
-              className="w-full px-4 py-2 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#0D9E7A] focus:border-transparent bg-white"
+              className="w-full px-4 py-2 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#E6007E] focus:border-transparent bg-white"
             >
               <option value="g">Grams (g)</option>
               <option value="kg">Kilograms (kg)</option>
@@ -169,7 +169,7 @@ export function IccMix() {
             className={`flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
               saved
                 ? 'bg-green-100 text-green-800'
-                : 'bg-[#0D9E7A] text-white hover:bg-[#0b8566]'
+                : 'bg-[#E6007E] text-white hover:bg-[#B80065]'
             }`}
           >
             {saved ? <Check className="w-4 h-4" /> : <Bookmark className="w-4 h-4" />}
@@ -179,7 +179,7 @@ export function IccMix() {
 
         <button
           onClick={() => setSelectedMatch(null)}
-          className="flex items-center gap-2 text-[#0D9E7A] hover:text-[#0b8566] mb-6 text-sm font-medium"
+          className="flex items-center gap-2 text-[#E6007E] hover:text-[#B80065] mb-6 text-sm font-medium"
         >
           <ArrowLeft className="w-4 h-4" />
           Back to results
@@ -206,7 +206,7 @@ export function IccMix() {
             value={family}
             onChange={(e) => setFamily(e.target.value)}
             disabled={searching}
-            className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#0D9E7A] focus:border-transparent bg-white"
+            className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#E6007E] focus:border-transparent bg-white"
           >
             <option value="7500 Coated">7500 Coated</option>
           </select>
