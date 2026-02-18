@@ -350,12 +350,17 @@ app.get("/api/icc/families", async (req, res) => {
   res.json(getIccFamilyNames());
 });
 
+// Health check endpoint for Railway / container orchestrators
+app.get("/health", (req, res) => {
+  res.status(200).json({ status: "ok" });
+});
+
 // SPA fallback — serve index.html for non-API routes (production build)
 app.get("*", (req, res) => {
   res.sendFile(resolve(staticDir, "index.html"));
 });
 
-app.listen(PORT, () => {
-  console.log(`PMS Finder API → http://localhost:${PORT}`);
+app.listen(PORT, "0.0.0.0", () => {
+  console.log(`PMS Finder API → http://0.0.0.0:${PORT}`);
   console.log(`Serving static from: ${staticDir}`);
 });
