@@ -156,7 +156,7 @@ function CardItem({
                 ? 'Green Galaxy'
                 : card.type === 'fnink'
                   ? 'FN-INK'
-                  : 'ICC UltraMix'}
+                  : 'ICC / TIS UMX'}
           </span>
           <span className="text-xs text-gray-500">{seriesLabel}</span>
         </div>
@@ -276,7 +276,7 @@ export function MixingCards() {
       <div className="mb-8">
         <h1 className="text-3xl mb-2">Mixing Cards</h1>
         <p className="text-gray-600">
-          Your saved formula results from Matsui, Green Galaxy, FN-INK, and ICC mixing
+          Your saved formula results from Matsui, Green Galaxy, FN-INK, and ICC/TIS UMX mixing
         </p>
       </div>
 
@@ -307,7 +307,7 @@ export function MixingCards() {
               <option value="matsui">Matsui ({cards.filter((c) => c.type === 'matsui').length})</option>
               <option value="greengalaxy">Green Galaxy ({cards.filter((c) => c.type === 'greengalaxy').length})</option>
               <option value="fnink">FN-INK ({cards.filter((c) => c.type === 'fnink').length})</option>
-              <option value="icc">ICC UltraMix ({cards.filter((c) => c.type === 'icc').length})</option>
+              <option value="icc">ICC / TIS UMX ({cards.filter((c) => c.type === 'icc').length})</option>
             </select>
           </div>
         </div>
@@ -318,7 +318,7 @@ export function MixingCards() {
         <div className="text-center py-16 text-gray-500">
           <p className="text-lg mb-2">No mixing cards saved yet</p>
           <p className="text-sm">
-            Save formulas from the Matsui, Green Galaxy, FN-INK, or ICC mixing pages to see them here.
+            Save formulas from the Matsui, Green Galaxy, FN-INK, or ICC/TIS UMX mixing pages to see them here.
           </p>
         </div>
       )}
