@@ -38,20 +38,26 @@ function stripPmsPrefix(input: string): string {
 }
 
 function findSwatch(swatches: Swatch[], raw: string): Swatch | null {
-  const cleaned = stripPmsPrefix(raw).toLowerCase();
+  const cleaned = stripPmsPrefix(raw).toLowerCase().trim();
   if (!cleaned) return null;
 
-  // 1. Exact match on name (e.g. "185 C")
+  // 1. Exact match on name (e.g. "185 C" or "185 c")
   const byName = swatches.find((s) => s.name.toLowerCase() === cleaned);
   if (byName) return byName;
 
-  // 2. Match on pms field (e.g. "185") — first match (Coated preferred since they come first)
+  // 2. Match with normalized spacing: "185C" -> "185 C", "100c" -> "100 C"
+  // Extract number and series from inputs like "185C", "100c", "2728u"
+  const match = cleaned.match(/^(\d+)\s*([cu])$/);
+  if (match) {
+    const [, num, series] = match;
+    const normalized = `${num} ${series.toUpperCase()}`;
+    const bySeries = swatches.find((s) => s.name.toLowerCase() === normalized.toLowerCase());
+    if (bySeries) return bySeries;
+  }
+
+  // 3. Match on pms field (e.g. "185") — first match (Coated preferred since they come first)
   const byPms = swatches.find((s) => s.pms.toLowerCase() === cleaned);
   if (byPms) return byPms;
-
-  // 3. Partial: if user typed just a number, try matching pms field
-  const byNumber = swatches.find((s) => s.pms === cleaned);
-  if (byNumber) return byNumber;
 
   return null;
 }
