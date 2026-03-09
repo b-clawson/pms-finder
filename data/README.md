@@ -7,7 +7,7 @@ This directory contains all color swatch and ink formula databases used by PMS F
 | File | Source | Records | Description |
 |------|--------|---------|-------------|
 | `pantone_swatches.json` | PeakTech PMS Color Chart | ~900 | Pantone PMS color swatches (C and U series) |
-| `icc_7500_coated.json` | ICC UltraMix website | ~4,500 | ICC UltraMix 7500 Coated ink formulas (also compatible with Total Ink Solutions UMX system) |
+| `icc_7500_coated.json` | ICC UltraMix website | ~4,500 | ICC UltraMix 7500 Coated ink formulas |
 | `matsui_301_rc_neo.json` | Matsui XLSX export | varies | Matsui 301 RC Neo ink formulas |
 | `matsui_alpha_discharge.json` | Matsui XLSX export | varies | Matsui Alpha Discharge ink formulas |
 | `matsui_brite_discharge.json` | Matsui XLSX export | varies | Matsui Brite Discharge ink formulas |
@@ -40,7 +40,7 @@ All schemas are defined in `shared/schemas.js` and enforced via Zod validation.
 
 If `pantone_swatches.json` is missing, the server falls back to a small set of stub swatches (`server/stubSwatches.js`).
 
-### ICC UltraMix / Total Ink Solutions UMX formulas (`icc_7500_coated.json`)
+### ICC UltraMix formulas (`icc_7500_coated.json`)
 
 ```json
 {

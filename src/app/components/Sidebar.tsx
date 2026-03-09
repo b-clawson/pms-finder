@@ -137,7 +137,7 @@ export function Sidebar() {
             />
             <NavItem
               icon={<FlaskConical />}
-              label="ICC / TIS UMX"
+              label="ICC UltraMix"
               to="/mixing/icc"
               active={location.pathname === '/mixing/icc'}
               accent={CMYK_CYCLE[2]}

@@ -41,7 +41,7 @@ export function IccFormulaDetailView({ match }: { match: IccMatch }) {
         </div>
         <div className="px-6 py-3 flex items-center gap-4 text-sm text-gray-500">
           <span className="font-mono">{match.hex}</span>
-          <span className="px-2 py-0.5 bg-sky-100 text-sky-800 rounded text-xs">ICC UltraMix / TIS UMX</span>
+          <span className="px-2 py-0.5 bg-sky-100 text-sky-800 rounded text-xs">ICC UltraMix</span>
           <span className="text-gray-400 text-xs">{match.family}</span>
         </div>
       </div>
@@ -161,7 +161,7 @@ export function IccMix() {
         <div className="mb-8 flex items-start justify-between">
           <div>
             <h1 className="text-3xl mb-2">Color Mixing — ICC UltraMix</h1>
-            <p className="text-gray-600">Formula detail • Also compatible with Total Ink Solutions UMX</p>
+            <p className="text-gray-600">Formula detail</p>
           </div>
           <button
             onClick={handleSave}
@@ -196,9 +196,6 @@ export function IccMix() {
         <h1 className="text-3xl mb-2">Color Mixing — ICC UltraMix</h1>
         <p className="text-gray-600">
           Type a hex code to find closest PMS matches and ICC UltraMix formulas
-        </p>
-        <p className="text-sm text-gray-500 mt-2">
-          Also compatible with <strong>Total Ink Solutions UMX</strong> (Ultimate Mixing System)
         </p>
       </div>
 
